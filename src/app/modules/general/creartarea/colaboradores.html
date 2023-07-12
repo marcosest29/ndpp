@@ -1,0 +1,22 @@
+<div class="colaboradores-content">
+    <p-card>
+        <ng-template pTemplate="title"> Informacion de colaboradores </ng-template>
+        <ng-template pTemplate="subtitle"> Seleccione los colaboradores </ng-template>
+        <ng-template pTemplate="content">
+            <div class="p-fluid formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="colaboradores">Colaboradores</label>
+                    <p-multiSelect inputId="colaboradores" [(ngModel)]="colaboradoresInfo.colaborador" [options]="colaboradores"
+                        optionLabel="nombre" placeholder="Selecione colaboradores"></p-multiSelect>
+                </div>
+            </div>
+            
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-between">
+                <button class="btn btn-sm btn-outline-danger" (click)="nextPage()">
+                    Siguiente  
+                   </button>            </div>
+        </ng-template>
+    </p-card>
+</div>

@@ -1,0 +1,15 @@
+body {  
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+  }
+  
+  
+  .textcolorcorp{
+    color: #e74c3c
+  }
+  
+  .fondocorp{
+    background-color:#e74c3c
+  }
+  
+  .hand {cursor: pointer;}

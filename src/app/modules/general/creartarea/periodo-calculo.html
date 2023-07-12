@@ -1,0 +1,32 @@
+<div class="periodo-calculo-content">
+    <p-card>
+        <ng-template pTemplate="title"> Informacion de Periodo y Calculo </ng-template>
+        <ng-template pTemplate="subtitle"> Seleccione la informacion </ng-template>
+        <ng-template pTemplate="content">
+            <div class="p-fluid formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="distribucion">Calculo</label>
+                    <p-dropdown inputId="distribucion" [(ngModel)]="periodocalculoInfo.calculo" [options]="distribucion"
+                        optionLabel="nombre" placeholder="Selecione distribucion"></p-dropdown>
+                </div>
+                <div class="me-3">
+                    <div class="row">
+                        <div class="col">
+                            <p class="mt-1">Desde: <p-calendar [(ngModel)]="periodocalculoInfo.desde" [showTime]="true"
+                                    [showSeconds]="true"></p-calendar></p>
+                        </div>
+                        <div class="col">
+                            <p class="mt-1">Hasta: <p-calendar [(ngModel)]="periodocalculoInfo.hasta"></p-calendar></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-between">
+                <button class="btn btn-sm btn-outline-danger" (click)="nextPage()">
+                    Siguiente  
+                   </button>            </div>
+        </ng-template>
+    </p-card>
+</div>

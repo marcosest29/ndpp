@@ -1,0 +1,25 @@
+.separadorcorp{
+    height: 30px;
+    background-color:#e74c3c
+  }
+  
+  .whitetextcolor{
+    color: white;
+  }
+  
+  .corpfooter{
+    font-size: small;
+    color: white;
+  }
+  
+  
+  .hand {cursor: pointer;}
+  
+  .kbottom {
+    position: absolute;
+    bottom: 0px;
+  }
+  
+  :host {
+    display: contents; height: 100%;  
+  }

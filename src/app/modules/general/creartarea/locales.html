@@ -1,0 +1,33 @@
+<div class="locales-content">
+    <p-card>
+        <ng-template pTemplate="title"> Informacion de locales </ng-template>
+        <ng-template pTemplate="subtitle"> Seleccione la informacion </ng-template>
+        <ng-template pTemplate="content">
+            <div class="p-fluid formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="formato">Formato</label>
+                    <p-dropdown inputId="formato" [(ngModel)]="localInfo.formato" [options]="formatos"
+                        optionLabel="nombre" placeholder="Selecione formato"></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="zona">Zonas</label>
+                    <p-dropdown inputId="zona" [(ngModel)]="localInfo.zona" [options]="zonas"
+                        optionLabel="nombre" placeholder="Selecione zona"></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="locales">Locales</label>
+                    <p-dropdown inputId="locales" [(ngModel)]="localInfo.locales" [options]="locales"
+                        optionLabel="nombre" placeholder="Selecione locales"></p-dropdown>
+                </div>
+            </div>
+            
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-between">
+                <button class="btn btn-sm btn-outline-danger" (click)="nextPage()">
+                 Siguiente  
+                </button>
+            </div>
+        </ng-template>
+    </p-card>
+</div>

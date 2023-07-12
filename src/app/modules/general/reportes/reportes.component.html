@@ -1,0 +1,59 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="mt-1">Formato:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="formatos" [(ngModel)]="selectedFormato" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="loadTabla()">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="main ps-2">
+            <p-table [value]="reportes" sortField="zona" sortMode="single" dataKey="zona" rowGroupMode="subheader" groupRowsBy="zona" [tableStyle]="{'min-width': '70rem'}">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Progreso</th>
+                        <th>Acciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="groupheader" let-reportes let-rowIndex="rowIndex" let-expanded="expanded">
+                    <tr>
+                        <td colspan="5">
+                            <button type="button" pButton pRipple [pRowToggler]="reportes" class="p-button-text p-button-rounded p-button-plain mr-2" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                            <span class="font-bold ml-2">{{reportes.zona}}</span>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="rowexpansion" let-reportes>
+                    <tr>
+                        <td>
+                            {{reportes.nombre}}
+                        </td>
+                        <td>
+                            <p-progressBar [value]="reportes.progreso" [showValue]="true"></p-progressBar>
+                        </td>
+                        <td class="d-flex">
+                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(reportes)">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(reportes)">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(reportes)">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </section>
+    </div>
+</div>

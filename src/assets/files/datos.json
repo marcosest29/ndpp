@@ -1,0 +1,291 @@
+{
+  "formatos": [
+    {
+      "codigo": "SUP",
+      "nombre": "SUPERMAXI"
+    },
+    {
+      "codigo": "MEG",
+      "nombre": "MEGAMAXI"
+    },
+    {
+      "codigo": "TTN",
+      "nombre": "TITAN"
+    },
+    {
+      "codigo": "AKI",
+      "nombre": "AKI"
+    },
+    {
+      "codigo": "MOB",
+      "nombre": "MOBLART"
+    }
+  ],
+  "zonas": [
+    {
+      "codigo": "UIO",
+      "nombre": "QUITO"
+    },
+    {
+      "codigo": "GUA",
+      "nombre": "GUAYAQUIL"
+    },
+    {
+      "codigo": "MAN",
+      "nombre": "MANTA"
+    },
+    {
+      "codigo": "CUE",
+      "nombre": "CUENCA"
+    }
+  ],
+  "locales": [
+    {
+      "codigo": "711",
+      "nombre": "6 DE DICIEMBRE",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "101",
+      "nombre": "MULTICENTRO",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "103",
+      "nombre": "CARCELEN",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "716",
+      "nombre": "SCALA",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "712",
+      "nombre": "SAN LUIS",
+      "zona": "QUITO",
+      "marcado":false
+    }
+  ],
+  "division": [
+    {
+      "codigo": "0002",
+      "nombre": "ALIMENTOS FRESCOS"
+    },
+    {
+      "codigo": "0004",
+      "nombre": "CUIDADO PERSONAL"
+    },
+    {
+      "codigo": "0008",
+      "nombre": "SUMINISTROS"
+    },
+    {
+      "codigo": "0001",
+      "nombre": "ABARROTES"
+    }
+  ],
+  "departamento": [
+    {
+      "codigo": "0010",
+      "nombre": "CANASTA BASICA"
+    },
+    {
+      "codigo": "0030",
+      "nombre": "ASEO Y LIMPIEZA"
+    },
+    {
+      "codigo": "0040",
+      "nombre": "PERFUMERIA"
+    },
+    {
+      "codigo": "0060",
+      "nombre": "ACCESORIOS BEBES"
+    }
+  ],
+  "clasificacion": [
+    {
+      "codigo": "5220",
+      "nombre": "DECORACION Y MANUALIDADES"
+    },
+    {
+      "codigo": "5221",
+      "nombre": "(I) DECORACION Y MANUALIDADES"
+    },
+    {
+      "codigo": "5020",
+      "nombre": "COCHES PARA MUNECAS"
+    },
+    {
+      "codigo": "5060",
+      "nombre": "HOBBIES Y EDUCATIVOS"
+    }
+  ],
+  "subclasificacion": [
+    {
+      "codigo": "0010",
+      "nombre": "CHOCOLATES"
+    },
+    {
+      "codigo": "0040",
+      "nombre": "CHUPETES"
+    },
+    {
+      "codigo": "0070",
+      "nombre": "TOFFES"
+    },
+    {
+      "codigo": "0060",
+      "nombre": "GOMAS"
+    }
+  ],
+  "clasificaciones": [
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-GIRASOL"
+    },
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-SOYA"
+    },
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1048-HARINAS VARIAS",
+      "subclasificacion": "0050-PRECOCIDAS"
+    },
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1058-MARGARINA",
+      "subclasificacion": "0030-GIRASOL"
+    }
+  ],
+  "habilitado": [
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE ALMACEN"
+    },
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE CAJAS"
+    },
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE SEGURIDAD"
+    },
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE EJECUTIVO"
+    },
+    {
+      "tipo": "GENERICO",
+      "nomina": "MEDIANTE AUTORIZACION"
+    },
+    {
+      "tipo": "LOCAL",
+      "nomina": "CERCANO"
+    }
+  ],
+  "reportes": [
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI MULTICENTRO",
+      "progreso": 80
+    },
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI CARCELEN",
+      "progreso": 50
+    },
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI EL BOSQUE",
+      "progreso": 90
+    },
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI PLAZA NORTE",
+      "progreso": 100
+    },
+    {
+      "zona": "ZONA GUAYAQUIL",
+      "nombre": "SUPERMAXI GUAYAQUIL1",
+      "progreso": 30
+    },
+    {
+      "zona": "ZONA GUAYAQUIL",
+      "nombre": "SUPERMAXI GUAYAQUIL2",
+      "progreso": 45
+    }
+  ],
+  "clases": [
+    {
+      "codigo": "R",
+      "nombre": "RESURTIBLE"
+    },
+    {
+      "codigo": "O",
+      "nombre": "OBSOLETO"
+    },
+    {
+      "codigo": "I",
+      "nombre": "NO TROQUELADO"
+    }
+  ],
+  "distribucion": [
+    {
+      "codigo": "D",
+      "nombre": "DISTRIBUCION"
+    },
+    {
+      "codigo": "P",
+      "nombre": "PORCENTAJE"
+    }
+  ],
+  "articulos": [
+    {
+      "codigo": "739907000010",
+      "nombre": "PAN HARINA MAIZ PRECOCIDA BLANCA",
+      "clase": "R",
+      "calculo": "DISTRIBUCION",
+      "locales": "711,712,713,714"
+    },
+    {
+      "codigo": "7702354945992",
+      "nombre": "SAVILOE BEBIDA ALOE VERA EXTRA CONTENIDO",
+      "clase": "R",
+      "calculo": "DISTRIBUCION",
+      "locales": "101,102,713,714"
+    },
+    {
+      "codigo": "7861024626255",
+      "nombre": "COCA COLA",
+      "clase": "I",
+      "calculo": "PORCENTAJE",
+      "locales": "716"
+    }
+  ],
+  "colaboradores": [
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PERSONAL DE ALMACEN"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PERSONAL DE CAJAS"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PERSONAL DE SEGURIDAD"
+    }
+  ]
+}

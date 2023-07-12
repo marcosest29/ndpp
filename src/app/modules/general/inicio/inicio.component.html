@@ -1,0 +1,106 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de busqueda</p>
+                <p-fieldset [toggleable]="true" legend="Locales" [collapsed]=true>
+                    <p class="mt-1">Formato:</p>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="formatos" [(ngModel)]="selectedFormato" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+                    <p class="mt-1">Locales:</p>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="locales" [(ngModel)]="selectedLocales" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+                </p-fieldset>
+                <p-fieldset [toggleable]="true" legend="Zonas" [collapsed]=true>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="zonas" [(ngModel)]="selectedZona" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+                </p-fieldset>
+                <p-fieldset [toggleable]="true" legend="Estructura comercial" [collapsed]=true>
+                    <p class="mt-1">Division:</p>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="division" [(ngModel)]="selectedDivision" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+
+                    <p class="mt-1">Departamento:</p>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="departamento" [(ngModel)]="selectedDepartamento" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+
+                    <p class="mt-1">Clasificacion:</p>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="clasificacion" [(ngModel)]="selectedClasificacion" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+
+                    <p class="mt-1">Sublasificacion:</p>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="subclasificacion" [(ngModel)]="selectedSubclasificacion"
+                            optionLabel="nombre" placeholder="Seleccionar"></p-dropdown>
+                    </div>
+                </p-fieldset>
+                <p-fieldset [toggleable]="true" legend="Clases de articulo" [collapsed]=true>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="clases" [(ngModel)]="selectedClase" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+                </p-fieldset>
+                <p-fieldset [toggleable]="true" legend="Tipo de calculo" [collapsed]=true>
+                    <div class="p-fluid">
+                        <p-dropdown [options]="distribucion" [(ngModel)]="selectedDistribucion" optionLabel="nombre"
+                            placeholder="Seleccionar"></p-dropdown>
+                    </div>
+                </p-fieldset>
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="search()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <div>
+                <p-table [value]="articulos" [paginator]="true"
+                [rows]="5"
+                [showCurrentPageReport]="true"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [rowsPerPageOptions]="[10, 20, 30]">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>N.º</th> 
+                            <th>Codigo barras</th>
+                            <th>Descripcion</th>
+                            <th>Clase de articulo</th>
+                            <th>Tipo de calculo</th>
+                            <th>Locales</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-art let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{ rowIndex+1 }}</td>
+                            <td>{{ art.codigo }}</td>
+                            <td>{{ art.nombre }}</td>
+                            <td>{{ art.clase }}</td>
+                            <td>{{ art.calculo }}</td>
+                            <td>{{ art.locales }}</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(art)">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </section>
+    </div>
+</div>

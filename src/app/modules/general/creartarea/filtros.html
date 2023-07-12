@@ -1,0 +1,42 @@
+<div class="filtros-content">
+    <p-card>
+        <ng-template pTemplate="title"> Informacion de filtros </ng-template>
+        <ng-template pTemplate="subtitle"> Seleccione los filtros </ng-template>
+        <ng-template pTemplate="content">
+            <div class="p-fluid formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="division">Division</label>
+                    <p-dropdown inputId="division" [(ngModel)]="filtrosInfo.division" [options]="division"
+                        optionLabel="nombre" placeholder="Selecione division"></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="departamento">Departamento</label>
+                    <p-dropdown inputId="departamento" [(ngModel)]="filtrosInfo.departamento" [options]="departamento"
+                        optionLabel="nombre" placeholder="Selecione departamento"></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="clasificacion">Clasificacion</label>
+                    <p-dropdown inputId="clasificacion" [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"
+                        optionLabel="nombre" placeholder="Selecione clasificacion"></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="subclasificacion">Subclasificacion</label>
+                    <p-dropdown inputId="subclasificacion" [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"
+                        optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="clases">Clases</label>
+                    <p-dropdown inputId="clases" [(ngModel)]="filtrosInfo.clases" [options]="clases"
+                        optionLabel="nombre" placeholder="Selecione clases"></p-dropdown>
+                </div>
+            </div>
+            
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-between">
+                <button class="btn btn-sm btn-outline-danger" (click)="nextPage()">
+                    Siguiente  
+                   </button>            </div>
+        </ng-template>
+    </p-card>
+</div>

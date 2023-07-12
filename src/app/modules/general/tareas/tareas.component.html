@@ -1,0 +1,168 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Parametrización</p>
+                <p class="mt-1">Formato:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="formatos" [(ngModel)]="selectedFormato" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+
+                <p class="mt-1">Zona:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="zonas" [(ngModel)]="selectedZona" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+
+                <p class="mt-1">Locales:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="locales" [(ngModel)]="selectedLocales" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+            </div>
+            <br>
+            <div class="me-3">
+                <p class="textcolorcorp">Seleccione variables</p>
+                <p class="mt-1">Division:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="division" [(ngModel)]="selectedDivision" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+
+                <p class="mt-1">Departamento:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="departamento" [(ngModel)]="selectedDepartamento" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+
+                <p class="mt-1">Clasificacion:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="clasificacion" [(ngModel)]="selectedClasificacion" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+
+                <p class="mt-1">Sublasificacion:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="subclasificacion" [(ngModel)]="selectedSubclasificacion" optionLabel="nombre"
+                        placeholder="Seleccionar"></p-dropdown>
+                </div>
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <p class="textcolorcorp">Periodo</p>
+            <div class="me-3">
+                <div class="row">
+                    <div class="col">
+                        <p class="mt-1">Desde: <p-calendar [(ngModel)]="dateDesde" [showTime]="true"
+                                [showSeconds]="true"></p-calendar></p>
+                    </div>
+                    <div class="col">
+                        <p class="mt-1">Hasta: <p-calendar [(ngModel)]="dateHasta"></p-calendar></p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <p class="textcolorcorp">Distribucion</p>
+                <div class="flex align-items-center">
+                    <p-radioButton name="distribucion" value="Alta" [(ngModel)]="distribucion" inputId="distribucionalta"></p-radioButton>
+                    <label for="distribucionalta" class="ml-2">Alta</label>
+                </div>
+                
+                <div class="flex align-items-center">
+                    <p-radioButton name="distribucion" value="Mediana" [(ngModel)]="distribucion" inputId="distribucionmediana"></p-radioButton>
+                    <label for="distribucionmediana" class="ml-2">Mediana</label>
+                </div>
+                
+                <div class="flex align-items-center">
+                    <p-radioButton name="distribucion" value="Baja" [(ngModel)]="distribucion" inputId="distribucionbaja"></p-radioButton>
+                    <label for="distribucionbaja" class="ml-2">Baja</label>
+                </div>
+            
+            </div>
+            
+            <div>
+                <p-table [value]="locales" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="nombre">Local <p-sortIcon field="nombre"></p-sortIcon></th>
+                            <th pSortableColumn="codigo">N Local <p-sortIcon field="codigo"></p-sortIcon></th>
+                            <th pSortableColumn="zona">Zona <p-sortIcon field="zona"></p-sortIcon></th>
+                            <th>Marcar/Desmarcar</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-loc>
+                        <tr>
+                            <td>{{ loc.nombre }}</td>
+                            <td>{{ loc.codigo }}</td>
+                            <td>{{ loc.zona }}</td>
+                            <td><p-tableCheckbox [value]="loc"></p-tableCheckbox></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div>
+                <p-table [value]="clasificaciones" [paginator]="true" [rows]="5"
+                [showCurrentPageReport]="true"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [rowsPerPageOptions]="[5, 10,15]">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="division">Division <p-sortIcon field="division"></p-sortIcon></th>
+                            <th pSortableColumn="departamento">Departamento <p-sortIcon
+                                    field="departamento"></p-sortIcon></th>
+                            <th pSortableColumn="clasificacion">Clasificacion <p-sortIcon
+                                    field="clasificacion"></p-sortIcon></th>
+                            <th pSortableColumn="subclasificacion">Sub-clasificacion <p-sortIcon
+                                    field="subclasificacion"></p-sortIcon></th>
+                            <th>Asignacion</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-cla>
+                        <tr>
+                            <td>{{ cla.division }}</td>
+                            <td>{{ cla.departamento }}</td>
+                            <td>{{ cla.clasificacion }}</td>
+                            <td>{{ cla.subclasificacion }}</td>
+                            <td><p-tableCheckbox [value]="cla"></p-tableCheckbox></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div >
+                <p class="textcolorcorp">Habilitado para</p>
+                <p-table [value]="habilitado" rowGroupMode="rowspan" groupRowsBy="tipo"
+                    sortField="tipo" sortMode="single">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Nomina</th>
+                            <th>Asignado</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-habilitado let-rowIndex="rowIndex" let-rowgroup="rowgroup"
+                        let-rowspan="rowspan">
+                        <tr>
+                            <td *ngIf="rowgroup" [attr.rowspan]="rowspan">
+                                <span class="font-bold ml-2">{{habilitado.tipo}}</span>
+                            </td>
+                            <td>
+                                {{habilitado.nomina}}
+                            </td>
+                            <td><p-tableCheckbox [value]="habilitado"></p-tableCheckbox></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                <button class="btn btn-danger" (click)="doSearch()">Generar</button>
+            </div>
+        </section>
+    </div>
+</div>
