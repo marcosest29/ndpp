@@ -3,6 +3,7 @@ import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
 @Component({
+    selector:'app-filtros',
     templateUrl: './filtros.html',
 })
 export class FiltrosComponent implements OnInit {

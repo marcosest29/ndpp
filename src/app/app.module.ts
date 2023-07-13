@@ -35,6 +35,8 @@ import { PeriodoCalculoComponent } from './modules/general/creartarea/periodo-ca
 import { ColaboradoresComponent } from './modules/general/creartarea/colaboradores';
 import { ConfirmacionComponent } from './modules/general/creartarea/confirmacion';
 import { MenuModule } from 'primeng/menu';
+import { CreartareanuevaComponent } from './modules/general/creartareanueva/creartareanueva.component';
+import { KFieldsetComponent } from './modules/general/k-fieldset/k-fieldset.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { MenuModule } from 'primeng/menu';
     FiltrosComponent,
     PeriodoCalculoComponent,
     ColaboradoresComponent,
-    ConfirmacionComponent
+    ConfirmacionComponent,
+    CreartareanuevaComponent,
+    KFieldsetComponent
   ],
   imports: [
     BrowserModule,

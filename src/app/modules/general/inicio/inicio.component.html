@@ -5,7 +5,7 @@
         <section class="barra border p-3">
             <div class="me-3">
                 <p class="textcolorcorp">Filtros de busqueda</p>
-                <p-fieldset [toggleable]="true" legend="Locales" [collapsed]=true>
+                <k-fieldset [kFieldsetLegend]="'Locales'">
                     <p class="mt-1">Formato:</p>
                     <div class="p-fluid">
                         <p-dropdown [options]="formatos" [(ngModel)]="selectedFormato" optionLabel="nombre"
@@ -16,14 +16,14 @@
                         <p-dropdown [options]="locales" [(ngModel)]="selectedLocales" optionLabel="nombre"
                             placeholder="Seleccionar"></p-dropdown>
                     </div>
-                </p-fieldset>
-                <p-fieldset [toggleable]="true" legend="Zonas" [collapsed]=true>
-                    <div class="p-fluid">
+                </k-fieldset>
+                <k-fieldset [kFieldsetLegend]="'Zonas'">
+                    <div class="p-fluid" style="margin-top: 15px;">
                         <p-dropdown [options]="zonas" [(ngModel)]="selectedZona" optionLabel="nombre"
                             placeholder="Seleccionar"></p-dropdown>
                     </div>
-                </p-fieldset>
-                <p-fieldset [toggleable]="true" legend="Estructura comercial" [collapsed]=true>
+                </k-fieldset>
+                <k-fieldset [kFieldsetLegend]="'Estructura comercial'">
                     <p class="mt-1">Division:</p>
                     <div class="p-fluid">
                         <p-dropdown [options]="division" [(ngModel)]="selectedDivision" optionLabel="nombre"
@@ -47,19 +47,19 @@
                         <p-dropdown [options]="subclasificacion" [(ngModel)]="selectedSubclasificacion"
                             optionLabel="nombre" placeholder="Seleccionar"></p-dropdown>
                     </div>
-                </p-fieldset>
-                <p-fieldset [toggleable]="true" legend="Clases de articulo" [collapsed]=true>
-                    <div class="p-fluid">
+                </k-fieldset>
+                <k-fieldset [kFieldsetLegend]="'Clases de articulo'">
+                    <div class="p-fluid" style="margin-top: 15px;">
                         <p-dropdown [options]="clases" [(ngModel)]="selectedClase" optionLabel="nombre"
                             placeholder="Seleccionar"></p-dropdown>
                     </div>
-                </p-fieldset>
-                <p-fieldset [toggleable]="true" legend="Tipo de calculo" [collapsed]=true>
-                    <div class="p-fluid">
+                </k-fieldset>
+                <k-fieldset [kFieldsetLegend]="'Tipo de calculo'">
+                    <div class="p-fluid" style="margin-top: 15px;">
                         <p-dropdown [options]="distribucion" [(ngModel)]="selectedDistribucion" optionLabel="nombre"
                             placeholder="Seleccionar"></p-dropdown>
                     </div>
-                </p-fieldset>
+                </k-fieldset>
                 <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
                     <button class="btn btn-danger" (click)="search()">Buscar</button>
                 </div>

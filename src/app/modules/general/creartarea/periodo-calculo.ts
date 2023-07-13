@@ -3,6 +3,7 @@ import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
 @Component({
+    selector:'app-periodo-calculo',
     templateUrl:'./periodo-calculo.html',
 })
 export class PeriodoCalculoComponent implements OnInit {

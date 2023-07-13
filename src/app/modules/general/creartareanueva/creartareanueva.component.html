@@ -1,0 +1,105 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="stepper" id="stepper">
+                <div class="steps-container">
+                    <div class="steps">
+                        <div class="step" icon="fa fa-pencil-alt" id="1"></div>
+                        <div class="step" icon="fa fa-pencil-alt" id="2"></div>
+                        <div class="step" icon="fa fa-pencil-alt" id="3"></div>
+                        <div class="step" icon="fa fa-pencil-alt" id="4"></div>
+                    </div>
+                </div>
+                <div class="stepper-content-container">
+                    <div (click)="setpaso(1)" class="stepper-content fade-in" stepper-label="1">
+                        <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                            <div class="my-0 mx-auto"
+                                style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                                <div class="p-10 d-flex flex-col justify-content-center align-items-center">
+                                    <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
+                                        style="fontSize: 20px; color:#55595c">
+                                        Locales
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div (click)="setpaso(2)" class="stepper-content fade-in" stepper-label="2">
+                        <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                            <div class="my-0 mx-auto"
+                                style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                                <div class="p-10 d-flex flex-col justify-content-center align-items-center">
+                                    <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
+                                        style="fontSize: 20px; color:#55595c">
+                                        Filtros
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div (click)="setpaso(3)" class="stepper-content fade-in" stepper-label="3">
+                        <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                            <div class="my-0 mx-auto"
+                                style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                                <div class="p-10 d-flex flex-col justify-content-center align-items-center">
+                                    <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
+                                        style="fontSize: 20px; color:#55595c">
+                                        Periodo y calculo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div (click)="setpaso(4)" class="stepper-content fade-in" stepper-label="4">
+                    <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                            <div class="p-10 d-flex flex-col justify-content-center align-items-center">
+                                <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
+                                    style="font-size: 20px; color:#55595c">
+                                    Colaboradores
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div (click)="setpaso(5)" class="stepper-content fade-in" stepper-label="4">
+                    <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                            <div class="p-10 d-flex flex-col justify-content-center align-items-center">
+                                <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
+                                    style="font-size: 20px; color:#55595c">
+                                    Confirmacion
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div *ngIf="paso===1">
+                <app-locales></app-locales>
+            </div>
+            <div *ngIf="paso===2">
+                <app-filtros></app-filtros>
+            </div>
+            <div *ngIf="paso===3">
+                <app-periodo-calculo></app-periodo-calculo>
+            </div>
+            <div *ngIf="paso===4">
+                <app-colaboradores></app-colaboradores>
+            </div>
+            <div *ngIf="paso===5">
+                <app-confirmacion></app-confirmacion>
+            </div>
+            <div>
+                <button *ngIf="paso>1 && paso<=5" class="btn btn-danger" (click)="anterior()" style="margin-right:15px">Anterior</button>
+                <button *ngIf="paso<5"class="btn btn-danger" (click)="siguiente()">Siguiente</button>
+                <button *ngIf="paso===5"class="btn btn-danger" >Generar</button>
+            </div>
+        </div>
+    </div>
+</div>

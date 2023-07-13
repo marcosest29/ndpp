@@ -3,6 +3,7 @@ import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
 @Component({
+    selector:'app-confirmacion',
     templateUrl: './confirmacion.html',
 })
 export class ConfirmacionComponent implements OnInit {

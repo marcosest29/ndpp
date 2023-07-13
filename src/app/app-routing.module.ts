@@ -10,6 +10,7 @@ import { FiltrosComponent } from './modules/general/creartarea/filtros';
 import { PeriodoCalculoComponent } from './modules/general/creartarea/periodo-calculo';
 import { ColaboradoresComponent } from './modules/general/creartarea/colaboradores';
 import { ConfirmacionComponent } from './modules/general/creartarea/confirmacion';
+import { CreartareanuevaComponent } from './modules/general/creartareanueva/creartareanueva.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   path: 'inicio', component: InicioComponent
 },
 {
-  path: 'nuevatarea', component: CreartareaComponent,
+  path: 'nuevatarea', component: CreartareanuevaComponent,
   children: [
     { path: '', redirectTo: 'local', pathMatch: 'full' },
     { path: 'local', component: LocalesComponent },

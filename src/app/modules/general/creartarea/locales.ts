@@ -3,6 +3,7 @@ import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
 @Component({
+    selector:'app-locales',
     templateUrl:'./locales.html',
 })
 export class LocalesComponent implements OnInit {

@@ -3,6 +3,7 @@ import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
 @Component({
+    selector:'app-colaboradores',
     templateUrl: './colaboradores.html',
 })
 export class ColaboradoresComponent implements OnInit {
