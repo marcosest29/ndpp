@@ -12,65 +12,65 @@
                     </div>
                 </div>
                 <div class="stepper-content-container">
-                    <div (click)="setpaso(1)" class="stepper-content fade-in" stepper-label="1">
-                        <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                    <div (click)="setpaso(1)" class="stepper-content fade-in {{paso==1?'activo':''}}" stepper-label="1">
+                        <div class="w-100 h-100" style="padding: 30px 10px;">
                             <div class="my-0 mx-auto"
-                                style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                                style="max-width: 500px;  border-radius: 10px;">
                                 <div class="p-10 d-flex flex-col justify-content-center align-items-center">
                                     <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                        style="fontSize: 20px; color:#55595c">
+                                        style="fontSize: 20px; ">
                                         Locales
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div (click)="setpaso(2)" class="stepper-content fade-in" stepper-label="2">
-                        <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                    <div (click)="setpaso(2)" class="stepper-content fade-in {{paso==2?'activo':''}}" stepper-label="2">
+                        <div class="w-100 h-100" style="padding: 30px 10px; ">
                             <div class="my-0 mx-auto"
-                                style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                                style="max-width: 500px;  border-radius: 10px; ">
                                 <div class="p-10 d-flex flex-col justify-content-center align-items-center">
                                     <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                        style="fontSize: 20px; color:#55595c">
+                                        style="fontSize: 20px;">
                                         Filtros
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div (click)="setpaso(3)" class="stepper-content fade-in" stepper-label="3">
-                        <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
+                    <div (click)="setpaso(3)" class="stepper-content fade-in {{paso==3?'activo':''}}" stepper-label="3">
+                        <div class="w-100 h-100" style="padding: 30px 10px; ">
                             <div class="my-0 mx-auto"
-                                style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                                style="max-width: 500px;  border-radius: 10px; ">
                                 <div class="p-10 d-flex flex-col justify-content-center align-items-center">
                                     <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                        style="fontSize: 20px; color:#55595c">
-                                        Periodo y calculo
+                                        style="fontSize: 20px; ">
+                                        Período y cálculo
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div (click)="setpaso(4)" class="stepper-content fade-in" stepper-label="4">
-                    <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
-                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                <div (click)="setpaso(4)" class="stepper-content fade-in {{paso==4?'activo':''}}" stepper-label="4">
+                    <div class="w-100 h-100" style="padding: 30px 10px; ">
+                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px;">
                             <div class="p-10 d-flex flex-col justify-content-center align-items-center">
                                 <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                    style="font-size: 20px; color:#55595c">
+                                    style="font-size: 20px; ">
                                     Colaboradores
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div (click)="setpaso(5)" class="stepper-content fade-in" stepper-label="4">
-                    <div class="w-100 h-100" style="padding: 30px 10px; background: #f9f9f9;">
-                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px; background: #f5f5f5;">
+                <div (click)="setpaso(5)" class="stepper-content fade-in {{paso==5?'activo':''}}" stepper-label="4">
+                    <div class="w-100 h-100" style="padding: 30px 10px; ">
+                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px;">
                             <div class="p-10 d-flex flex-col justify-content-center align-items-center">
                                 <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                    style="font-size: 20px; color:#55595c">
-                                    Confirmacion
+                                    style="font-size: 20px; ">
+                                    Confirmación
                                 </div>
                             </div>
                         </div>
@@ -95,8 +95,8 @@
             <div *ngIf="paso===5">
                 <app-confirmacion></app-confirmacion>
             </div>
-            <div>
-                <button *ngIf="paso>1 && paso<=5" class="btn btn-danger" (click)="anterior()" style="margin-right:15px">Anterior</button>
+            <div style="position: absolute;right: 275px; margin-top: 20px;">
+                <button *ngIf="paso>1 && paso<=5" class="btn btn-danger" (click)="anterior()" style="margin-right:15px;">Anterior</button>
                 <button *ngIf="paso<5"class="btn btn-danger" (click)="siguiente()">Siguiente</button>
                 <button *ngIf="paso===5"class="btn btn-danger" >Generar</button>
             </div>

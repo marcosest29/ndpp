@@ -16,6 +16,7 @@ export class InicioComponent implements OnInit {
     private messageService: MessageService) {
     this.loadListas();
   }
+  codtarea: any;
   formatos: Array<any> = [];
   selectedFormato: any = null;
   clases: Array<any> = [];

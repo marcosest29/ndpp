@@ -1,0 +1,10 @@
+.stepper-content{
+    border: 1px solid #55595c;
+    cursor: pointer;  
+    color:#55595c;
+}
+
+.activo{
+    background: red;
+    color: white;
+}

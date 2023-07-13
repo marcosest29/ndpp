@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NodeService } from '../nodeservice';
+import { MyMsgService } from '../msgservice';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-creartareanueva',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreartareanuevaComponent implements OnInit {
   paso:number=1;
-  constructor() { }
+  constructor(
+    private nodeService: NodeService,
+    private mymsgservice: MyMsgService,
+    private messageService: MessageService) {
+  }
 
   ngOnInit(): void {
+    this.mymsgservice.publishMessage('pantalla-creartarea');
+
   }
 
   setpaso(x){

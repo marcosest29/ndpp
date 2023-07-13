@@ -5,6 +5,14 @@
         <section class="barra border p-3">
             <div class="me-3">
                 <p class="textcolorcorp">Filtros de busqueda</p>
+                <div >
+                    <k-fieldset [kFieldsetLegend]="'Tarea'">
+                        <div style="margin-top: 5px; margin-bottom: 15px" class="flex flex-column gap-2">
+                            <label htmlFor="codtarea">Codigo de tarea</label>
+                            <input pInputText id="codtarea" [(ngModel)]="codtarea" />
+                        </div>
+                    </k-fieldset>
+                </div>
                 <k-fieldset [kFieldsetLegend]="'Locales'">
                     <p class="mt-1">Formato:</p>
                     <div class="p-fluid">
@@ -67,7 +75,7 @@
         </section>
         <section class="main ps-2">
             <div>
-                <p-table [value]="articulos" [paginator]="true"
+                <p-table [value]="articulos" [paginator]="true" paginatorPosition="top"
                 [rows]="5"
                 [showCurrentPageReport]="true"
                 [tableStyle]="{ 'min-width': '50rem' }"

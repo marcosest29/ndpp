@@ -1,56 +1,96 @@
 <div class="confirmacion-content">
-    <p-card>
-        <ng-template pTemplate="title"> Confirmacion </ng-template>
-        <ng-template pTemplate="subtitle"> Datos ingresados </ng-template>
-        <ng-template pTemplate="content">
-            <div class="field col-12">
-                <label for="class">Formatos: </label>
-                <b>{{ informacionTarea.local.formato.nombre }}</b>
+    <div class="card">
+        <div class="card-header">
+            <h2>Confirmación </h2>
+        </div>
+        <div class="card-body">
+            <div class="row borde">
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Formatos: </label>
+                        <b>{{ informacionTarea.local.formato.nombre }}</b>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Zonas: </label>
+                        <b>{{ informacionTarea.local.zona.nombre }}</b>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Locales: </label>
+                        <b>{{ informacionTarea.local.locales.nombre }}</b>
+                    </div>
+                </div>
             </div>
-            <div class="field col-12">
-                <label for="class">Zonas: </label>
-                <b>{{ informacionTarea.local.zona.nombre }}</b>
+            <div class="row borde">
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">División: </label>
+                        <b>{{ informacionTarea.filtros.division.nombre }}</b>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Departamento: </label>
+                        <b>{{ informacionTarea.filtros.departamento.nombre }}</b>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Clasificación: </label>
+                        <b>{{ informacionTarea.filtros.clasificacion.nombre }}</b>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Sublasificación: </label>
+                        <b>{{ informacionTarea.filtros.subclasificacion.nombre }}</b>
+                    </div>
+                </div>
             </div>
-            <div class="field col-12">
-                <label for="class">Locales: </label>
-                <b>{{ informacionTarea.local.locales.nombre }}</b>
+
+            <div class="row borde">
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Clases: </label>
+                        <b>{{ informacionTarea.filtros.clases.nombre }}</b>
+                    </div>
+                </div>
             </div>
-            <div class="field col-12">
-                <label for="class">Division: </label>
-                <b>{{ informacionTarea.filtros.division.nombre  }}</b>
+            <div class="borde">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="field">
+                            <label for="class">Cálculo: </label>
+                            <b>{{ informacionTarea.periodo.calculo.nombre }}</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="field">
+                            <label for="class">Desde: </label>
+                            <b>{{ informacionTarea.periodo.desde }}</b>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="field">
+                            <label for="class">Hasta: </label>
+                            <b>{{ informacionTarea.periodo.hasta }}</b>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="field col-12">
-                <label for="class">Departamento: </label>
-                <b>{{ informacionTarea.filtros.departamento.nombre  }}</b>
+            <div class="row borde">
+                <div class="col-md">
+                    <div class="field">
+                        <label for="class">Colaboradores: </label>
+                        <b *ngFor="let x of informacionTarea.colaboradores.colaborador">{{ x.nombre }} <br> </b>
+                    </div>
+                </div>
             </div>
-            <div class="field col-12">
-                <label for="class">Clasificacion: </label>
-                <b>{{ informacionTarea.filtros.clasificacion.nombre  }}</b>
-            </div>
-            <div class="field col-12">
-                <label for="class">Sublasificacion: </label>
-                <b>{{ informacionTarea.filtros.subclasificacion.nombre  }}</b>
-            </div>
-            <div class="field col-12">
-                <label for="class">Clases: </label>
-                <b>{{ informacionTarea.filtros.clases.nombre  }}</b>
-            </div>
-            <div class="field col-12">
-                <label for="class">Desde: </label>
-                <b>{{ informacionTarea.periodo.desde }}</b>
-            </div>
-            <div class="field col-12">
-                <label for="class">Hasta: </label>
-                <b>{{ informacionTarea.periodo.hasta }}</b>
-            </div>
-            <div class="field col-12">
-                <label for="class">Calculo: </label>
-                <b>{{ informacionTarea.periodo.calculo.nombre }}</b>
-            </div>
-            <div class="field col-12">
-                <label for="class">Colaboradores: </label>
-                <b *ngFor="let x of informacionTarea.colaboradores.colaborador">{{ x.nombre }} <br> </b>
-            </div>
-        </ng-template>
-    </p-card>
+        </div>
+    </div>
 </div>

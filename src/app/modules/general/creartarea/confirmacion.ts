@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector:'app-confirmacion',
     templateUrl: './confirmacion.html',
+    styleUrls: ['./confirmacion.css']
 })
 export class ConfirmacionComponent implements OnInit {
     informacionTarea: any;

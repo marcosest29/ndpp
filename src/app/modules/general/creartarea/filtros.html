@@ -1,11 +1,10 @@
 <div class="filtros-content">
-    <p-card>
-        <ng-template pTemplate="title"> Informacion de filtros </ng-template>
-        <ng-template pTemplate="subtitle"> Seleccione los filtros </ng-template>
-        <ng-template pTemplate="content">
+    <div class="card">
+        <div class="card-header"> <h2>Información de filtros </h2></div>
+        <div class="card-body">
             <div class="p-fluid formgrid grid">
                 <div class="field col-12 md:col-6">
-                    <label for="division">Division</label>
+                    <label for="division">División</label>
                     <p-dropdown inputId="division" [(ngModel)]="filtrosInfo.division" [options]="division"
                         optionLabel="nombre" placeholder="Selecione division"></p-dropdown>
                 </div>
@@ -15,12 +14,12 @@
                         optionLabel="nombre" placeholder="Selecione departamento"></p-dropdown>
                 </div>
                 <div class="field col-12 md:col-6">
-                    <label for="clasificacion">Clasificacion</label>
+                    <label for="clasificacion">Clasificación</label>
                     <p-dropdown inputId="clasificacion" [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"
                         optionLabel="nombre" placeholder="Selecione clasificacion"></p-dropdown>
                 </div>
                 <div class="field col-12 md:col-6">
-                    <label for="subclasificacion">Subclasificacion</label>
+                    <label for="subclasificacion">Subclasificación</label>
                     <p-dropdown inputId="subclasificacion" [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"
                         optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>
                 </div>
@@ -31,6 +30,6 @@
                 </div>
             </div>
             
-        </ng-template>
-    </p-card>
+        </div>
+    </div>
 </div>
