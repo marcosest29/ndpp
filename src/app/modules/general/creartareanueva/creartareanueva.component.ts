@@ -13,6 +13,8 @@ export class CreartareanuevaComponent implements OnInit {
 
   fecini = new Date();
   fecfin = new Date();
+
+  dosave = false;
   constructor(
     private nodeService: NodeService,
     private mymsgservice: MyMsgService,
@@ -29,10 +31,16 @@ export class CreartareanuevaComponent implements OnInit {
   }
 
   anterior(){
-    this.paso=this.paso-1
+    this.paso=this.paso-1;
   }
 
   siguiente(){
-    this.paso=this.paso+1
+    this.paso=this.paso+1;
+    this.dosave = true;
+    console.log("this.dosave-->", this.dosave);
+    setTimeout(()=>{
+      this.dosave=false;
+      console.log("this.dosave after timeout-->", this.dosave);
+    },1000);
   }
 }

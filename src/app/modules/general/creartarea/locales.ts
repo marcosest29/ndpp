@@ -1,13 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {NodeService} from "../nodeservice";
 import {Router} from '@angular/router';
+import {Inplace} from "primeng/inplace";
 
 @Component({
     selector: 'app-locales',
     templateUrl: './locales.html',
     styleUrls: ['./locales.css']
 })
-export class LocalesComponent implements OnInit {
+export class LocalesComponent implements OnInit, OnChanges {
+
     localInfo: any;
 
     submitted: boolean = false;
@@ -20,8 +22,20 @@ export class LocalesComponent implements OnInit {
 
     allLocal = false;
 
+    @Input()
+    dosave = false;
+
+
     constructor(public nodeService: NodeService, private router: Router) {
         this.loadListas();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log("locales changes-->", changes);
+        if (changes.dosave.currentValue) {
+            this.nextPage();
+            console.log("Se ejecuto nextPage locales");
+        }
     }
 
     ngOnInit() {
@@ -44,9 +58,7 @@ export class LocalesComponent implements OnInit {
             return local.check
         });
         this.nodeService.informacionTarea.locales = locales;
-        this.router.navigate(['nuevatarea/filtros']);
         this.submitted = true;
-        console.log('Locales:',this.nodeService);
     }
 
     loadListas() {

@@ -4,25 +4,25 @@
         <div class="row ms-3">
             <div class="col-md-9 p-fluid">
                 <div class="row borde py-3">
-                    <div class="col-md">
+                    <div class="col-md-3">
                         <div class="mjflex">
                             <label>Formato: </label>
-                            <span class="ms-2 fw-bold">{{ informacionTarea.local.formato.nombre }}</span>
+                            <span class="ms-2 fw-bold">{{ informacionTarea?.local?.formato?.nombre }}</span>
                         </div>
                     </div>
-                    <div class="col-md">
+                    <div class="col-md-3">
                         <div class="mjflex">
                             <label>Zonas: </label>
-                            <span class="ms-2 fw-bold">{{ informacionTarea.local.zona.nombre }}</span>
+                            <span class="ms-2 fw-bold">{{ informacionTarea?.local?.zona?.nombre }}</span>
                         </div>
                     </div>
-                    <div class="col-md">
+                    <div class="col-md-6">
                         <div class="mjflex">
                             <label>Locales: </label>
                             <div class="ms-2">
                                 <table class="table table-sm table-bordered table-striped">
                                     <tbody>
-                                        <tr *ngFor="let loc of informacionTarea.locales">
+                                        <tr *ngFor="let loc of informacionTarea?.locales">
                                             <td>
                                                 {{loc.codigo}} - {{loc.nombre}}
                                             </td>
@@ -30,7 +30,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <span class="ms-2 fw-bold">{{ informacionTarea.local.locales.nombre }}</span>
+                            <span class="ms-2 fw-bold">{{ informacionTarea?.local?.locales?.nombre }}</span>
                         </div>
                     </div>
                 </div>
@@ -40,19 +40,19 @@
                         <div class="col-md ms-2">
                             <div class="mjflex">
                                 <label>División: </label>
-                                <span class="ms-2 fw-bold">{{ informacionTarea.filtros.division.nombre }}</span>
+                                <span class="ms-2 fw-bold">{{ informacionTarea?.filtros?.division?.nombre }}</span>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="mjflex">
                                 <label>Departamento: </label>
-                                <span class="ms-2 fw-bold">{{ informacionTarea.filtros.departamento.nombre }}</span>
+                                <span class="ms-2 fw-bold">{{ informacionTarea?.filtros?.departamento?.nombre }}</span>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="mjflex">
                                 <label>Clasificación: </label>
-                                <span class="ms-2 fw-bold">{{ informacionTarea.filtros.clasificacion.nombre }}</span>
+                                <span class="ms-2 fw-bold">{{ informacionTarea?.filtros?.clasificacion?.nombre }}</span>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="col-md ms-2">
                             <div class="mjflex">
                                 <label>Sublasificación: </label>
-                                <span class="ms-2 fw-bold">{{ informacionTarea.filtros.subclasificacion.nombre }}</span>
+                                <span class="ms-2 fw-bold">{{ informacionTarea?.filtros?.subclasificacion?.nombre }}</span>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                         <div class="col-md ">
                             <div class="field">
                                 <label>Tipo Cálculo: </label>
-                                <b>{{ informacionTarea.calculo.tipo }}</b>
+                                <b>{{ informacionTarea?.calculo?.tipo }}</b>
                             </div>
                         </div>
                     </div>
@@ -79,19 +79,19 @@
                         <div class="col-md ">
                             <div class="mjflex">
                                 <span>Alta rotación:</span>
-                                <span class="ms-2 fw-bold">{{informacionTarea.calculo.alta}}%</span>
+                                <span class="ms-2 fw-bold">{{informacionTarea?.calculo?.alta}}%</span>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="mjflex">
                                 <span>Media rotación:</span>
-                                <span class="ms-2 fw-bold">{{informacionTarea.calculo.media}}%</span>
+                                <span class="ms-2 fw-bold">{{informacionTarea?.calculo?.media}}%</span>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="mjflex">
                                 <span>Baja rotación:</span>
-                                <span class="ms-2 fw-bold">{{informacionTarea.calculo.baja}}%</span>
+                                <span class="ms-2 fw-bold">{{informacionTarea?.calculo?.baja}}%</span>
                             </div>
                         </div>
                     </div>

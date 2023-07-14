@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
@@ -7,20 +7,30 @@ import { Router } from '@angular/router';
     templateUrl: './confirmacion.html',
     styleUrls: ['./confirmacion.css']
 })
-export class ConfirmacionComponent implements OnInit {
-    informacionTarea: any;
+export class ConfirmacionComponent implements OnInit, OnChanges {
+    informacionTarea:any= {};
     submitted: boolean = false;
 
+    @Input()
+    doload = false;
 
     constructor(public nodeService: NodeService, private router: Router) { }
 
     ngOnInit() {
-        this.informacionTarea=this.nodeService.informacionTarea;
         console.log(this.informacionTarea);
     }
 
     complete() {
         this.nodeService.complete();
     }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.doload.currentValue) {
+            this.informacionTarea=this.nodeService.informacionTarea;
+            console.log("Se carga informacion tarea:", this.informacionTarea);
+        }
+    }
+
+
 
 }

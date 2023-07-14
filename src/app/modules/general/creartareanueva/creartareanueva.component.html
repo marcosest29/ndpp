@@ -70,20 +70,20 @@
                 </div>
             </div>
             <div class="col-md border">
-                <div *ngIf="paso===1">
-                    <app-locales></app-locales>
+                <div [ngClass]="{'oculto':paso!==1}">
+                    <app-locales [dosave]="dosave"></app-locales>
                 </div>
-                <div *ngIf="paso===2">
-                    <app-filtros></app-filtros>
+                <div [ngClass]="{'oculto':paso!==2}">
+                    <app-filtros [dosave]="dosave"></app-filtros>
                 </div>
-                <div *ngIf="paso===3">
-                    <app-periodo-calculo></app-periodo-calculo>
+                <div [ngClass]="{'oculto':paso!==3}">
+                    <app-periodo-calculo [dosave]="dosave"></app-periodo-calculo>
                 </div>
-                <div *ngIf="paso===4">
-                    <app-colaboradores></app-colaboradores>
+                <div [ngClass]="{'oculto':paso!==4}">
+                    <app-colaboradores [dosave]="dosave"></app-colaboradores>
                 </div>
-                <div *ngIf="paso===5">
-                    <app-confirmacion></app-confirmacion>
+                <div [ngClass]="{'oculto':paso!==5}">
+                    <app-confirmacion [doload]="dosave"></app-confirmacion>
                 </div>
 
                 <div class="row ms-3">

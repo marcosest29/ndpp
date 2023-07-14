@@ -25,3 +25,8 @@
 .mjflex{
     display: flex;
 }
+
+.oculto{
+    visibility: hidden;
+    display: none;
+}

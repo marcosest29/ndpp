@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {NodeService} from "../nodeservice";
 import {Router} from '@angular/router';
 
@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
     selector: 'app-periodo-calculo',
     templateUrl: './periodo-calculo.html',
 })
-export class PeriodoCalculoComponent implements OnInit {
+export class PeriodoCalculoComponent implements OnInit, OnChanges {
     periodocalculoInfo: any;
     submitted: boolean = false;
     desde: any;
@@ -17,6 +17,9 @@ export class PeriodoCalculoComponent implements OnInit {
     rotacionDist = {alta: 10, media: 60, baja: 30};
     tipoCalculo = 1;
 
+    @Input()
+    dosave = false;
+
     constructor(public nodeService: NodeService, private router: Router) {
         this.loadListas();
     }
@@ -25,6 +28,11 @@ export class PeriodoCalculoComponent implements OnInit {
         this.periodocalculoInfo = this.nodeService.getInformacionTarea().periodo;
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.dosave.currentValue) {
+            this.nextPage();
+        }
+    }
     changeTipoCalculo(tipoCalculo) {
         this.tipoCalculo = tipoCalculo;
     }
@@ -42,10 +50,6 @@ export class PeriodoCalculoComponent implements OnInit {
             this.nodeService.informacionTarea.calculo.media = this.rotacionDist.media;
             this.nodeService.informacionTarea.calculo.baja = this.rotacionDist.baja;
         }
-        console.log('periodo:');
-        console.log(this.nodeService.informacionTarea);
-
-        this.router.navigate(['nuevatarea/colaboradores']);
 
         this.submitted = true;
     }

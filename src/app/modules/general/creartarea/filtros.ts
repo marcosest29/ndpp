@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
     templateUrl: './filtros.html',
     styleUrls:['./filtros.css']
 })
-export class FiltrosComponent implements OnInit {
+export class FiltrosComponent implements OnInit, OnChanges {
     filtrosInfo: any;
     submitted: boolean = false;
     division: any[];
@@ -16,6 +16,9 @@ export class FiltrosComponent implements OnInit {
     clases: any[];
     subclasificacion: any[];
 
+    @Input()
+    dosave = false;
+
     constructor(public nodeService: NodeService, private router: Router) { this.loadListas(); }
 
     ngOnInit() {
@@ -23,11 +26,9 @@ export class FiltrosComponent implements OnInit {
     }
 
     nextPage() {
-        if (this.filtrosInfo.division && this.filtrosInfo.departamento && this.filtrosInfo.clasificacion &&
+        if (this.filtrosInfo&&this.filtrosInfo.division && this.filtrosInfo.departamento && this.filtrosInfo.clasificacion &&
             this.filtrosInfo.subclasificacion) {
             this.nodeService.informacionTarea.filtros = this.filtrosInfo;
-            this.router.navigate(['nuevatarea/periodo-calculo']);
-            return;
         }
 
         this.submitted = true;
@@ -48,5 +49,11 @@ export class FiltrosComponent implements OnInit {
         this.nodeService.getClases().then(clases => {
             this.clases = clases;
         });
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.dosave.currentValue) {
+            this.nextPage();
+        }
     }
 }

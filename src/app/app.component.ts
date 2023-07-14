@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   pantalla = 'home';
-  titulo = "No Disponible Producto Piso";
+  titulo = '';
   items: MenuItem[] | undefined;
 
   constructor(
@@ -47,14 +47,21 @@ export class AppComponent implements OnInit {
 
     this.mymsgservice.source.subscribe(msg => {
       if (msg.startsWith("pantalla")) {
-        this.pantalla = msg.split("-")[1];
+        setTimeout(()=>{
+          this.pantalla = msg.split("-")[1];
+        },1000);
       }
       console.log("Valor de pantalla es:", this.pantalla);
       if (this.pantalla === "inicio") {
+        setTimeout(()=>{
         this.titulo = "Administración de tareas";
+        },1000);
       }
       if (this.pantalla === "creartarea") {
-        this.titulo = "Nueva tarea";
+        setTimeout(()=>{
+          this.titulo = "Nueva tarea";
+        },1000);
+
       }
     });
   }

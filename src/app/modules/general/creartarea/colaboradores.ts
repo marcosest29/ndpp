@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
 
@@ -6,22 +6,27 @@ import { Router } from '@angular/router';
     selector:'app-colaboradores',
     templateUrl: './colaboradores.html',
 })
-export class ColaboradoresComponent implements OnInit {
+export class ColaboradoresComponent implements OnInit, OnChanges {
     colaboradoresInfo: any;
     submitted: boolean = false;
     colaboradores: any[];
 
+    @Input()
+    dosave = false;
     constructor(public nodeService: NodeService, private router: Router) { this.loadListas(); }
 
     ngOnInit() {
         this.colaboradoresInfo = this.nodeService.getInformacionTarea().colaboradores;
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.dosave.currentValue) {
+            this.nextPage();
+        }
+    }
     nextPage() {
-        if (this.colaboradoresInfo.colaborador) {
+        if (this.colaboradoresInfo&&this.colaboradoresInfo.colaborador) {
             this.nodeService.informacionTarea.colaboradores = this.colaboradoresInfo;
-            this.router.navigate(['nuevatarea/confirmacion']);
-            return;
         }
         this.submitted = true;
     }
