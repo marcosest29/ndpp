@@ -11,12 +11,13 @@ import { PeriodoCalculoComponent } from './modules/general/creartarea/periodo-ca
 import { ColaboradoresComponent } from './modules/general/creartarea/colaboradores';
 import { ConfirmacionComponent } from './modules/general/creartarea/confirmacion';
 import { CreartareanuevaComponent } from './modules/general/creartareanueva/creartareanueva.component';
+import { AdmintareaComponent } from './modules/general/admintarea/admintarea.component';
 
 
 const routes: Routes = [
 { path: '', component: StartComponent, },
 {
-  path: 'tareas', component: TareasComponent
+  path: 'tareas', component: AdmintareaComponent
 },
 {
   path: 'reportes', component: ReportesComponent

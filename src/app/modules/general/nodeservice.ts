@@ -98,6 +98,12 @@ export class NodeService {
       .then(res => <any[]>res.colaboradores);
   }
 
+  getTareas() {
+    return this.http.get<any>('assets/files/datos.json')
+      .toPromise()
+      .then(res => <any[]>res.tareas);
+  }
+
   informacionTarea = {
     local: {
       formato: null,

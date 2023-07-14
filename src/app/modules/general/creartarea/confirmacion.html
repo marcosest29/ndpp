@@ -101,7 +101,7 @@
                         <div class="col-md ms-2">
                             <div class="mjflex">
                                 <span>Cargos: </span>
-                                <span class="fw-bold">Cajeros</span>
+                                <span class="fw-bold" *ngFor="let x of informacionTarea?.colaboradores?.colaborador">{{ x.nombre }},</span>
                             </div>
                         </div>
                     </div>

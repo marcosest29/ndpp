@@ -37,6 +37,7 @@ import { ConfirmacionComponent } from './modules/general/creartarea/confirmacion
 import { MenuModule } from 'primeng/menu';
 import { CreartareanuevaComponent } from './modules/general/creartareanueva/creartareanueva.component';
 import { KFieldsetComponent } from './modules/general/k-fieldset/k-fieldset.component';
+import { AdmintareaComponent } from './modules/general/admintarea/admintarea.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { KFieldsetComponent } from './modules/general/k-fieldset/k-fieldset.comp
     ColaboradoresComponent,
     ConfirmacionComponent,
     CreartareanuevaComponent,
-    KFieldsetComponent
+    KFieldsetComponent,
+    AdmintareaComponent
   ],
   imports: [
     BrowserModule,
