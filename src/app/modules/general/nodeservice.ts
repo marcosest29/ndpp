@@ -104,6 +104,7 @@ export class NodeService {
       zona: null,
       locales: null
     },
+    locales: [],
     filtros: {
       division: null,
       departamento: null,
@@ -118,6 +119,12 @@ export class NodeService {
     },
     colaboradores: {
       colaborador: null
+    },
+    calculo:{
+      tipo:'',
+      alta:0,
+      media:0,
+      baja:0
     }
   };
 

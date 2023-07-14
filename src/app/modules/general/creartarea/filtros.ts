@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector:'app-filtros',
     templateUrl: './filtros.html',
+    styleUrls:['./filtros.css']
 })
 export class FiltrosComponent implements OnInit {
     filtrosInfo: any;
@@ -22,8 +23,8 @@ export class FiltrosComponent implements OnInit {
     }
 
     nextPage() {
-        if (this.filtrosInfo.division && this.filtrosInfo.departamento && this.filtrosInfo.clasificacion
-            && this.filtrosInfo.clases && this.filtrosInfo.subclasificacion) {
+        if (this.filtrosInfo.division && this.filtrosInfo.departamento && this.filtrosInfo.clasificacion &&
+            this.filtrosInfo.subclasificacion) {
             this.nodeService.informacionTarea.filtros = this.filtrosInfo;
             this.router.navigate(['nuevatarea/periodo-calculo']);
             return;

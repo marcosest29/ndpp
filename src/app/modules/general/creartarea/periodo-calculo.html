@@ -1,24 +1,111 @@
-<div class="periodo-calculo-content">
-    <div class="card">
-        <div class="card-header"> <h2>Información de Período y Cálculo </h2> </div>
-        <div class="card-body">
-            <div class="p-fluid formgrid grid">
+<div class="locales-content">
+    <div class=" mt-3">
+        <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
+        <div class="row ms-3">
+            <div class="col-md-9 mt-2">
+
+                <div class="row p-fluid">
+                    <div class="col-md border-end">
+                        <div class="form-check">
+                            <input checked (click)="changeTipoCalculo(1)" class="form-check-input" id="flexRadioDefault1" name="flexRadioDefault"
+                                   type="radio">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Porcentaje
+                            </label>
+                        </div>
+                        <div>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <div class="row">
+                                <div class="col-md"><span>Alta rotación:</span></div>
+                                <div class="col-md">
+                                    <p-inputNumber [(ngModel)]="rotacionPorc.alta" [max]="100" [min]="0"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                                   suffix="%"></p-inputNumber>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="w-50"><span>Media rotación:</span></div>
+                                <div class="w-50">
+                                    <p-inputNumber [(ngModel)]="rotacionPorc.media" [max]="100" [min]="0"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                                   suffix="%"></p-inputNumber>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md"><span>Baja rotación:</span></div>
+                                <div class="col-md">
+                                    <p-inputNumber [(ngModel)]="rotacionPorc.baja" [max]="100" [min]="0"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                                   suffix="%"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-check">
+                            <input class="form-check-input" (click)="changeTipoCalculo(2)" id="flexRadioDefault2" name="flexRadioDefault" type="radio">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Distribución
+                            </label>
+                        </div>
+                        <div>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="row">
+                                <div class="col-md"><span>Alta rotación:</span></div>
+                                <div class="col-md">
+                                    <p-inputNumber [(ngModel)]="rotacionDist.alta" [max]="100" [min]="0"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                                   suffix="%"></p-inputNumber>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md"><span>Media rotación:</span></div>
+                                <div class="col-md">
+                                    <p-inputNumber [(ngModel)]="rotacionDist.media" [max]="100" [min]="0"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                                   suffix="%"></p-inputNumber>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md"><span>Baja rotación:</span></div>
+                                <div class="col-md">
+                                    <p-inputNumber [(ngModel)]="rotacionDist.baja" [max]="100" [min]="0"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                                   suffix="%"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--
                 <div class="field col-12 md:col-6">
                     <label for="distribucion">Cálculo</label>
-                    <p-dropdown inputId="distribucion" [(ngModel)]="periodocalculoInfo.calculo" [options]="distribucion"
-                        optionLabel="nombre" placeholder="Selecione distribucion"></p-dropdown>
+                    <p-dropdown [(ngModel)]="periodocalculoInfo.calculo" [options]="distribucion" inputId="distribucion"
+                                optionLabel="nombre" placeholder="Selecione distribucion"></p-dropdown>
                 </div>
                 <div class="me-3">
                     <div class="row">
                         <div class="col">
-                            <p class="mt-1">Desde: <p-calendar [(ngModel)]="periodocalculoInfo.desde" [showTime]="true"
-                                    [showSeconds]="true"></p-calendar></p>
+                            <p class="mt-1">Desde:
+                                <p-calendar [(ngModel)]="periodocalculoInfo.desde" [showSeconds]="true"
+                                            [showTime]="true"></p-calendar>
+                            </p>
                         </div>
                         <div class="col">
-                            <p class="mt-1">Hasta: <p-calendar [(ngModel)]="periodocalculoInfo.hasta"></p-calendar></p>
+                            <p class="mt-1">Hasta:
+                                <p-calendar [(ngModel)]="periodocalculoInfo.hasta"></p-calendar>
+                            </p>
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </div>

@@ -1,105 +1,107 @@
-<div class="container mt-3">
+<div class="container mt-3 ">
     <p-toast></p-toast>
-    <div class="row">
-        <div class="col-md-2">
-            <div class="stepper" id="stepper">
-                <div class="steps-container">
-                    <div class="steps">
-                        <div class="step" icon="fa fa-pencil-alt" id="1"></div>
-                        <div class="step" icon="fa fa-pencil-alt" id="2"></div>
-                        <div class="step" icon="fa fa-pencil-alt" id="3"></div>
-                        <div class="step" icon="fa fa-pencil-alt" id="4"></div>
+    <div class="border mjpad p-3">
+
+        <div class="border p-2 mb-3">
+            <div class="row">
+                <div class="col">
+                    <div class="mjflex">
+                        <span class="w-25">Nueva Tarea:</span>
+                        <input class="form-control form-control-sm" type="text">
                     </div>
-                </div>
-                <div class="stepper-content-container">
-                    <div (click)="setpaso(1)" class="stepper-content fade-in {{paso==1?'activo':''}}" stepper-label="1">
-                        <div class="w-100 h-100" style="padding: 30px 10px;">
-                            <div class="my-0 mx-auto"
-                                style="max-width: 500px;  border-radius: 10px;">
-                                <div class="p-10 d-flex flex-col justify-content-center align-items-center">
-                                    <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                        style="fontSize: 20px; ">
-                                        Locales
-                                    </div>
-                                </div>
+                    <div class="my-3">
+                        <span>Periodo Revisión</span>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col mjflex">
+                            <span style="width: 35%">Fecha Inicio:</span>
+                            <div style="width: 65%">
+                                <input class="form-control form-control-sm" type="date">
+                                <!--
+                                <p-calendar [(ngModel)]="fecini" [ngClass]="'form-control-sm'"></p-calendar>
+                                -->
                             </div>
                         </div>
-                    </div>
-                    <div (click)="setpaso(2)" class="stepper-content fade-in {{paso==2?'activo':''}}" stepper-label="2">
-                        <div class="w-100 h-100" style="padding: 30px 10px; ">
-                            <div class="my-0 mx-auto"
-                                style="max-width: 500px;  border-radius: 10px; ">
-                                <div class="p-10 d-flex flex-col justify-content-center align-items-center">
-                                    <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                        style="fontSize: 20px;">
-                                        Filtros
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div (click)="setpaso(3)" class="stepper-content fade-in {{paso==3?'activo':''}}" stepper-label="3">
-                        <div class="w-100 h-100" style="padding: 30px 10px; ">
-                            <div class="my-0 mx-auto"
-                                style="max-width: 500px;  border-radius: 10px; ">
-                                <div class="p-10 d-flex flex-col justify-content-center align-items-center">
-                                    <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                        style="fontSize: 20px; ">
-                                        Período y cálculo
-                                    </div>
-                                </div>
+                        <div class="col mjflex">
+                            <span class="ms-5" style="width: 35%">Fecha Fin:</span>
+                            <div style="width: 65%">
+                                <input class="form-control form-control-sm" type="date">
+                                <!--
+                                <p-calendar [(ngModel)]="fecfin" [ngClass]="'form-control-sm'"></p-calendar>
+                                -->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div (click)="setpaso(4)" class="stepper-content fade-in {{paso==4?'activo':''}}" stepper-label="4">
-                    <div class="w-100 h-100" style="padding: 30px 10px; ">
-                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px;">
-                            <div class="p-10 d-flex flex-col justify-content-center align-items-center">
-                                <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                    style="font-size: 20px; ">
-                                    Colaboradores
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div (click)="setpaso(5)" class="stepper-content fade-in {{paso==5?'activo':''}}" stepper-label="4">
-                    <div class="w-100 h-100" style="padding: 30px 10px; ">
-                        <div class="my-0 mx-auto" style="max-width: 500px;  border-radius: 10px;">
-                            <div class="p-10 d-flex flex-col justify-content-center align-items-center">
-                                <div class="text-center pt-20 pe-0 pb-10 ps-0 fw-bold"
-                                    style="font-size: 20px; ">
-                                    Confirmación
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col mjflex">
+                    <span class="me-3">Mensaje:</span>
+                    <textarea class="form-control" rows="5"></textarea>
                 </div>
             </div>
         </div>
 
-        <div class="col-md">
-            <div *ngIf="paso===1">
-                <app-locales></app-locales>
+        <div class="row">
+            <div class="col-md-2 border-end">
+                <div>
+                    <div (click)="setpaso(1)" [ngClass]="{'activo':paso===1}"
+                         class="stepper-content text-center fade-in">
+                        Locales
+                    </div>
+
+                    <div (click)="setpaso(2)" [ngClass]="{'activo':paso===2}"
+                         class="stepper-content text-center fade-in">
+                        Muestra
+                    </div>
+
+                    <div (click)="setpaso(3)" [ngClass]="{'activo':paso===3}"
+                         class="stepper-content text-center fade-in ">
+                        Tipo cálculo
+                    </div>
+
+                    <div (click)="setpaso(4)" [ngClass]="{'activo':paso===4}"
+                         class="stepper-content text-center fade-in">
+                        Colaboradores
+                    </div>
+
+                    <div (click)="setpaso(5)" [ngClass]="{'activo':paso===5}"
+                         class="stepper-content text-center fade-in">
+                        Confirmación
+                    </div>
+                </div>
             </div>
-            <div *ngIf="paso===2">
-                <app-filtros></app-filtros>
+            <div class="col-md border">
+                <div *ngIf="paso===1">
+                    <app-locales></app-locales>
+                </div>
+                <div *ngIf="paso===2">
+                    <app-filtros></app-filtros>
+                </div>
+                <div *ngIf="paso===3">
+                    <app-periodo-calculo></app-periodo-calculo>
+                </div>
+                <div *ngIf="paso===4">
+                    <app-colaboradores></app-colaboradores>
+                </div>
+                <div *ngIf="paso===5">
+                    <app-confirmacion></app-confirmacion>
+                </div>
+
+                <div class="row ms-3">
+                    <div class="col-md-9 p-fluid">
+                        <div class="botones">
+                            <button (click)="siguiente()" *ngIf="paso<5"
+                                    class="btn btn-danger">Siguiente <i class="fa fa-arrow-right"></i>
+                            </button>
+                            <button (click)="anterior()" *ngIf="paso>1 && paso<=5"
+                                    class="btn btn-danger" style="margin-right:15px;">Anterior <i class="fa fa-arrow-left"></i>
+                            </button>
+                            <button *ngIf="paso===5" style="margin-right:15px;" class="btn btn-danger">Generar
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div *ngIf="paso===3">
-                <app-periodo-calculo></app-periodo-calculo>
-            </div>
-            <div *ngIf="paso===4">
-                <app-colaboradores></app-colaboradores>
-            </div>
-            <div *ngIf="paso===5">
-                <app-confirmacion></app-confirmacion>
-            </div>
-            <div style="position: absolute;right: 275px; margin-top: 20px;">
-                <button *ngIf="paso>1 && paso<=5" class="btn btn-danger" (click)="anterior()" style="margin-right:15px;">Anterior</button>
-                <button *ngIf="paso<5"class="btn btn-danger" (click)="siguiente()">Siguiente</button>
-                <button *ngIf="paso===5"class="btn btn-danger" >Generar</button>
-            </div>
+
         </div>
+
     </div>
-</div>

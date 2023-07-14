@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { NodeService } from "../nodeservice";
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {NodeService} from "../nodeservice";
+import {Router} from '@angular/router';
 
 @Component({
-    selector:'app-locales',
-    templateUrl:'./locales.html',
+    selector: 'app-locales',
+    templateUrl: './locales.html',
+    styleUrls: ['./locales.css']
 })
 export class LocalesComponent implements OnInit {
     localInfo: any;
@@ -17,31 +18,46 @@ export class LocalesComponent implements OnInit {
 
     formatos: any[];
 
-    constructor(public nodeService: NodeService, private router: Router) { this.loadListas(); }
+    allLocal = false;
+
+    constructor(public nodeService: NodeService, private router: Router) {
+        this.loadListas();
+    }
 
     ngOnInit() {
         this.localInfo = this.nodeService.getInformacionTarea().local;
     }
 
-    nextPage() {
-        if (this.localInfo.formato && this.localInfo.zona && this.localInfo.locales) {
-            this.nodeService.informacionTarea.local = this.localInfo;
-            this.router.navigate(['nuevatarea/filtros']);
-
-            return;
-        }
-
-        this.submitted = true;
+    toggleAllLocal() {
+        this.allLocal = !this.allLocal;
+        this.locales.forEach(loc => {
+            loc.check = this.allLocal;
+        });
     }
+
+    toggleLocalItem(local: any) {
+        local.check = local.check ? false : true;
+    }
+
+    nextPage() {
+        let locales = this.locales.filter(local => {
+            return local.check
+        });
+        this.nodeService.informacionTarea.locales = locales;
+        this.router.navigate(['nuevatarea/filtros']);
+        this.submitted = true;
+        console.log('Locales:',this.nodeService);
+    }
+
     loadListas() {
         this.nodeService.getFormatos().then(formatos => {
-          this.formatos = formatos;
+            this.formatos = formatos;
         });
         this.nodeService.getZonas().then(zonas => {
-          this.zonas = zonas;
+            this.zonas = zonas;
         });
         this.nodeService.getLocales().then(locales => {
-          this.locales = locales;
+            this.locales = locales;
         });
     }
 }

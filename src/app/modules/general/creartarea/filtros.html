@@ -1,35 +1,48 @@
-<div class="filtros-content">
-    <div class="card">
-        <div class="card-header"> <h2>Información de filtros </h2></div>
-        <div class="card-body">
-            <div class="p-fluid formgrid grid">
-                <div class="field col-12 md:col-6">
-                    <label for="division">División</label>
-                    <p-dropdown inputId="division" [(ngModel)]="filtrosInfo.division" [options]="division"
-                        optionLabel="nombre" placeholder="Selecione division"></p-dropdown>
+<div class="locales-content">
+    <div class=" mt-3">
+        <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
+        <div class="row ms-3">
+            <div class="col-md-9 p-fluid">
+                <div class="mjflex">
+                    <span class="w-25">División:</span>
+                    <div class="w-75">
+                        <p-dropdown [(ngModel)]="filtrosInfo.division" [options]="division" inputId="division"
+                                    optionLabel="nombre" placeholder="Selecione division"></p-dropdown>
+                    </div>
                 </div>
-                <div class="field col-12 md:col-6">
-                    <label for="departamento">Departamento</label>
-                    <p-dropdown inputId="departamento" [(ngModel)]="filtrosInfo.departamento" [options]="departamento"
-                        optionLabel="nombre" placeholder="Selecione departamento"></p-dropdown>
+                <div class="mjflex mt-3">
+                    <span class="w-25">Departamento:</span>
+                    <div class="w-75">
+                        <p-dropdown [(ngModel)]="filtrosInfo.departamento" [options]="departamento"
+                                    inputId="departamento"
+                                    optionLabel="nombre" placeholder="Selecione departamento"></p-dropdown>
+                    </div>
                 </div>
-                <div class="field col-12 md:col-6">
-                    <label for="clasificacion">Clasificación</label>
-                    <p-dropdown inputId="clasificacion" [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"
-                        optionLabel="nombre" placeholder="Selecione clasificacion"></p-dropdown>
+                <div class="mjflex mt-3">
+                    <span class="w-25">Clasificación:</span>
+                    <div class="w-75">
+                        <p-dropdown [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"
+                                    inputId="clasificacion"
+                                    optionLabel="nombre" placeholder="Selecione clasificacion"></p-dropdown>
+                    </div>
                 </div>
-                <div class="field col-12 md:col-6">
-                    <label for="subclasificacion">Subclasificación</label>
-                    <p-dropdown inputId="subclasificacion" [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"
-                        optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>
+                <div class="mjflex mt-3">
+                    <span class="w-25">Subclasificación:</span>
+                    <div class="w-75">
+                        <p-dropdown [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"
+                                    inputId="subclasificacion"
+                                    optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>
+                    </div>
                 </div>
+                <!--
                 <div class="field col-12 md:col-6">
                     <label for="clases">Clases</label>
-                    <p-dropdown inputId="clases" [(ngModel)]="filtrosInfo.clases" [options]="clases"
-                        optionLabel="nombre" placeholder="Selecione clases"></p-dropdown>
+                    <p-dropdown [(ngModel)]="filtrosInfo.clases" [options]="clases" inputId="clases"
+                                optionLabel="nombre" placeholder="Selecione clases"></p-dropdown>
                 </div>
+                -->
             </div>
-            
+
         </div>
     </div>
 </div>

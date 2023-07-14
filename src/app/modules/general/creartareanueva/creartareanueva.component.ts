@@ -10,6 +10,9 @@ import { MessageService } from 'primeng/api';
 })
 export class CreartareanuevaComponent implements OnInit {
   paso:number=1;
+
+  fecini = new Date();
+  fecfin = new Date();
   constructor(
     private nodeService: NodeService,
     private mymsgservice: MyMsgService,
