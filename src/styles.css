@@ -17,3 +17,60 @@ body {
 .mjflex{
     display: flex;
 }
+
+
+.p-button {
+    color: #ffffff;
+    background: #e74c3c;
+    border: 1px solid #e74c3c;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 6px;
+}
+
+
+.p-radiobutton .p-radiobutton-box.p-highlight {
+    border-color: #e74c3c;
+    background: #e74c3c;
+}
+.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+    border-color: #a8332a;
+    background: #a8332a;
+    color: #ffffff;
+}
+
+
+.p-radiobutton .p-radiobutton-box:not(.p-disabled):not(.p-highlight):hover {
+    border-color: #e74c3c;
+}
+.p-radiobutton .p-radiobutton-box:not(.p-disabled).p-focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #fd8679;
+    border-color: #e74c3c;
+}
+
+
+.p-progressbar .p-progressbar-value {
+    border: 0 none;
+    margin: 0;
+    background: #e74c3c;
+}
+
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    color: #e74c3c;
+    background: #EFF6FF;
+}
+
+
+.p-dropdown:not(.p-disabled):hover {
+    border-color: #e74c3c;
+}
+.p-dropdown:not(.p-disabled).p-focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #fdb3a8;
+    border-color: #fd8679;
+}

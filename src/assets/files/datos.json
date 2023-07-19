@@ -287,5 +287,31 @@
       "tipo": "Colaboradores",
       "nombre": "PERSONAL DE SEGURIDAD"
     }
+  ],
+  "tareas": [
+    {
+      "codigo": "NDPP001",
+      "calculo": "PORCENTAJE",
+      "estado": "CONFIRMADO",
+      "finicio": "2023-06-01",
+      "ffin": "2023-06-30",
+      "progreso": 80
+    },
+    {
+      "codigo": "NDPP002",
+      "calculo": "PORCENTAJE",
+      "estado": "PENDIENTE",
+      "finicio": "2023-06-01",
+      "ffin": "2023-06-30",
+      "progreso": 50
+    },
+    {
+      "codigo": "NDPP003",
+      "calculo": "DISTRIBUCION",
+      "estado": "CONFIRMADO",
+      "finicio": "2023-06-01",
+      "ffin": "2023-06-30",
+      "progreso": 100
+    }
   ]
 }

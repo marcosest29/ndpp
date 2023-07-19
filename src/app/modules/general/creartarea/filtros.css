@@ -1,3 +1,9 @@
 .mjflex{
     display: flex;
 }
+
+.supflex{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
