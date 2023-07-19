@@ -265,7 +265,8 @@
       "rotacion":"ALTA",
       "responsable": "scueva",
       "estado": "EN PROCESO",
-      "local": 716
+      "local": 716,
+      "observacion": ""
     },
     {
       "codigo": "7702354945992",
@@ -280,7 +281,8 @@
       "rotacion":"MEDIA",
       "responsable": "scueva",
       "estado": "EN PROCESO",
-      "local": 716
+      "local": 716,
+      "observacion": "FUERA DE ALCANCE"
     },
     {
       "codigo": "7861024626255",
@@ -295,7 +297,8 @@
       "rotacion":"BAJA",
       "responsable": "scueva",
       "estado": "EN PROCESO",
-      "local": 716
+      "local": 716,
+      "observacion": "FUERA DE ALCANCE"
     }
   ],
   "colaboradores": [
