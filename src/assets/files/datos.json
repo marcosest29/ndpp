@@ -257,21 +257,45 @@
       "nombre": "PAN HARINA MAIZ PRECOCIDA BLANCA",
       "clase": "R",
       "calculo": "DISTRIBUCION",
-      "locales": "711,712,713,714"
+      "locales": "711,712,713,714",
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-SOYA",
+      "rotacion":"ALTA",
+      "responsable": "scueva",
+      "estado": "EN PROCESO",
+      "local": 716
     },
     {
       "codigo": "7702354945992",
       "nombre": "SAVILOE BEBIDA ALOE VERA EXTRA CONTENIDO",
       "clase": "R",
       "calculo": "DISTRIBUCION",
-      "locales": "101,102,713,714"
+      "locales": "101,102,713,714",
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-SOYA",
+      "rotacion":"MEDIA",
+      "responsable": "scueva",
+      "estado": "EN PROCESO",
+      "local": 716
     },
     {
       "codigo": "7861024626255",
       "nombre": "COCA COLA",
       "clase": "I",
       "calculo": "PORCENTAJE",
-      "locales": "716"
+      "locales": "716",
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-SOYA",
+      "rotacion":"BAJA",
+      "responsable": "scueva",
+      "estado": "EN PROCESO",
+      "local": 716
     }
   ],
   "colaboradores": [

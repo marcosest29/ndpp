@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NodeService } from '../nodeservice';
 import { MyMsgService } from '../msgservice';
 import { MessageService } from 'primeng/api';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admintarea',
@@ -13,6 +14,7 @@ export class AdmintareaComponent implements OnInit {
   constructor(
     private nodeService: NodeService,
     private mymsgservice: MyMsgService,
+    private router: Router,
     private messageService: MessageService) {
     this.loadListas();
   }
@@ -41,7 +43,7 @@ export class AdmintareaComponent implements OnInit {
   }
 
   gotoEdit(){
-
+    this.router.navigate(['detalle-tarea'], {});
   }
 
 }

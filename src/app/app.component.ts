@@ -38,10 +38,6 @@ export class AppComponent implements OnInit {
           command: () => {
             this.gotoCrearTarea();
         }
-      },
-      {
-          label: 'Manual',
-          icon: 'pi pi-fw pi-trash'
       }
   ];
 
@@ -55,13 +51,17 @@ export class AppComponent implements OnInit {
       if (this.pantalla === "inicio") {
         setTimeout(()=>{
         this.titulo = "Administración de tareas";
-        },1000);
+        },1);
+      }
+      if (this.pantalla === "detalle") {
+        setTimeout(()=>{
+          this.titulo = "Detalle de tareas";
+        },1);
       }
       if (this.pantalla === "creartarea") {
         setTimeout(()=>{
           this.titulo = "Nueva tarea";
-        },1000);
-
+        },1);
       }
     });
   }

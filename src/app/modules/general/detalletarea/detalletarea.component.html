@@ -1,0 +1,94 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de busqueda</p>
+                <p class="mt-1">Locales:</p>
+                <div class="p-fluid">
+                    <p-dropdown [options]="locales" [(ngModel)]="tipolocal" optionLabel="nombre" placeholder="Seleccionar"></p-dropdown>
+                </div>
+                <p class="mt-1">Rotacion:</p>
+                <div class="p-fluid">
+                    <input type="text" class="form-control" [(ngModel)]="rotacion" />
+                </div>
+                <p class="mt-1">Estado:</p>
+                <div class="p-fluid">
+                    <input type="text" class="form-control" [(ngModel)]="estado" />
+                </div>
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <p class="textcolorcorp">Detalle de tareas</p>
+            <div class="ayuda">
+                <div class="row">
+                    <div class="col-3">
+                        Nombre de tarea: NoDPP-01-02-2023
+                    </div>
+                    <div class="col-2">
+                        Fecha inicio: 2023-01-01
+                    </div>
+                    <div class="col-2">
+                        Fecha fin: 2023-02-01
+                    </div>
+                    <div class="col-2">
+                        Tipo: Distribucion
+                    </div>
+                    <div class="col-3">
+                        Progreso local: <p-progressBar [value]=50 [showValue]="true"></p-progressBar>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p-table [value]="articulos" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>N</th>
+                            <th>Codigo de barras</th>
+                            <th>Descripcion</th>
+                            <th>Local</th>
+                            <th>Division</th>
+                            <th>Departamento</th>
+                            <th>Clasificacion</th>
+                            <th>Subbclasificacion</th>
+                            <th>Rotacion</th>
+                            <th>Responsable</th>
+                            <th>Estado</th>
+                            <th>Observacion</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{ rowIndex+1 }}</td>
+                            <td>{{ tarea.codigo }}</td>
+                            <td>{{ tarea.nombre }}</td>
+                            <td>{{ tarea.local }}</td>
+                            <td>{{ tarea.division }}</td>
+                            <td>{{ tarea.departamento }}</td>
+                            <td>{{ tarea.clasificacion }}</td>
+                            <td>{{ tarea.subclasificacion }}</td>
+                            <td>{{ tarea.rotacion }}</td>
+                            <td>{{ tarea.responsable }}</td>
+                            <td>{{ tarea.estado }}</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </section>
+    </div>
+</div>

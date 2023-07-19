@@ -12,12 +12,16 @@ import { ColaboradoresComponent } from './modules/general/creartarea/colaborador
 import { ConfirmacionComponent } from './modules/general/creartarea/confirmacion';
 import { CreartareanuevaComponent } from './modules/general/creartareanueva/creartareanueva.component';
 import { AdmintareaComponent } from './modules/general/admintarea/admintarea.component';
+import {DetalletareaComponent} from "./modules/general/detalletarea/detalletarea.component";
 
 
 const routes: Routes = [
 { path: '', component: StartComponent, },
 {
   path: 'tareas', component: AdmintareaComponent
+},
+{
+  path: 'detalle-tarea', component: DetalletareaComponent
 },
 {
   path: 'reportes', component: ReportesComponent

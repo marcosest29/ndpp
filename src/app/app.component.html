@@ -17,7 +17,7 @@
               <img (click)="menu.toggle($event)" src="assets/images/plusicon.png" alt="Agregar">
             </a>
           </div>
-          <div *ngIf="pantalla==='inicio'">
+          <div *ngIf="pantalla==='inicio' || pantalla==='editar'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Descargar" >
               <i class="fa fa-download"></i> Descargar
             </a>
