@@ -10,7 +10,8 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
     colaboradoresInfo: any;
     submitted: boolean = false;
     colaboradores: any[];
-
+    isShowModalColaborators:boolean=false;
+    selectedColaborators=[];
     @Input()
     dosave = false;
     constructor(public nodeService: NodeService, private router: Router) { this.loadListas(); }
@@ -34,5 +35,17 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
         this.nodeService.getColaboradores().then(colaboradores => {
             this.colaboradores = colaboradores;
         });
+    }
+    showColaborators(){
+        // this.selectedColaborator = col;
+        this.isShowModalColaborators=true;
+    }
+    closeViewColaborators(){
+        this.isShowModalColaborators=false;
+    }
+
+    AddColaborators(){
+        this.closeViewColaborators();
+        this.selectedColaborators=this.nodeService.informacionTarea.colaboradores;
     }
 }

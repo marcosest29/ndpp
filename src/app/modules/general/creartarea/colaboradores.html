@@ -3,13 +3,47 @@
         <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
         <div class="row ms-3">
             <div class="col-md-10 p-fluid">
+                <div style="display:flex;flex-direction: row-reverse; font-size:25px" (click)="showColaborators()">
+                    <i class="fas fa-user-plus"></i>
+                </div>
                 <div class="mjflex">
-                    <span class="w-25">Colaboradores:</span>
-                    <div class="w-75">
-                        <p-multiSelect [(ngModel)]="colaboradoresInfo.colaborador" [options]="colaboradores"
-                                       inputId="colaboradores"
-                                       optionLabel="nombre" placeholder="Selecione colaboradores"></p-multiSelect>
-                    </div>
+                    <span class="w-25">Cargos colaboradores:</span>
+<!--                    <div class="w-75">-->
+<!--                        <p-multiSelect [(ngModel)]="colaboradoresInfo.colaborador" [options]="colaboradores"-->
+<!--                                       inputId="colaboradores"-->
+<!--                                       optionLabel="nombre" placeholder="Selecione colaboradores"></p-multiSelect>-->
+<!--                    </div>-->
+                    <table class="table table-sm table-bordered table-striped">
+                        <thead>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span class="ms-2">Cargo</span>
+                            </td>
+                        </tr>
+                        <tr *ngFor="let col of selectedColaborators">
+                            <td>
+                                <span class="ms-2">{{col.nombre}}</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mjflex">
+                    <p-dialog header="Gestionar cargos" [(visible)]="isShowModalColaborators" [style]="{width: '750px',height:'500px'}">
+                        <div>
+                            <app-vercolaboradores></app-vercolaboradores>
+                        </div>
+                        <ng-template pTemplate="footer">
+                            <button class="btn btn-outline-secondary" (click)="AddColaborators()">Agregar <span
+                                    class="pi pi-times"></span>
+                            </button>
+                            <button class="btn btn-outline-secondary" (click)="closeViewColaborators()">Cerrar <span
+                                    class="pi pi-times"></span>
+                            </button>
+                        </ng-template>
+                    </p-dialog>
                 </div>
             </div>
         </div>

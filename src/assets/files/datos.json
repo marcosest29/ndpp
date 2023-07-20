@@ -304,15 +304,31 @@
   "colaboradores": [
     {
       "tipo": "Colaboradores",
-      "nombre": "PERSONAL DE ALMACEN"
+      "nombre": "BODEGUERO"
     },
     {
       "tipo": "Colaboradores",
-      "nombre": "PERSONAL DE CAJAS"
+      "nombre": "CAJEROS"
     },
     {
       "tipo": "Colaboradores",
-      "nombre": "PERSONAL DE SEGURIDAD"
+      "nombre": "SEGURIDAD"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PERCHEROS"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "DELI"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "ADMINISTRADOR LOCAL"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PANADERIA"
     }
   ],
   "tareas": [

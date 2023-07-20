@@ -123,9 +123,7 @@ export class NodeService {
       hasta: null,
       calculo: null
     },
-    colaboradores: {
-      colaborador: null
-    },
+    colaboradores: [],
     calculo:{
       tipo:'',
       alta:0,
