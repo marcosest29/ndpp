@@ -21,6 +21,7 @@ export class DetalletareaComponent implements OnInit {
   rotacion:any;
   locales:any[];
   articulos:any[];
+  codbarras:any;
 
   doSearch(){
     this.nodeService.getArticulos().then(t => {

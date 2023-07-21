@@ -1,7 +1,10 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { NodeService } from "../nodeservice";
 import { Router } from '@angular/router';
-
+interface UploadEvent {
+    originalEvent: Event;
+    files: File[];
+}
 @Component({
     selector:'app-filtros',
     templateUrl: './filtros.html',
@@ -56,5 +59,8 @@ export class FiltrosComponent implements OnInit, OnChanges {
         if (changes.dosave.currentValue) {
             this.nextPage();
         }
+    }
+    onUpload(event: UploadEvent) {
+        // this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
     }
 }

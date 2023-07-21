@@ -24,6 +24,9 @@
                         </tr>
                         <tr *ngFor="let col of selectedColaborators">
                             <td>
+                                <i (click)="toggleColItem(col)"
+                                   class="ms-2 fa-regular"
+                                   [ngClass]="col.check?'fa-square-check':'fa-square'"></i>
                                 <span class="ms-2">{{col.nombre}}</span>
                             </td>
                         </tr>

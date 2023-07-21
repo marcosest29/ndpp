@@ -43,7 +43,7 @@ export class AdmintareaComponent implements OnInit {
   }
 
   gotoEdit(){
-    this.router.navigate(['detalle-tarea'], {});
+    this.router.navigate(['detalle-tarea-local'], {});
   }
 
 }

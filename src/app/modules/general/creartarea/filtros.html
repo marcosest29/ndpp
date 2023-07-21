@@ -3,28 +3,17 @@
         <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
         <div class="row ms-3">
             <div class="col-md-10 mt-2">
-
-
                 <div class="row p-fluid">
                     <div class="col-md border-end">
-                        <div class="form-check supflex border-bottom pb-3">
-                            <p-radioButton id="ingredient1" name="porcentaje" value="1" [(ngModel)]="tipoCalculo" inputId="ingredient1"></p-radioButton>
-                            <label for="ingredient1" class="ms-3">
+                        <div class="form-check supflex pb-3">
+                            <p-radioButton id="ingredient2" name="porcentaje" value="2" [(ngModel)]="tipoCalculo" inputId="ingredient2"></p-radioButton>
+                            <label for="ingredient2" class="ms-3">
                                 <div>
-                                    <span class="ms-4 fa-solid fa-arrow-up textcolorcorp"></span>
-                                    <span class="ms-2 fa-solid fa-arrow-down textcolorcorp"></span>
+                                    Las clases de artículos que se marque se utilizarán para filtrar despues que se obtenga la muestra
                                 </div>
-
-                                <div class="mt-2">
-                                    Los artículos cargados serán la muestra para la generación de la tarea
-                                </div>
-
                             </label>
-
                         </div>
-
                         <div class="mt-5">
-
                             <div class="mjflex">
                                 <span style="width:30%">División:</span>
                                 <div style="width:70%">
@@ -56,48 +45,32 @@
                                                 optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>
                                 </div>
                             </div>
-
                         </div>
-
-                    </div>
-                    <div class="col-md">
-
-
-                        <div class="form-check supflex pb-3">
-                            <p-radioButton id="ingredient2" name="porcentaje" value="2" [(ngModel)]="tipoCalculo" inputId="ingredient2"></p-radioButton>
-                            <label for="ingredient2" class="ms-3">
-                                <div>
-                                    Las clases de artículos que se marque se utilizarán para filtrar despues que se obtenga la muestra
-                                </div>
-                            </label>
-
-                        </div>
-
-                        <div class="mt-5 ms-4">
-
-                            <div class="mjflex">
-                                <span style="width:35%">Clases artículos:</span>
-                                <div style="width:65%">
+                        <div class="mjflex mt-3">
+                                <span style="width:30%">Clases artículos:</span>
+                                <div style="width:70%">
                                     <p-dropdown [(ngModel)]="filtrosInfo.clase" [options]="clases" inputId="clases"
                                                 optionLabel="nombre" placeholder="Selecione clase"></p-dropdown>
                                 </div>
                             </div>
-
+                    </div>
+                    <div class="col-md">
+                        <div class="form-check supflex border-bottom pb-3">
+                            <p-radioButton id="ingredient1" name="porcentaje" value="1" [(ngModel)]="tipoCalculo" inputId="ingredient1"></p-radioButton>
+                            <label for="ingredient1" class="ms-3">
+                                <div>
+                                    <span class="ms-4 fa-solid fa-arrow-up textcolorcorp"></span>
+                                    <span class="ms-2 fa-solid fa-arrow-down textcolorcorp"></span>
+                                </div>
+                                <div class="mt-2">
+                                    <p-fileUpload mode="basic" chooseLabel="Choose" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
+                                    Los artículos cargados serán la muestra para la generación de la tarea
+                                </div>
+                            </label>
+                        </div>
                     </div>
                 </div>
-
-
-
-
-                <!--
-                <div class="field col-12 md:col-6">
-                    <label for="clases">Clases</label>
-                    <p-dropdown [(ngModel)]="filtrosInfo.clases" [options]="clases" inputId="clases"
-                                optionLabel="nombre" placeholder="Selecione clases"></p-dropdown>
-                </div>
-                -->
             </div>
-
         </div>
     </div>
 </div>

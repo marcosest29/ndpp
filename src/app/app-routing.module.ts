@@ -13,12 +13,16 @@ import { ConfirmacionComponent } from './modules/general/creartarea/confirmacion
 import { CreartareanuevaComponent } from './modules/general/creartareanueva/creartareanueva.component';
 import { AdmintareaComponent } from './modules/general/admintarea/admintarea.component';
 import {DetalletareaComponent} from "./modules/general/detalletarea/detalletarea.component";
+import {DetallelocaltareaComponent} from "./modules/general/detallelocaltarea/detallelocaltarea.component";
 
 
 const routes: Routes = [
 { path: '', component: StartComponent, },
 {
   path: 'tareas', component: AdmintareaComponent
+},
+{
+  path: 'detalle-tarea-local', component: DetallelocaltareaComponent
 },
 {
   path: 'detalle-tarea', component: DetalletareaComponent

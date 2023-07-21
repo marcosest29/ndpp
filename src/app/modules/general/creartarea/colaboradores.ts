@@ -48,4 +48,8 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
         this.closeViewColaborators();
         this.selectedColaborators=this.nodeService.informacionTarea.colaboradores;
     }
+
+    toggleColItem(col){
+
+    }
 }

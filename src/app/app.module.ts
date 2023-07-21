@@ -40,6 +40,7 @@ import { KFieldsetComponent } from './modules/general/k-fieldset/k-fieldset.comp
 import { AdmintareaComponent } from './modules/general/admintarea/admintarea.component';
 import { DetalletareaComponent } from './modules/general/detalletarea/detalletarea.component';
 import {VercolaboradoresComponent} from "./modules/general/creartarea/vercolaboradores";
+import { DetallelocaltareaComponent } from './modules/general/detallelocaltarea/detallelocaltarea.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {VercolaboradoresComponent} from "./modules/general/creartarea/vercolabor
     KFieldsetComponent,
     AdmintareaComponent,
     DetalletareaComponent,
-    VercolaboradoresComponent
+    VercolaboradoresComponent,
+    DetallelocaltareaComponent
   ],
   imports: [
     BrowserModule,

@@ -103,6 +103,11 @@ export class NodeService {
       .toPromise()
       .then(res => <any[]>res.tareas);
   }
+  getTareaslocal() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.tareaslocal);
+  }
 
   informacionTarea = {
     local: {

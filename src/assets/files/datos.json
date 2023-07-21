@@ -356,5 +356,19 @@
       "ffin": "2023-06-30",
       "progreso": 100
     }
+  ],
+  "tareaslocal": [
+    {
+      "local": "711 - 6 DE DICIEMBRE",
+      "tareas": 255
+    },
+    {
+      "local": "712 - BATAN",
+      "tareas": 300
+    },
+    {
+      "local": "716 - SAN LUIS",
+      "tareas": 1000
+    }
   ]
 }
