@@ -6,17 +6,24 @@
             <div class="col-md-5 mt-5">
                 <div class="mjflex">
                     <span class="w-25">Formato:</span>
-                    <div class="w-75">
+                    <div *ngIf="tipo===1" class="w-75">
                         <p-dropdown [(ngModel)]="localInfo.formato" [options]="formatos" inputId="formato"
                                     optionLabel="nombre" placeholder="Selecione formato"></p-dropdown>
+                    </div>
+
+                    <div *ngIf="tipo===2" class="w-75">
+                        <span> Megamaxi</span>
                     </div>
 
                 </div>
                 <div class="mjflex mt-3">
                     <span class="w-25">Zona:</span>
-                    <div class="w-75">
+                    <div *ngIf="tipo===1" class="w-75">
                         <p-dropdown [(ngModel)]="localInfo.zona" [options]="zonas" inputId="zona"
                                     optionLabel="nombre" placeholder="Selecione zona"></p-dropdown>
+                    </div>
+                    <div *ngIf="tipo===2" class="w-75">
+                        <span> Sur</span>
                     </div>
                 </div>
             </div>

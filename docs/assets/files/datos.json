@@ -360,15 +360,35 @@
   "tareaslocal": [
     {
       "local": "711 - 6 DE DICIEMBRE",
-      "tareas": 255
+      "tareas": 255,
+      "estado": "CONFIRMADO"
     },
     {
       "local": "712 - BATAN",
-      "tareas": 300
+      "tareas": 300,
+      "estado": "NOTIFICADA"
     },
     {
       "local": "716 - SAN LUIS",
-      "tareas": 1000
+      "tareas": 1000,
+      "estado": "PENDIENTE"
+    }
+  ],
+  "estados": [
+    {
+      "nombre": "PENDIENTE"
+    },
+    {
+      "nombre": "CREADA"
+    },
+    {
+      "nombre": "GENERADA"
+    },
+    {
+      "nombre": "NOTIFICADA"
+    },
+    {
+      "nombre": "ELIMINADA"
     }
   ]
 }

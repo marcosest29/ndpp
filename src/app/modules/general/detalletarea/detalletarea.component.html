@@ -9,10 +9,6 @@
                 <div class="p-fluid">
                     <input type="text" class="form-control" [(ngModel)]="codbarras" />
                 </div>
-                <p class="mt-1">Rotacion:</p>
-                <div class="p-fluid">
-                    <input type="text" class="form-control" [(ngModel)]="rotacion" />
-                </div>
                 <p class="mt-1">Estado:</p>
                 <div class="p-fluid">
                     <input type="text" class="form-control" [(ngModel)]="estado" />
@@ -26,20 +22,30 @@
             <p class="textcolorcorp">Detalle de tareas</p>
             <div class="ayuda">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-4">
                         Nombre de tarea: NoDPP-01-02-2023
                     </div>
-                    <div class="col-2">
+                    <div class="col-4">
+                        Tipo calculo: Distribucion
+                    </div>
+                    <div class="col-4">
+                        <p class="textcolorcorp">Local: 711 - Megamaxi 6 de diciembre </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
                         Fecha inicio: 2023-01-01
                     </div>
-                    <div class="col-2">
-                        Fecha fin: 2023-02-01
+                    <div class="col-4">
+                        Estado: Generada
                     </div>
-                    <div class="col-2">
-                        Tipo: Distribucion
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        Fecha fin: 2023-08-01
                     </div>
                     <div class="col-3">
-                        Progreso local: <p-progressBar [value]=50 [showValue]="true"></p-progressBar>
+                        Progreso general: <p-progressBar [value]=50 [showValue]="true"></p-progressBar>
                     </div>
                 </div>
             </div>
@@ -47,6 +53,7 @@
                 <p-table [value]="articulos" [tableStyle]="{ 'min-width': '50rem' }">
                     <ng-template pTemplate="header">
                         <tr>
+                            <th></th>
                             <th>N</th>
                             <th>Codigo de barras</th>
                             <th>Descripcion</th>
@@ -59,10 +66,12 @@
                             <th>Responsable</th>
                             <th>Estado</th>
                             <th>Observacion</th>
+                            <th>Acciones</th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
                         <tr>
+                            <td><p-checkbox name="tareasgrupo" [binary]="true" [(ngModel)]="selectedtareas"></p-checkbox></td>
                             <td>{{ rowIndex+1 }}</td>
                             <td>{{ tarea.codigo }}</td>
                             <td>{{ tarea.nombre }}</td>
@@ -75,6 +84,20 @@
                             <td>{{ tarea.responsable }}</td>
                             <td>{{ tarea.estado }}</td>
                             <td>{{ tarea.observacion }}</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-bell"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
                         </tr>
                     </ng-template>
                 </p-table>

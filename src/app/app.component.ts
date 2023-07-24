@@ -66,6 +66,6 @@ export class AppComponent implements OnInit {
   }
 
   gotoCrearTarea(){
-    this.router.navigate(['nuevatarea'], {});
+    this.router.navigate(['nuevatarea','1'], {});
   }
 }

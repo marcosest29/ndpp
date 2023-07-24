@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NodeService} from "../nodeservice";
 import {MyMsgService} from "../msgservice";
 import {MessageService} from "primeng/api";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-detalletarea',
@@ -13,6 +14,7 @@ export class DetalletareaComponent implements OnInit {
   constructor(
       private nodeService: NodeService,
       private mymsgservice: MyMsgService,
+      private router: Router,
       private messageService: MessageService) {
     this.loadListas();
   }
@@ -22,6 +24,7 @@ export class DetalletareaComponent implements OnInit {
   locales:any[];
   articulos:any[];
   codbarras:any;
+  selectedtareas:any;
 
   doSearch(){
     this.nodeService.getArticulos().then(t => {
@@ -38,7 +41,7 @@ export class DetalletareaComponent implements OnInit {
   }
 
   gotoEdit(){
-
+    // this.router.navigate(['nuevatarea'], {});
   }
 
 }

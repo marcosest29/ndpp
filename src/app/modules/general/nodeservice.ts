@@ -109,6 +109,12 @@ export class NodeService {
         .then(res => <any[]>res.tareaslocal);
   }
 
+  getEstados() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.estados);
+  }
+
   informacionTarea = {
     local: {
       formato: null,

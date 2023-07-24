@@ -18,11 +18,13 @@ export class DetallelocaltareaComponent implements OnInit {
       this.loadListas();
     }
     tipolocal:any;
-    estado:any;
+    estados:any;
     rotacion:any;
     locales:any[];
     tareas:any[];
     codbarras:any;
+    tipoestado:any[];
+    selectedtareas:any;
     doSearch(){
       this.nodeService.getTareaslocal().then(t => {
         this.tareas = t;
@@ -35,6 +37,9 @@ export class DetallelocaltareaComponent implements OnInit {
       this.nodeService.getLocales().then(loc => {
         this.locales = loc;
       });
+        this.nodeService.getEstados().then(est => {
+            this.estados = est;
+        });
     }
 
     gotoEdit(){

@@ -7,7 +7,8 @@
                 <div class="col">
                     <div class="mjflex">
                         <span class="w-25">Nueva Tarea:</span>
-                        <input class="form-control form-control-sm" type="text">
+                        <input *ngIf="tipo===1" class="form-control form-control-sm" type="text">
+                        <span *ngIf="tipo===2">NDPP001</span>
                     </div>
                     <div class="my-3">
                         <span>Periodo Revisión</span>
@@ -15,27 +16,30 @@
                     <div class="row g-0">
                         <div class="col mjflex">
                             <span style="width: 35%">Fecha Inicio:</span>
-                            <div style="width: 65%">
+                            <div *ngIf="tipo===1" style="width: 65%">
                                 <input class="form-control form-control-sm" type="date">
                                 <!--
                                 <p-calendar [(ngModel)]="fecini" [ngClass]="'form-control-sm'"></p-calendar>
                                 -->
                             </div>
+                            <span *ngIf="tipo===2">2023-01-01</span>
                         </div>
                         <div class="col mjflex">
                             <span class="ms-5" style="width: 35%">Fecha Fin:</span>
-                            <div style="width: 65%">
+                            <div *ngIf="tipo===1" style="width: 65%">
                                 <input class="form-control form-control-sm" type="date">
                                 <!--
                                 <p-calendar [(ngModel)]="fecfin" [ngClass]="'form-control-sm'"></p-calendar>
                                 -->
                             </div>
+                            <span *ngIf="tipo===2">2023-02-01</span>
                         </div>
                     </div>
                 </div>
                 <div class="col mjflex">
                     <span class="me-3">Mensaje:</span>
-                    <textarea class="form-control" rows="5"></textarea>
+                    <textarea *ngIf="tipo===1" class="form-control" rows="5"></textarea>
+                    <textarea *ngIf="tipo===2" class="form-control" rows="5"> Realizar la revision de los articulos antes de terminar el inventario de fin de año</textarea>
                 </div>
             </div>
         </div>
@@ -71,7 +75,7 @@
             </div>
             <div class="col-md border">
                 <div [ngClass]="{'oculto':paso!==1}">
-                    <app-locales [dosave]="dosave"></app-locales>
+                    <app-locales [dosave]="dosave" [tipo]="tipo"></app-locales>
                 </div>
                 <div [ngClass]="{'oculto':paso!==2}">
                     <app-filtros [dosave]="dosave"></app-filtros>
@@ -86,7 +90,7 @@
                     <app-confirmacion [doload]="dosave"></app-confirmacion>
                 </div>
 
-                <div class="row ms-3">
+                <div *ngIf="tipo===1"  class="row ms-3">
                     <div class="col-md-10 p-fluid">
                         <div class="botones">
                             <button (click)="siguiente()" *ngIf="paso<5"

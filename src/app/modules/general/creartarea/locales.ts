@@ -25,6 +25,8 @@ export class LocalesComponent implements OnInit, OnChanges {
     @Input()
     dosave = false;
 
+    @Input()
+    tipo:any=0;
 
     constructor(public nodeService: NodeService, private router: Router) {
         this.loadListas();

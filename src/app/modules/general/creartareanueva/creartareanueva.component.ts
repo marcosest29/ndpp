@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NodeService } from '../nodeservice';
 import { MyMsgService } from '../msgservice';
 import { MessageService } from 'primeng/api';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-creartareanueva',
@@ -13,17 +14,18 @@ export class CreartareanuevaComponent implements OnInit {
 
   fecini = new Date();
   fecfin = new Date();
-
+  tipo:any=0;
   dosave = false;
   constructor(
     private nodeService: NodeService,
     private mymsgservice: MyMsgService,
+    private route: ActivatedRoute,
     private messageService: MessageService) {
   }
 
   ngOnInit(): void {
-    this.mymsgservice.publishMessage('pantalla-creartarea');
-
+    this.tipo = +this.route.snapshot.paramMap.get('tipo');
+    this.mymsgservice.publishMessage('pantalla-creartarea'+this.tipo);
   }
 
   setpaso(x){

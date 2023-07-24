@@ -34,7 +34,7 @@ const routes: Routes = [
   path: 'inicio', component: InicioComponent
 },
 {
-  path: 'nuevatarea', component: CreartareanuevaComponent,
+  path: 'nuevatarea/:tipo', component: CreartareanuevaComponent,
   children: [
     { path: '', redirectTo: 'local', pathMatch: 'full' },
     { path: 'local', component: LocalesComponent },

@@ -17,12 +17,17 @@
               <img (click)="menu.toggle($event)" src="assets/images/plusicon.png" alt="Agregar">
             </a>
           </div>
-          <div *ngIf="pantalla==='creartarea'">
+          <div *ngIf="pantalla==='creartarea1'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-floppy-disk" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='creartarea'">
+          <div *ngIf="pantalla==='creartarea2'">
+            <a  class="hand ms-2" >
+              <i class="fas fa-sync-alt" style="color:red;font-size:25px;margin-top:5px"></i>
+            </a>
+          </div>
+          <div *ngIf="pantalla==='creartarea1'||pantalla==='creartarea2' ">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-circle-xmark" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
@@ -30,6 +35,11 @@
           <div *ngIf="pantalla==='detalle'">
             <a  class="hand ms-2" >
               <i class="fas fa-file-excel" style="color:red;font-size:25px;margin-top:5px"></i>
+            </a>
+          </div>
+          <div *ngIf="pantalla==='detalle'">
+            <a  class="hand ms-2" >
+              <i class="fa-solid fa-bell" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
         </div>
