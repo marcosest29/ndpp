@@ -11,7 +11,10 @@
                 </div>
                 <p class="mt-1">Estado:</p>
                 <div class="p-fluid">
-                    <input type="text" class="form-control" [(ngModel)]="estado" />
+<!--                    <input type="text" class="form-control" [(ngModel)]="estado" />-->
+                    <p-multiSelect [(ngModel)]="estado" [options]="estados"
+                                   inputId="local"
+                                   optionLabel="nombre" placeholder="Selecione estados"></p-multiSelect>
                 </div>
                 <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
                     <button class="btn btn-danger" (click)="doSearch()">Buscar</button>

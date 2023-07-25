@@ -23,6 +23,7 @@ export class DetalletareaComponent implements OnInit {
   rotacion:any;
   locales:any[];
   articulos:any[];
+  estados:any[];
   codbarras:any;
   selectedtareas:any;
   isShowModalColaborators:boolean=false;
@@ -37,6 +38,9 @@ export class DetalletareaComponent implements OnInit {
   loadListas(){
     this.nodeService.getLocales().then(loc => {
       this.locales = loc;
+    });
+    this.nodeService.getEstados().then(est => {
+      this.estados = est;
     });
   }
 
