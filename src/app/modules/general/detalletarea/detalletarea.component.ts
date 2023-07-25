@@ -25,7 +25,7 @@ export class DetalletareaComponent implements OnInit {
   articulos:any[];
   codbarras:any;
   selectedtareas:any;
-
+  isShowModalColaborators:boolean=false;
   doSearch(){
     this.nodeService.getArticulos().then(t => {
       this.articulos = t;
@@ -42,6 +42,23 @@ export class DetalletareaComponent implements OnInit {
 
   gotoEdit(){
     // this.router.navigate(['nuevatarea'], {});
+  }
+
+  showColaborators(){
+    // this.selectedColaborator = col;
+    this.isShowModalColaborators=true;
+  }
+  closeViewColaborators(){
+    this.isShowModalColaborators=false;
+  }
+
+  AddColaborators(){
+    this.closeViewColaborators();
+    // this.selectedColaborators=this.nodeService.informacionTarea.colaboradores;
+    // this.selectedColaboratorsTable=this.selectedColaborators;
+    // this.selectedColaboratorsTable.forEach(col => {
+    //   col.check = false;
+    // });
   }
 
 }

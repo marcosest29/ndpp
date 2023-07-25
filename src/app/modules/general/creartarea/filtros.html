@@ -48,8 +48,9 @@
                         <div class="mjflex mt-3">
                             <span style="width:30%">Clases artículos:</span>
                                 <div style="width:70%">
-                                    <p-dropdown [(ngModel)]="filtrosInfo.clase" [options]="clases" inputId="clases"
-                                                optionLabel="nombre" placeholder="Selecione clase"></p-dropdown>
+                                    <p-multiSelect [(ngModel)]="filtrosInfo.clase" [options]="clases"  optionLabel="nombre" placeholder="Selecione clases"></p-multiSelect>
+<!--                                    <p-dropdown [(ngModel)]="filtrosInfo.clase" [options]="clases" inputId="clases"-->
+<!--                                                optionLabel="nombre" placeholder="Selecione clase"></p-dropdown>-->
                                 </div>
                             </div>
                     </div>

@@ -29,6 +29,7 @@ export class AdmintareaComponent implements OnInit {
   tipocalculo:any;
   calculos:any[];
   tareas:any[];
+  estados:any[];
 
   doSearch(){
     this.nodeService.getTareas().then(t => {
@@ -39,6 +40,9 @@ export class AdmintareaComponent implements OnInit {
   loadListas(){
     this.nodeService.getDistribucion().then(dist => {
       this.calculos = dist;
+    });
+    this.nodeService.getEstados().then(est => {
+      this.estados = est;
     });
   }
 

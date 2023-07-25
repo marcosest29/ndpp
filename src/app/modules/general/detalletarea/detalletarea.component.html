@@ -39,6 +39,9 @@
                     <div class="col-4">
                         Estado: Generada
                     </div>
+                    <div class="col-4">
+                        Colaboradores: Personal de caja
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
@@ -57,9 +60,6 @@
                             <th>N</th>
                             <th>Codigo de barras</th>
                             <th>Descripcion</th>
-                            <th>Local</th>
-                            <th>Division</th>
-                            <th>Departamento</th>
                             <th>Clasificacion</th>
                             <th>Subbclasificacion</th>
                             <th>Rotacion</th>
@@ -75,9 +75,6 @@
                             <td>{{ rowIndex+1 }}</td>
                             <td>{{ tarea.codigo }}</td>
                             <td>{{ tarea.nombre }}</td>
-                            <td>{{ tarea.local }}</td>
-                            <td>{{ tarea.division }}</td>
-                            <td>{{ tarea.departamento }}</td>
                             <td>{{ tarea.clasificacion }}</td>
                             <td>{{ tarea.subclasificacion }}</td>
                             <td>{{ tarea.rotacion }}</td>
@@ -86,21 +83,39 @@
                             <td>{{ tarea.observacion }}</td>
                             <td class="d-flex">
                                 <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
-                                    <i class="fa fa-eye"></i>
+                                    <i class="fa fa-play"></i>
                                 </button>
                                 <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
-                                    <i class="fa fa-edit"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
-                                    <i class="fa-solid fa-bell"></i>
+                                    <i class="fa fa-pause"></i>
                                 </button>
                                 <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
                                     <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="showColaborators()">
+                                    <i class="fa-solid fa-user-check"></i>
                                 </button>
                             </td>
                         </tr>
                     </ng-template>
                 </p-table>
+            </div>
+            <div class="mjflex">
+                <p-dialog header="Gestionar cargos" [(visible)]="isShowModalColaborators" [style]="{width: '750px',height:'500px'}">
+                    <div>
+                        <app-vercolaboradores></app-vercolaboradores>
+                    </div>
+                    <ng-template pTemplate="footer">
+                        <button class="btn btn-outline-secondary" (click)="AddColaborators()">Agregar <span
+                                class="pi pi-times"></span>
+                        </button>
+                        <button class="btn btn-outline-secondary" (click)="closeViewColaborators()">Cerrar <span
+                                class="pi pi-times"></span>
+                        </button>
+                    </ng-template>
+                </p-dialog>
             </div>
         </section>
     </div>

@@ -42,12 +42,46 @@
               <i class="fa-solid fa-bell" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
+          <div *ngIf="pantalla==='detalle'">
+            <a  class="hand ms-2" >
+              <i class="fa-solid fa-play" style="color:red;font-size:25px;margin-top:5px"></i>
+            </a>
+          </div>
+          <div *ngIf="pantalla==='detalle'">
+            <a  class="hand ms-2" >
+              <i class="fa-solid fa-pause" style="color:red;font-size:25px;margin-top:5px"></i>
+            </a>
+          </div>
+          <div *ngIf="pantalla==='detalle'">
+            <a  class="hand ms-2" >
+              <i class="fa-solid fa-xmark" style="color:red;font-size:25px;margin-top:5px"></i>
+            </a>
+          </div>
+          <div *ngIf="pantalla==='detalle'">
+            <a  class="hand ms-2" >
+              <i class="fa-solid fa-user-check" style="color:red;font-size:25px;margin-top:5px" (click)="showColaborators()"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
+<div class="mjflex">
+  <p-dialog header="Gestionar cargos" [(visible)]="isShowModalColaborators" [style]="{width: '750px',height:'500px'}">
+    <div>
+      <app-vercolaboradores></app-vercolaboradores>
+    </div>
+    <ng-template pTemplate="footer">
+      <button class="btn btn-outline-secondary" (click)="AddColaborators()">Agregar <span
+              class="pi pi-times"></span>
+      </button>
+      <button class="btn btn-outline-secondary" (click)="closeViewColaborators()">Cerrar <span
+              class="pi pi-times"></span>
+      </button>
+    </ng-template>
+  </p-dialog>
+</div>
 <div class="container">
   <div class="row">
     <div class="separadorcorp whitetextcolor">

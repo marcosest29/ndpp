@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   pantalla = 'home';
   titulo = 'No Disponible Producto Piso';
   items: MenuItem[] | undefined;
-
+  isShowModalColaborators:boolean=false;
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
     private mymsgservice: MyMsgService,
@@ -67,5 +67,17 @@ export class AppComponent implements OnInit {
 
   gotoCrearTarea(){
     this.router.navigate(['nuevatarea','1'], {});
+  }
+
+  showColaborators(){
+    // this.selectedColaborator = col;
+    this.isShowModalColaborators=true;
+  }
+  closeViewColaborators(){
+    this.isShowModalColaborators=false;
+  }
+
+  AddColaborators(){
+    this.closeViewColaborators();
   }
 }

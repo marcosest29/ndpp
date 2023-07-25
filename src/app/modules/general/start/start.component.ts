@@ -21,4 +21,7 @@ export class StartComponent {
     this.router.navigate(['inicio'], {});
   }
 
+  gotoLocales(){
+    this.router.navigate(['detalle-tarea-local'], {});
+  }
 }
