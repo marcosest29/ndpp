@@ -25,13 +25,17 @@ export class DetallelocaltareaComponent implements OnInit {
     codbarras:any;
     tipoestado:any[];
     selectedtareas:any;
+    notificadosSelected:any;
+    notificados:any[];
     doSearch(){
       this.nodeService.getTareaslocal().then(t => {
         this.tareas = t;
       });
     }
     ngOnInit(): void {
-      this.mymsgservice.publishMessage('pantalla-detalle');
+      this.mymsgservice.publishMessage('pantalla-detalle1');
+        // @ts-ignore
+        this.notificados = [{nombre:"SI"},{nombre:"NO"}];
     }
     loadListas(){
       this.nodeService.getLocales().then(loc => {

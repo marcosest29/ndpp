@@ -33,13 +33,13 @@ export class DetalletareaComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.mymsgservice.publishMessage('pantalla-detalle');
+    this.mymsgservice.publishMessage('pantalla-detalle2');
   }
   loadListas(){
     this.nodeService.getLocales().then(loc => {
       this.locales = loc;
     });
-    this.nodeService.getEstados().then(est => {
+    this.nodeService.getEstadosL().then(est => {
       this.estados = est;
     });
   }

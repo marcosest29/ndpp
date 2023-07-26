@@ -22,6 +22,6 @@ export class StartComponent {
   }
 
   gotoLocales(){
-    this.router.navigate(['detalle-tarea-local'], {});
+    this.router.navigate(['tarealocal'], {});
   }
 }

@@ -4,22 +4,28 @@
             <div class="col-md-10 mt-2">
                 <div class="row p-fluid">
                     <div class="col-md border-end">
-                        <div>
-                            <p-radioButton id="ingredient2" name="porcentaje" value="2" [(ngModel)]="tipoCalculo" inputId="ingredient2"></p-radioButton>
-                            <label for="ingredient2" class="ms-2">Distribución</label>
+                        <div style="margin:10px 0;">
+                            <div>
+                                <p-radioButton id="ingredient2" name="porcentaje" value="1" [(ngModel)]="tipoCalculo" inputId="ingredient2"></p-radioButton>
+                                <label for="ingredient2" class="ms-2">Distribución</label>
+                            </div>
+                            <div class="mt-2">
+                                <textarea class="form-control" rows="3">Información que explica a detalle el tratamiento de datos</textarea>
+                            </div>
                         </div>
-
-                        <div>
-                            <p-radioButton id="ingredient1" name="porcentaje" value="1" [(ngModel)]="tipoCalculo" inputId="ingredient1"></p-radioButton>
-                            <label for="ingredient1" class="ms-2">Porcentaje</label>
-                        </div>
-                        <div class="mt-2">
-                            <textarea class="form-control" rows="3"></textarea>
+                        <div style="margin:10px 0;">
+                            <div>
+                                <p-radioButton id="ingredient1" name="porcentaje" value="2" [(ngModel)]="tipoCalculo" inputId="ingredient1"></p-radioButton>
+                                <label for="ingredient1" class="ms-2">Porcentaje</label>
+                            </div>
+                            <div class="mt-2">
+                                <textarea class="form-control" rows="3">Información que explica a detalle el tratamiento de datos</textarea>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md">
                         <div class="mt-4">
-                            <div class="row" style="margin:10px ">
+                            <div class="row" style="margin:20px 0">
                                 <div class="col-md"><span>Alta rotación:</span></div>
                                 <div class="col-md">
                                     <p-inputNumber [(ngModel)]="rotacionDist.alta" [max]="100" [min]="0"

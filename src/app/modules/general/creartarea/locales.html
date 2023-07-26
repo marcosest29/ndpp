@@ -7,8 +7,11 @@
                 <div class="mjflex">
                     <span class="w-25">Formato:</span>
                     <div *ngIf="tipo===1" class="w-75">
-                        <p-dropdown [(ngModel)]="localInfo.formato" [options]="formatos" inputId="formato"
-                                    optionLabel="nombre" placeholder="Selecione formato"></p-dropdown>
+                        <p-multiSelect [(ngModel)]="localInfo.formato" [options]="formatos"
+                                       inputId="formatos"
+                                       optionLabel="nombre" placeholder="Selecione formatos"></p-multiSelect>
+<!--                        <p-dropdown [(ngModel)]="localInfo.formato" [options]="formatos" inputId="formato"-->
+<!--                                    optionLabel="nombre" placeholder="Selecione formato"></p-dropdown>-->
                     </div>
 
                     <div *ngIf="tipo===2" class="w-75">
@@ -19,8 +22,11 @@
                 <div class="mjflex mt-3">
                     <span class="w-25">Zona:</span>
                     <div *ngIf="tipo===1" class="w-75">
-                        <p-dropdown [(ngModel)]="localInfo.zona" [options]="zonas" inputId="zona"
-                                    optionLabel="nombre" placeholder="Selecione zona"></p-dropdown>
+                        <p-multiSelect [(ngModel)]="localInfo.zona" [options]="zonas"
+                                       inputId="zonas"
+                                       optionLabel="nombre" placeholder="Selecione zonas"></p-multiSelect>
+<!--                        <p-dropdown [(ngModel)]="localInfo.zona" [options]="zonas" inputId="zona"-->
+<!--                                    optionLabel="nombre" placeholder="Selecione zona"></p-dropdown>-->
                     </div>
                     <div *ngIf="tipo===2" class="w-75">
                         <span> Sur</span>

@@ -390,5 +390,30 @@
     {
       "nombre": "ELIMINADA"
     }
+  ],
+  "estadosL": [
+    {
+      "nombre": "GENERADA"
+    },
+    {
+      "nombre": "EN PROCESO"
+    },
+    {
+      "nombre": "FINALIZADA"
+    }
+  ],
+  "tareaslocalnuevo": [
+    {
+      "codigo": "NoDPP-01-02-2023",
+      "estado": "GENERADA"
+    },
+    {
+      "codigo": "NoDPP-02-02-2023",
+      "estado": "GENERADA"
+    },
+    {
+      "codigo": "NoDPP-03-02-2023",
+      "estado": "GENERADA"
+    }
   ]
 }

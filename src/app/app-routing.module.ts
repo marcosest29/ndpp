@@ -14,6 +14,8 @@ import { CreartareanuevaComponent } from './modules/general/creartareanueva/crea
 import { AdmintareaComponent } from './modules/general/admintarea/admintarea.component';
 import {DetalletareaComponent} from "./modules/general/detalletarea/detalletarea.component";
 import {DetallelocaltareaComponent} from "./modules/general/detallelocaltarea/detallelocaltarea.component";
+import {TarealocalComponent} from "./modules/general/tarealocal/tarealocal.component";
+import {TarealocaldetalleComponent} from "./modules/general/tarealocaldetalle/tarealocaldetalle.component";
 
 
 const routes: Routes = [
@@ -33,6 +35,12 @@ const routes: Routes = [
 {
   path: 'inicio', component: InicioComponent
 },
+{
+  path: 'tarealocal', component: TarealocalComponent
+},
+  {
+    path: 'tarealocaldetalle', component: TarealocaldetalleComponent
+  },
 {
   path: 'nuevatarea/:tipo', component: CreartareanuevaComponent,
   children: [

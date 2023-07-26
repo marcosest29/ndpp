@@ -6,38 +6,43 @@
                 <div class="row p-fluid">
                     <div class="col-md border-end">
                         <div class="form-check supflex pb-3">
-                            <p-radioButton id="ingredient2" name="porcentaje" value="2" [(ngModel)]="tipoCalculo" inputId="ingredient2"></p-radioButton>
+                            <p-radioButton id="ingredient2" name="porcentaje" value="1" [(ngModel)]="tipoCalculo" inputId="ingredient2"></p-radioButton>
                         </div>
                         <div class="mt-5">
                             <div class="mjflex">
                                 <span style="width:30%">División:</span>
                                 <div style="width:70%">
-                                    <p-dropdown [(ngModel)]="filtrosInfo.division" [options]="division" inputId="division"
-                                                optionLabel="nombre" placeholder="Selecione division"></p-dropdown>
+                                    <p-multiSelect [(ngModel)]="filtrosInfo.division" [options]="division"  optionLabel="nombre" placeholder="Selecione divisiones"></p-multiSelect>
+<!--                                    <p-dropdown [(ngModel)]="filtrosInfo.division" [options]="division" inputId="division"-->
+<!--                                                optionLabel="nombre" placeholder="Selecione division"></p-dropdown>-->
                                 </div>
                             </div>
                             <div class="mjflex mt-3">
                                 <span style="width:30%">Departamento:</span>
                                 <div style="width:70%">
-                                    <p-dropdown [(ngModel)]="filtrosInfo.departamento" [options]="departamento"
-                                                inputId="departamento"
-                                                optionLabel="nombre" placeholder="Selecione departamento"></p-dropdown>
+                                    <p-multiSelect [(ngModel)]="filtrosInfo.departamento" [options]="departamento"  optionLabel="nombre" placeholder="Selecione departamentos"></p-multiSelect>
+<!--                                    <p-dropdown [(ngModel)]="filtrosInfo.departamento" [options]="departamento"-->
+<!--                                                inputId="departamento"-->
+<!--                                                optionLabel="nombre" placeholder="Selecione departamento"></p-dropdown>-->
                                 </div>
                             </div>
                             <div class="mjflex mt-3">
                                 <span style="width:30%">Clasificación:</span>
                                 <div style="width:70%">
-                                    <p-dropdown [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"
-                                                inputId="clasificacion"
-                                                optionLabel="nombre" placeholder="Selecione clasificacion"></p-dropdown>
+                                    <p-multiSelect [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"  optionLabel="nombre" placeholder="Selecione clasificaciones"></p-multiSelect>
+<!--                                    <p-dropdown [(ngModel)]="filtrosInfo.clasificacion" [options]="clasificacion"-->
+<!--                                                inputId="clasificacion"-->
+<!--                                                optionLabel="nombre" placeholder="Selecione clasificacion"></p-dropdown>-->
                                 </div>
                             </div>
                             <div class="mjflex mt-3">
                                 <span style="width:30%">Subclasificación:</span>
                                 <div style="width:70%">
-                                    <p-dropdown [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"
-                                                inputId="subclasificacion"
-                                                optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>
+                                    <p-multiSelect [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"  optionLabel="nombre" placeholder="Selecione subclasificaciones"></p-multiSelect>
+
+<!--                                    <p-dropdown [(ngModel)]="filtrosInfo.subclasificacion" [options]="subclasificacion"-->
+<!--                                                inputId="subclasificacion"-->
+<!--                                                optionLabel="nombre" placeholder="Selecione subclasificacion"></p-dropdown>-->
                                 </div>
                             </div>
                         </div>
@@ -56,7 +61,7 @@
                     </div>
                     <div class="col-md">
                         <div class="form-check supflex border-bottom pb-3">
-                            <p-radioButton id="ingredient1" name="porcentaje" value="1" [(ngModel)]="tipoCalculo" inputId="ingredient1"></p-radioButton>
+                            <p-radioButton id="ingredient1" name="porcentaje" value="2" [(ngModel)]="tipoCalculo" inputId="ingredient1"></p-radioButton>
                             <label for="ingredient1" class="ms-3">
                                 <div class="mt-2">
                                     <label for="ingredient1" class="ms-3">

@@ -1,0 +1,65 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de busqueda</p>
+                <p class="mt-1">Codigo de tarea:</p>
+                <div class="p-fluid">
+                    <input type="text" class="form-control" [(ngModel)]="codbarras" />
+                </div>
+                <p class="mt-1">Estado:</p>
+                <div class="p-fluid">
+                    <!--                    <input type="text" class="form-control" [(ngModel)]="estado" />-->
+                    <p-multiSelect [(ngModel)]="estado" [options]="estados"
+                                   inputId="local"
+                                   optionLabel="nombre" placeholder="Selecione estados"></p-multiSelect>
+                </div>
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <div>
+                <p-table [value]="articulos" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th></th>
+                            <th>N</th>
+                            <th>Codigo de tarea</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
+                        <tr>
+                            <td><p-checkbox name="tareasgrupo" [binary]="true" [(ngModel)]="selectedtareas"></p-checkbox></td>
+                            <td>{{ rowIndex+1 }}</td>
+                            <td>{{ tarea.codigo }}</td>
+                            <td>{{ tarea.estado }}</td>
+                            <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoDetalle()">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-pause"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </section>
+    </div>
+</div>

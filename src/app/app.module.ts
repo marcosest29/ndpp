@@ -41,6 +41,8 @@ import { AdmintareaComponent } from './modules/general/admintarea/admintarea.com
 import { DetalletareaComponent } from './modules/general/detalletarea/detalletarea.component';
 import {VercolaboradoresComponent} from "./modules/general/creartarea/vercolaboradores";
 import { DetallelocaltareaComponent } from './modules/general/detallelocaltarea/detallelocaltarea.component';
+import { TarealocalComponent } from './modules/general/tarealocal/tarealocal.component';
+import { TarealocaldetalleComponent } from './modules/general/tarealocaldetalle/tarealocaldetalle.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { DetallelocaltareaComponent } from './modules/general/detallelocaltarea/
     AdmintareaComponent,
     DetalletareaComponent,
     VercolaboradoresComponent,
-    DetallelocaltareaComponent
+    DetallelocaltareaComponent,
+    TarealocalComponent,
+    TarealocaldetalleComponent
   ],
   imports: [
     BrowserModule,

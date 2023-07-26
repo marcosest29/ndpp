@@ -5,27 +5,15 @@
         <section class="barra border p-3">
             <div class="me-3">
                 <p class="textcolorcorp">Filtros de busqueda</p>
-                <p class="mt-1">Locales:</p>
-                <div class="p-fluid">
-                    <p-multiSelect [(ngModel)]="tipolocal" [options]="locales"
-                                   inputId="local"
-                                   optionLabel="nombre" placeholder="Selecione locales"></p-multiSelect>
-                </div>
-                <p class="mt-1">Notificados:</p>
-                <div class="p-fluid">
-                    <p-dropdown [(ngModel)]="notificadosSelected" [options]="notificados"
-                                optionLabel="nombre" placeholder="Selecione notificacion"></p-dropdown>
-<!--                    <input type="text" class="form-control" [(ngModel)]="codbarras" />-->
-                </div>
-                <p class="mt-1">Estado:</p>
-                <div class="p-fluid">
-                    <p-multiSelect [(ngModel)]="tipoestado" [options]="estados"
-                                   inputId="estado"
-                                   optionLabel="nombre" placeholder="Selecione estados"></p-multiSelect>
-                </div>
                 <p class="mt-1">Codigo de barras:</p>
                 <div class="p-fluid">
                     <input type="text" class="form-control" [(ngModel)]="codbarras" />
+                </div>
+                <p class="mt-1">Estado:</p>
+                <div class="p-fluid">
+                    <p-multiSelect [(ngModel)]="estado" [options]="estados"
+                                   inputId="local"
+                                   optionLabel="nombre" placeholder="Selecione estados"></p-multiSelect>
                 </div>
                 <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
                     <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
@@ -33,7 +21,7 @@
             </div>
         </section>
         <section class="main ps-2">
-            <p class="textcolorcorp">Detalle de tareas</p>
+            <p class="textcolorcorp">Detalle de tarea</p>
             <div class="ayuda">
                 <div class="row">
                     <div class="col-4">
@@ -67,15 +55,19 @@
                 </div>
             </div>
             <div>
-                <p-table [value]="tareas" [tableStyle]="{ 'min-width': '50rem' }">
+                <p-table [value]="articulos" [tableStyle]="{ 'min-width': '50rem' }">
                     <ng-template pTemplate="header">
                         <tr>
                             <th></th>
                             <th>N</th>
-                            <th>Local</th>
-                            <th>Tareas</th>
+                            <th>Codigo de barras</th>
+                            <th>Descripcion</th>
+                            <th>Clasificacion</th>
+                            <th>Subbclasificacion</th>
+                            <th>Rotacion</th>
+                            <th>Responsable</th>
                             <th>Estado</th>
-                            <th>Progreso</th>
+                            <th>Observacion</th>
                             <th>Acciones</th>
                         </tr>
                     </ng-template>
@@ -83,19 +75,29 @@
                         <tr>
                             <td><p-checkbox name="tareasgrupo" [binary]="true" [(ngModel)]="selectedtareas"></p-checkbox></td>
                             <td>{{ rowIndex+1 }}</td>
-                            <td>{{ tarea.local }}</td>
-                            <td>{{ tarea.tareas }}</td>
+                            <td>{{ tarea.codigo }}</td>
+                            <td>{{ tarea.nombre }}</td>
+                            <td>{{ tarea.clasificacion }}</td>
+                            <td>{{ tarea.subclasificacion }}</td>
+                            <td>{{ tarea.rotacion }}</td>
+                            <td>{{ tarea.responsable }}</td>
                             <td>{{ tarea.estado }}</td>
-                            <td><p-progressBar [value]=50 [showValue]="true"></p-progressBar></td>
+                            <td>{{ tarea.observacion }}</td>
                             <td class="d-flex">
-                                <button class="btn btn-sm btn-outline-danger" (click)="gotoTareas()">
-                                    <i class="fa fa-eye"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger" (click)="gotoTareas()">
-                                    <i class="fa-solid fa-bell"></i>
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-play"></i>
                                 </button>
                                 <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-pause"></i>
+                                </button>
+                                <!--                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">-->
+                                <!--                                    <i class="fa-solid fa-check"></i>-->
+                                <!--                                </button>-->
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
                                     <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="showColaborators()">
+                                    <i class="fa-solid fa-user-check"></i>
                                 </button>
                             </td>
                         </tr>
@@ -105,4 +107,3 @@
         </section>
     </div>
 </div>
-

@@ -32,6 +32,18 @@ export class NodeService {
       .then(res => <any[]>res.locales);
   }
 
+  getEstadosL() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.estadosL);
+  }
+
+  gettareaslocalnuevo() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.tareaslocalnuevo);
+  }
+
   getDivision() {
     return this.http.get<any>('assets/files/datos.json')
       .toPromise()

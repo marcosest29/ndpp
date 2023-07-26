@@ -32,32 +32,32 @@
               <i class="fa-solid fa-circle-xmark" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle'">
+          <div *ngIf="pantalla==='detalle1'||pantalla==='detalle2'">
             <a  class="hand ms-2" >
               <i class="fas fa-file-excel" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle'">
+          <div *ngIf="pantalla==='detalle1'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-bell" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle'">
+          <div *ngIf="pantalla==='tarealocal'||pantalla==='tarealocaldetalle'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-play" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle'">
+          <div *ngIf="pantalla==='tarealocal'||pantalla==='tarealocaldetalle'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-pause" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle'">
+          <div *ngIf="pantalla==='detalle2'||pantalla==='detalle1'||pantalla==='tarealocal'||pantalla==='tarealocaldetalle'">
             <a  class="hand ms-2" >
-              <i class="fa-solid fa-xmark" style="color:red;font-size:25px;margin-top:5px"></i>
+              <i class="fa-solid fa-trash" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle'">
+          <div *ngIf="pantalla==='tarealocaldetalle'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-user-check" style="color:red;font-size:25px;margin-top:5px" (click)="showColaborators()"></i>
             </a>
