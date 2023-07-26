@@ -52,9 +52,14 @@
               <i class="fa-solid fa-pause" style="color:red;font-size:25px;margin-top:5px"></i>
             </a>
           </div>
-          <div *ngIf="pantalla==='detalle2'||pantalla==='detalle1'||pantalla==='tarealocal'||pantalla==='tarealocaldetalle'">
+          <div *ngIf="pantalla==='detalle2'||pantalla==='detalle1'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-trash" style="color:red;font-size:25px;margin-top:5px"></i>
+            </a>
+          </div>
+          <div *ngIf="pantalla==='tarealocal'||pantalla==='tarealocaldetalle'">
+            <a  class="hand ms-2" >
+              <i class="fa-solid fa-check" style="color:red;font-size:25px;margin-top:5px" ></i>
             </a>
           </div>
           <div *ngIf="pantalla==='tarealocaldetalle'">

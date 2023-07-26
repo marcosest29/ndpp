@@ -19,6 +19,14 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         this.colaboradoresInfo = this.nodeService.getInformacionTarea().colaboradores;
+        this.selectedColaboratorsTable=[{
+            tipo: "Colaboradores",
+            nombre: "BODEGUERO"
+        },
+            {
+                tipo: "Colaboradores",
+                nombre: "CAJEROS"
+            }];
     }
 
     ngOnChanges(changes: SimpleChanges): void {
