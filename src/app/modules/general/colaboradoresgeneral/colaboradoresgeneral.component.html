@@ -1,0 +1,40 @@
+<div class="mjflex">
+    <div class="col">
+        <p>Se muestran usuarios de los cargos: Personal de caja, Percheros</p>
+        <div class="p-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" [(ngModel)]="filtro" />
+                </div>
+                <div class="col">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <div class="p-fluid">
+            <div class="row">
+                <div class="col">
+                    <span>lerazo - Luis Erazo - Personal de caja</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 d-flex" style="margin-top:10px ;border:solid 1px black">
+            <div >
+                <table>
+                    <tbody>
+                    <tr *ngFor="let item of items;let indexOfelement=index;">
+<!--                        <td><i (click)="toggleColItem(item)"-->
+<!--                               class="ms-2 fa-regular"-->
+<!--                               [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>-->
+                        <td>{{indexOfelement+1}} - {{item.usuario}} - {{item.nombre}} - {{item.cargo}}</td>
+                        <td><button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(indexOfelement)">
+                            <i class="fa-solid fa-trash"></i>
+                        </button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

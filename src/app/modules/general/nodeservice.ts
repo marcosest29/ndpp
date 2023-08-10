@@ -2,7 +2,7 @@ import { animate } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-    
+
 interface Articulo {
   codbarra: String,
   nomecommerce: String,
@@ -108,6 +108,12 @@ export class NodeService {
     return this.http.get<any>('assets/files/datos.json')
       .toPromise()
       .then(res => <any[]>res.colaboradores);
+  }
+
+  getColaboradorSantiago() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.colaboradorSantiago);
   }
 
   getTareas() {

@@ -43,6 +43,8 @@ import {VercolaboradoresComponent} from "./modules/general/creartarea/vercolabor
 import { DetallelocaltareaComponent } from './modules/general/detallelocaltarea/detallelocaltarea.component';
 import { TarealocalComponent } from './modules/general/tarealocal/tarealocal.component';
 import { TarealocaldetalleComponent } from './modules/general/tarealocaldetalle/tarealocaldetalle.component';
+import { ColaboradoresunicosComponent } from './modules/general/colaboradoresunicos/colaboradoresunicos.component';
+import { ColaboradoresgeneralComponent } from './modules/general/colaboradoresgeneral/colaboradoresgeneral.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { TarealocaldetalleComponent } from './modules/general/tarealocaldetalle/
     VercolaboradoresComponent,
     DetallelocaltareaComponent,
     TarealocalComponent,
-    TarealocaldetalleComponent
+    TarealocaldetalleComponent,
+    ColaboradoresunicosComponent,
+    ColaboradoresgeneralComponent
   ],
   imports: [
     BrowserModule,

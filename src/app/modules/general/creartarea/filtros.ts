@@ -19,6 +19,8 @@ export class FiltrosComponent implements OnInit, OnChanges {
     clases: any[];
     subclasificacion: any[];
     tipoCalculo = 1;
+    minimo:any;
+    maximo:any;
 
     @Input()
     dosave = false;

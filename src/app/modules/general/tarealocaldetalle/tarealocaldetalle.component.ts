@@ -22,6 +22,7 @@ export class TarealocaldetalleComponent implements OnInit {
   estado:any;
   selectedtareas:any[];
   codbarras:any;
+  isShowModalColaborators:boolean=false;
   ngOnInit(): void {
     this.mymsgservice.publishMessage('pantalla-tarealocaldetalle');
   }
@@ -42,6 +43,10 @@ export class TarealocaldetalleComponent implements OnInit {
   }
 
   showColaborators(){
-
+    // this.selectedColaborator = col;
+    this.isShowModalColaborators=true;
+  }
+  closeViewColaborators(){
+    this.isShowModalColaborators=false;
   }
 }

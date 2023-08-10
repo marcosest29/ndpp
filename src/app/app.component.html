@@ -73,12 +73,12 @@
   </div>
 </header>
 <div class="mjflex">
-  <p-dialog header="Gestionar cargos" [(visible)]="isShowModalColaborators" [style]="{width: '750px',height:'500px'}">
+  <p-dialog header="Usuarios" [(visible)]="isShowModalColaborators" [style]="{width: '750px',height:'500px'}">
     <div>
-      <app-vercolaboradores></app-vercolaboradores>
+      <app-colaboradoresgeneral></app-colaboradoresgeneral>
     </div>
     <ng-template pTemplate="footer">
-      <button class="btn btn-outline-secondary" (click)="AddColaborators()">Agregar <span
+      <button class="btn btn-outline-secondary" (click)="AddColaborators()">Aceptar <span
               class="pi pi-times"></span>
       </button>
       <button class="btn btn-outline-secondary" (click)="closeViewColaborators()">Cerrar <span
