@@ -415,5 +415,33 @@
       "codigo": "NoDPP-03-02-2023",
       "estado": "GENERADA"
     }
+  ],
+  "colaboradorSantiago": [
+    {
+      "usuario": "scueva",
+      "nombre": "Santiago Cueva",
+      "cargo": "Personal de caja",
+      "check": true
+    },
+    {
+      "usuario": "rflores",
+      "nombre": "Richard Flores",
+      "cargo": "Perchero",
+      "check": false
+    }
+  ],
+  "colaborador2": [
+    {
+      "usuario": "lerazo",
+      "nombre": "Luis Erazo",
+      "cargo": "Personal de caja",
+      "check": true
+    },
+    {
+      "usuario": "kreascos",
+      "nombre": "Karen Reascos",
+      "cargo": "Perchero",
+      "check": false
+    }
   ]
 }
