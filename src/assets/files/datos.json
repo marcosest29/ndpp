@@ -429,5 +429,19 @@
       "cargo": "Perchero",
       "check": false
     }
+  ],
+  "colaborador2": [
+    {
+      "usuario": "lerazo",
+      "nombre": "Luis Erazo",
+      "cargo": "Personal de caja",
+      "check": true
+    },
+    {
+      "usuario": "kreascos",
+      "nombre": "Karen Reascos",
+      "cargo": "Perchero",
+      "check": false
+    }
   ]
 }

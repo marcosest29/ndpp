@@ -12,6 +12,7 @@ export class ColaboradoresgeneralComponent implements OnInit {
 
   filtro:any;
   items:any[];
+  items2:any[];
   constructor(
       private nodeService: NodeService,
       private mymsgservice: MyMsgService,
@@ -27,15 +28,27 @@ export class ColaboradoresgeneralComponent implements OnInit {
   toggleColItem(col: any) {
     col.check = !col.check;
   }
-  gotoEdit(item){
+  gotoDelete(item){
     console.log(item)
+    this.items2.push(this.items[item])
     this.items.splice(item,1)
+    // this.items.remove(item);
+  }
+
+  gotoAdd(item){
+    console.log(item)
+    this.items.push(this.items2[item])
+    this.items2.splice(item,1)
     // this.items.remove(item);
   }
 
   loadListas(){
     this.nodeService.getColaboradorSantiago().then(est => {
       this.items = est;
+    });
+
+    this.nodeService.getColaborador2().then(est => {
+      this.items2 = est;
     });
   }
 }

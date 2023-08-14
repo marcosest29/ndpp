@@ -11,11 +11,28 @@
                 </div>
             </div>
         </div>
-        <div class="p-fluid">
-            <div class="row">
-                <div class="col">
-                    <span>lerazo - Luis Erazo - Personal de caja</span>
-                </div>
+<!--        <div class="p-fluid">-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <span>lerazo - Luis Erazo - Personal de caja</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="col-md-7 d-flex" style="margin-top:10px ;border:solid 1px black">
+            <div >
+                <table>
+                    <tbody>
+                    <tr *ngFor="let item of items2;let indexOfelement=index;">
+                        <!--                        <td><i (click)="toggleColItem(item)"-->
+                        <!--                               class="ms-2 fa-regular"-->
+                        <!--                               [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>-->
+                        <td>{{indexOfelement+1}} - {{item.usuario}} - {{item.nombre}} - {{item.cargo}}</td>
+                        <td><button class="btn btn-sm btn-outline-danger" (click)="gotoAdd(indexOfelement)">
+                            <i class="fa-solid fa-plus"></i>
+                        </button></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-md-7 d-flex" style="margin-top:10px ;border:solid 1px black">
@@ -27,7 +44,7 @@
 <!--                               class="ms-2 fa-regular"-->
 <!--                               [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>-->
                         <td>{{indexOfelement+1}} - {{item.usuario}} - {{item.nombre}} - {{item.cargo}}</td>
-                        <td><button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(indexOfelement)">
+                        <td><button class="btn btn-sm btn-outline-danger" (click)="gotoDelete(indexOfelement)">
                             <i class="fa-solid fa-trash"></i>
                         </button></td>
                     </tr>

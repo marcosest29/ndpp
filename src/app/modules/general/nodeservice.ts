@@ -115,6 +115,11 @@ export class NodeService {
         .toPromise()
         .then(res => <any[]>res.colaboradorSantiago);
   }
+  getColaborador2() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.colaborador2);
+  }
 
   getTareas() {
     return this.http.get<any>('assets/files/datos.json')
