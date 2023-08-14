@@ -110,6 +110,30 @@ export class NodeService {
       .then(res => <any[]>res.colaboradores);
   }
 
+  getTipoColaboradores() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.tipocolaboradores);
+  }
+
+  getAdminLocal() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.adminlocal);
+  }
+
+  getGenericos() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.genericos);
+  }
+
+  getClientes() {
+    return this.http.get<any>('assets/files/datos.json')
+        .toPromise()
+        .then(res => <any[]>res.clientes);
+  }
+
   getColaboradorSantiago() {
     return this.http.get<any>('assets/files/datos.json')
         .toPromise()
@@ -158,6 +182,7 @@ export class NodeService {
       calculo: null
     },
     colaboradores: [],
+    cargos:[],
     calculo:{
       tipo:'',
       alta:0,

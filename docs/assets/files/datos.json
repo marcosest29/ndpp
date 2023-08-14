@@ -443,5 +443,80 @@
       "cargo": "Perchero",
       "check": false
     }
+  ],
+  "tipocolaboradores": [
+    {
+      "nombre": "Cargo"
+    },
+    {
+      "nombre": "Administracion local"
+    },
+    {
+      "nombre": "Genericos"
+    },
+    {
+      "nombre": "Cliente"
+    }
+  ],
+  "adminlocal": [
+    {
+      "nombre": "Pedro Perez",
+      "cargo": "Administrador 1",
+      "check": false
+    },
+    {
+      "nombre": "Pablo Andrade",
+      "cargo": "Administrador 2",
+      "check": false
+    },
+    {
+      "nombre": "Monica Alvarado",
+      "cargo": "Administrador 3",
+      "check": false
+    }
+  ],
+  "genericos": [
+    {
+      "nombre": "Despa711",
+      "cargo": "Despachos generico",
+      "check": false
+    },
+    {
+      "nombre": "CAJ711",
+      "cargo": "Caja generico",
+      "check": false
+    },
+    {
+      "nombre": "DEL711",
+      "cargo": "Deli generico",
+      "check": false
+    },
+    {
+      "nombre": "AUD711",
+      "cargo": "Auditoria generico",
+      "check": false
+    }
+  ],
+  "clientes": [
+    {
+      "nombre": "1729999999",
+      "cargo": "Pedro Perez",
+      "check": false
+    },
+    {
+      "nombre": "1729999998",
+      "cargo": "Pablo Andrade",
+      "check": false
+    },
+    {
+      "nombre": "1729999997",
+      "cargo": "Monica Alvarado",
+      "check": false
+    },
+    {
+      "nombre": "1729999996",
+      "cargo": "Pepe Perez",
+      "check": false
+    }
   ]
 }

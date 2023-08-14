@@ -100,8 +100,8 @@
                     <div class="row">
                         <div class="col-md ms-2">
                             <div>
-                                <span>Cargos: </span>
-                                <div class="fw-bold" *ngFor="let x of informacionTarea?.colaboradores">{{ x.nombre }}  </div>
+                                <span>Tipo asignacion: {{ informacionTarea?.colaboradores?.colaborador?.nombre }}</span>
+                                <div class="fw-bold" *ngFor="let x of informacionTarea?.cargos">{{ x.nombre }}  </div>
                             </div>
                         </div>
                     </div>
