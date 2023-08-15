@@ -45,15 +45,21 @@
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col-md-5">
-                    <input type="text" class="form-control" [(ngModel)]="filtro" />
+                    <div *ngIf="colaboradoresInfo.colaborador.nombre=='Funcionario'" >
+                        <p-dropdown [options]="locales" [(ngModel)]="filtrolocales" optionLabel="nombre"></p-dropdown>
+                    </div>
+                    <div *ngIf="colaboradoresInfo.colaborador.nombre!='Funcionario'">
+                        <input type="text" class="form-control" [(ngModel)]="filtro" />
+                    </div>
+
                 </div>
                 <div class="col">
                     <button class="btn btn-danger" (click)="doSearch()">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Administracion local' ||colaboradoresInfo.colaborador.nombre=='Genericos'" class="col-md-5">
-                    <span style="font-weight: bold;">711 - Megamaxi - 6 de Diciembre</span>
+                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Funcionario'" class="col-md-5">
+                    <span style="font-weight: bold;">{{filtrolocales.codigo}} - {{filtrolocales.nombre}}</span>
                 </div>
                 <div *ngIf="colaboradoresInfo.colaborador.nombre=='Cliente'" class="col-md-5 d-flex flex-row-reverse">
                     <button class="btn btn-danger" (click)="doSearch()">
@@ -75,10 +81,10 @@
                     </table>
                 </div>
             </div>
-            <div *ngIf="colaboradoresInfo.colaborador.nombre=='Administracion local'"  style="margin-top:10px ;border:solid 1px black">
+            <div *ngIf="colaboradoresInfo.colaborador.nombre=='Funcionario'"  style="margin-top:10px ;border:solid 1px black">
                 <div class="row" style="margin-top: 10px">
                     <div class="col-md-5">
-                        <input type="text" class="form-control" [(ngModel)]="filtro" />
+                        <input type="text" class="form-control" [(ngModel)]="filtro2" />
                     </div>
                     <div class="col">
                         <button class="btn btn-danger" (click)="doSearch()">

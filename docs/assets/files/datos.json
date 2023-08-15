@@ -449,13 +449,10 @@
       "nombre": "Cargo"
     },
     {
-      "nombre": "Administracion local"
+      "nombre": "Funcionario"
     },
     {
       "nombre": "Genericos"
-    },
-    {
-      "nombre": "Cliente"
     }
   ],
   "adminlocal": [
@@ -477,22 +474,22 @@
   ],
   "genericos": [
     {
-      "nombre": "Despa711",
+      "nombre": "Despa",
       "cargo": "Despachos generico",
       "check": false
     },
     {
-      "nombre": "CAJ711",
+      "nombre": "CAJ",
       "cargo": "Caja generico",
       "check": false
     },
     {
-      "nombre": "DEL711",
+      "nombre": "DEL",
       "cargo": "Deli generico",
       "check": false
     },
     {
-      "nombre": "AUD711",
+      "nombre": "AUD",
       "cargo": "Auditoria generico",
       "check": false
     }

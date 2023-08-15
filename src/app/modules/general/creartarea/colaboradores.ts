@@ -18,6 +18,9 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
     genericos=[];
     clientes=[];
     filtro:any;
+    filtro2:any;
+    filtrolocales:any;
+    locales=[];
 
     @Input()
     dosave = false;
@@ -62,6 +65,9 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
         });
         this.nodeService.getClientes().then(colaboradores => {
             this.clientes = colaboradores;
+        });
+        this.nodeService.getLocales().then(loc => {
+            this.locales = loc;
         });
     }
     showColaborators(){
