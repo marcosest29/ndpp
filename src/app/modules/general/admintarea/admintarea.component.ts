@@ -53,4 +53,7 @@ export class AdmintareaComponent implements OnInit {
     this.router.navigate(['detalle-tarea-local'], {});
   }
 
+  gotoNone(){
+
+  }
 }

@@ -68,7 +68,7 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
         this.nodeService.getClientes().then(colaboradores => {
             this.clientes = colaboradores;
         });
-        this.nodeService.getLocales().then(loc => {
+        this.nodeService.getLocalesC().then(loc => {
             this.locales = loc;
         });
     }

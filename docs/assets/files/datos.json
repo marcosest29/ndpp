@@ -71,6 +71,44 @@
       "marcado":false
     }
   ],
+  "localescolaboradores": [
+    {
+      "codigo": "OFI",
+      "nombre": "OFICINAS",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "711",
+      "nombre": "6 DE DICIEMBRE",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "101",
+      "nombre": "MULTICENTRO",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "103",
+      "nombre": "CARCELEN",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "716",
+      "nombre": "SCALA",
+      "zona": "QUITO",
+      "marcado":false
+    },
+    {
+      "codigo": "712",
+      "nombre": "SAN LUIS",
+      "zona": "QUITO",
+      "marcado":false
+    }
+  ],
   "division": [
     {
       "codigo": "0002",

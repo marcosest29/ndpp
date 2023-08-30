@@ -47,6 +47,18 @@
                     <p-radioButton id="no" name="no" value="NO" [(ngModel)]="asignacion" inputId="asignacion" ></p-radioButton>
                 </div>
             </div>
+            <div *ngIf="asignacion=='NO'" style="border: 1px solid black;">
+                <div  class="row" style="margin-bottom: 20px">
+                    <div class="col">
+                        <span class="w-25">La tarea se va a crear sin asignacion de colaboradores.</span>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col">
+                        <span class="w-25">La administracion se encarga cada local.</span>
+                    </div>
+                </div>
+            </div>
             <div *ngIf="asignacion=='SI'">
                 <div class="row">
                     <div class="col-2">
