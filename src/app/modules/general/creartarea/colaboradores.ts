@@ -21,6 +21,8 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
     filtro2:any;
     filtrolocales:any;
     locales=[];
+    asignacion:any;
+    aplica:any;
 
     @Input()
     dosave = false;
