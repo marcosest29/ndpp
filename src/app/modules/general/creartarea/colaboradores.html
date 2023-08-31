@@ -46,6 +46,18 @@
                     <span class="w-25">NO </span>
                     <p-radioButton id="no" name="no" value="NO" [(ngModel)]="asignacion" inputId="asignacion" ></p-radioButton>
                 </div>
+
+                <div class="col-2">
+                    <span class="w-25">Aplica reasignacion:</span>
+                </div>
+                <div class="col-1">
+                    <span class="w-25">SI </span>
+                    <p-radioButton id="sia" name="si" value="SI" [(ngModel)]="aplica" inputId="aplica"></p-radioButton>
+                </div>
+                <div class="col-1">
+                    <span class="w-25">NO </span>
+                    <p-radioButton id="noa" name="no" value="NO" [(ngModel)]="aplica" inputId="aplica" ></p-radioButton>
+                </div>
             </div>
             <div *ngIf="asignacion=='NO'" style="border: 1px solid black;">
                 <div  class="row" style="margin-bottom: 20px">
@@ -73,10 +85,10 @@
                 </div>
                 <div class="row" style="margin-top: 20px">
                     <div class="col-md-5">
-                        <div *ngIf="colaboradoresInfo.colaborador.nombre=='Funcionario'" >
+                        <div *ngIf="colaboradoresInfo.colaborador.nombre=='Colaboradores'" >
                             <p-dropdown [options]="locales" [(ngModel)]="filtrolocales" optionLabel="nombre"></p-dropdown>
                         </div>
-                        <div *ngIf="colaboradoresInfo.colaborador.nombre!='Funcionario'">
+                        <div *ngIf="colaboradoresInfo.colaborador.nombre!='Colaboradores'">
                             <input type="text" class="form-control" [(ngModel)]="filtro" />
                         </div>
 
@@ -86,19 +98,8 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
-                    <div class="col-2">
-                        <span class="w-25">Aplica reasignacion:</span>
-                    </div>
-                    <div class="col-1">
-                        <span class="w-25">SI </span>
-                        <p-radioButton id="sia" name="si" value="SI" [(ngModel)]="aplica" inputId="aplica"></p-radioButton>
-                    </div>
-                    <div class="col-1">
-                        <span class="w-25">NO </span>
-                        <p-radioButton id="noa" name="no" value="NO" [(ngModel)]="aplica" inputId="aplica" ></p-radioButton>
-                    </div>
 
-                    <div *ngIf="colaboradoresInfo.colaborador.nombre=='Funcionario'" class="col-md-5">
+                    <div *ngIf="colaboradoresInfo.colaborador.nombre=='Colaboradores'" class="col-md-5">
                         <span style="font-weight: bold;">{{filtrolocales.codigo}} - {{filtrolocales.nombre}}</span>
                     </div>
                     <div *ngIf="colaboradoresInfo.colaborador.nombre=='Cliente'" class="col-md-5 d-flex flex-row-reverse">
@@ -121,7 +122,7 @@
                         </table>
                     </div>
                 </div>
-                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Funcionario'"  style="margin-top:10px ;border:solid 1px black">
+                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Colaboradores'"  style="margin-top:10px ;border:solid 1px black">
                     <div class="row" style="margin-top: 10px">
                         <div class="col-md-5">
                             <input type="text" class="form-control" [(ngModel)]="filtro2" />
@@ -132,19 +133,21 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row">
-                        <table>
-                            <tbody>
-                            <tr *ngFor="let item of adminlocal;">
-                                <td><i (click)="toggleColItem(item)"
-                                       class="ms-2 fa-regular"
-                                       [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>
-                                <td> {{item.nombre}} </td>
-                                <td> {{item.cargo}} </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <!-- <div class="row" > -->
+                        <div>
+                            <table>
+                                <tbody>
+                                <tr *ngFor="let item of adminlocal;">
+                                    <td><i (click)="toggleColItem(item)"
+                                           class="ms-2 fa-regular"
+                                           [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>
+                                    <td> {{item.nombre}} </td>
+                                    <td> {{item.cargo}} </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    <!-- </div> -->
                 </div>
                 <div *ngIf="colaboradoresInfo.colaborador.nombre=='Genericos'"  style="margin-top:10px ;border:solid 1px black">
                     <div class="row" style="margin-top: 10px">

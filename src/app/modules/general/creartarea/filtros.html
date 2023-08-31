@@ -8,9 +8,9 @@
                     <div class="row" style="margin:20px 0">
                         <div class="col-md-2"><span>Minimo:</span></div>
                         <div class="col-md-2">
-                            <p-inputNumber [(ngModel)]="minimo" [max]="100" [min]="0"
+                            <p-inputNumber [(ngModel)]="minimo" [min]="1" [min]="0"
                                            [showButtons]="true" inputId="minmax-buttons" mode="decimal"
-                                           suffix="%"></p-inputNumber>
+                                           ></p-inputNumber>
                         </div>
                     </div>
                 </div>
@@ -18,9 +18,9 @@
                     <div class="row" style="margin:20px 0">
                         <div class="col-md-2"><span>Maximo:</span></div>
                         <div class="col-md-2">
-                            <p-inputNumber [(ngModel)]="maximo" [max]="100" [min]="0"
+                            <p-inputNumber [(ngModel)]="maximo" [max]="800" [min]="0"
                                            [showButtons]="true" inputId="minmax-buttons" mode="decimal"
-                                           suffix="%"></p-inputNumber>
+                                           ></p-inputNumber>
                         </div>
                     </div>
                 </div>
