@@ -23,6 +23,7 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
     locales=[];
     asignacion:any;
     aplica:any;
+    colaboradoresSeleccionados=[];
 
     @Input()
     dosave = false;
@@ -124,5 +125,16 @@ export class ColaboradoresComponent implements OnInit, OnChanges {
 
     doSearch(){
 
+    }
+
+    add(){
+        this.colaboradoresSeleccionados = this.adminlocal.filter(col => {
+            return col.check
+        });
+        console.log(this.colaboradoresSeleccionados)
+    }
+
+    delete(item){
+        this.colaboradoresSeleccionados.splice(item,1)
     }
 }
