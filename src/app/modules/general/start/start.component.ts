@@ -17,6 +17,9 @@ export class StartComponent {
   gotoReportes() {
     this.router.navigate(['reportes'], {});
   }
+  gotperiodicidad() {
+    this.router.navigate(['periodicidad'], {});
+  }
   gotoInicio(){
     this.router.navigate(['inicio'], {});
   }

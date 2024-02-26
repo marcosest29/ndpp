@@ -1,0 +1,31 @@
+<div class="mjflex">
+    <span class="w-25">Cargos colaboradores:</span>
+    <div class="w-75">
+        <table class="table table-sm table-bordered table-striped">
+            <thead>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span class="ms-2">Todos</span>
+                </td>
+                <td>
+                    <i (click)="toggleAllCols()"
+                       class="ms-2 fa-regular"
+                       [ngClass]="allCols?'fa-square-check':'fa-square'"></i>
+                </td>
+            </tr>
+            <tr *ngFor="let col of colaborators">
+                <td>
+                    <span class="ms-2">{{col.nombre}}</span>
+                </td>
+                <td>
+                    <i (click)="toggleColItem(col)"
+                       class="ms-2 fa-regular"
+                       [ngClass]="col.check?'fa-square-check':'fa-square'"></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

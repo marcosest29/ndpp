@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   pantalla = 'home';
   titulo = 'No Disponible Producto Piso';
   items: MenuItem[] | undefined;
+  tpitems: MenuItem[] | undefined;
   isShowModalColaborators:boolean=false;
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
@@ -39,6 +40,14 @@ export class AppComponent implements OnInit {
             this.gotoCrearTarea();
         }
       }
+  ];    this.tpitems = [
+      {
+          label: 'Tarea Periodica',
+          icon: 'pi pi-fw pi-plus',
+          command: () => {
+            this.gotoCrearTpTarea();
+        }
+      }
   ];
 
     this.mymsgservice.source.subscribe(msg => {
@@ -48,6 +57,10 @@ export class AppComponent implements OnInit {
           if (this.pantalla === "inicio") {
             setTimeout(()=>{
               this.titulo = "Administración de tareas";
+            },1);
+          }if (this.pantalla === "tpinicio") {
+            setTimeout(()=>{
+              this.titulo = "Administración periodicidad de configuraciones";
             },1);
           }
           if (this.pantalla === "detalle") {
@@ -65,7 +78,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-  gotoCrearTarea(){
+  gotoCrearTpTarea(){
+    this.router.navigate(['nuevatareatp','1'], {});
+  }
+ gotoCrearTarea(){
     this.router.navigate(['nuevatarea','1'], {});
   }
 

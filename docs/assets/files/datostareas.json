@@ -1,0 +1,512 @@
+{
+  "formatos": [
+    {
+      "codigo": "SUP",
+      "nombre": "SUPERMAXI"
+    },
+    {
+      "codigo": "MEG",
+      "nombre": "MEGAMAXI"
+    },
+    {
+      "codigo": "TTN",
+      "nombre": "TITAN"
+    },
+    {
+      "codigo": "AKI",
+      "nombre": "AKI"
+    },
+    {
+      "codigo": "MOB",
+      "nombre": "MOBLART"
+    }
+  ],
+  "zonas": [
+    {
+      "codigo": "UIO",
+      "nombre": "QUITO"
+    },
+    {
+      "codigo": "GUA",
+      "nombre": "GUAYAQUIL"
+    },
+    {
+      "codigo": "MAN",
+      "nombre": "MANTA"
+    },
+    {
+      "codigo": "CUE",
+      "nombre": "CUENCA"
+    }
+  ],
+  "locales": [
+    {
+      "codigo": "711",
+      "nombre": "6 DE DICIEMBRE",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "101",
+      "nombre": "MULTICENTRO",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "103",
+      "nombre": "CARCELEN",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "716",
+      "nombre": "SCALA",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "712",
+      "nombre": "SAN LUIS",
+      "zona": "QUITO",
+      "marcado": false
+    }
+  ],
+  "localescolaboradores": [
+    {
+      "codigo": "OFI",
+      "nombre": "OFICINAS",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "711",
+      "nombre": "6 DE DICIEMBRE",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "101",
+      "nombre": "MULTICENTRO",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "103",
+      "nombre": "CARCELEN",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "716",
+      "nombre": "SCALA",
+      "zona": "QUITO",
+      "marcado": false
+    },
+    {
+      "codigo": "712",
+      "nombre": "SAN LUIS",
+      "zona": "QUITO",
+      "marcado": false
+    }
+  ],
+  "division": [
+    {
+      "codigo": "0002",
+      "nombre": "ALIMENTOS FRESCOS"
+    },
+    {
+      "codigo": "0004",
+      "nombre": "CUIDADO PERSONAL"
+    },
+    {
+      "codigo": "0008",
+      "nombre": "SUMINISTROS"
+    },
+    {
+      "codigo": "0001",
+      "nombre": "ABARROTES"
+    }
+  ],
+  "departamento": [
+    {
+      "codigo": "0010",
+      "nombre": "CANASTA BASICA"
+    },
+    {
+      "codigo": "0030",
+      "nombre": "ASEO Y LIMPIEZA"
+    },
+    {
+      "codigo": "0040",
+      "nombre": "PERFUMERIA"
+    },
+    {
+      "codigo": "0060",
+      "nombre": "ACCESORIOS BEBES"
+    }
+  ],
+  "clasificacion": [
+    {
+      "codigo": "5220",
+      "nombre": "DECORACION Y MANUALIDADES"
+    },
+    {
+      "codigo": "5221",
+      "nombre": "(I) DECORACION Y MANUALIDADES"
+    },
+    {
+      "codigo": "5020",
+      "nombre": "COCHES PARA MUNECAS"
+    },
+    {
+      "codigo": "5060",
+      "nombre": "HOBBIES Y EDUCATIVOS"
+    }
+  ],
+  "subclasificacion": [
+    {
+      "codigo": "0010",
+      "nombre": "CHOCOLATES"
+    },
+    {
+      "codigo": "0040",
+      "nombre": "CHUPETES"
+    },
+    {
+      "codigo": "0070",
+      "nombre": "TOFFES"
+    },
+    {
+      "codigo": "0060",
+      "nombre": "GOMAS"
+    }
+  ],
+  "clasificaciones": [
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-GIRASOL"
+    },
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-SOYA"
+    },
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1048-HARINAS VARIAS",
+      "subclasificacion": "0050-PRECOCIDAS"
+    },
+    {
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1058-MARGARINA",
+      "subclasificacion": "0030-GIRASOL"
+    }
+  ],
+  "habilitado": [
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE ALMACEN"
+    },
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE CAJAS"
+    },
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE SEGURIDAD"
+    },
+    {
+      "tipo": "COLABORADORES",
+      "nomina": "PERSONAL DE EJECUTIVO"
+    },
+    {
+      "tipo": "GENERICO",
+      "nomina": "MEDIANTE AUTORIZACION"
+    },
+    {
+      "tipo": "LOCAL",
+      "nomina": "CERCANO"
+    }
+  ],
+  "reportes": [
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI MULTICENTRO"
+    },
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI CARCELEN"
+    },
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI EL BOSQUE"
+    },
+    {
+      "zona": "ZONA QUITO",
+      "nombre": "SUPERMAXI PLAZA NORTE"
+    },
+    {
+      "zona": "ZONA GUAYAQUIL",
+      "nombre": "SUPERMAXI GUAYAQUIL1"
+    },
+    {
+      "zona": "ZONA GUAYAQUIL",
+      "nombre": "SUPERMAXI GUAYAQUIL2"
+    }
+  ],
+  "clases": [
+    {
+      "codigo": "R",
+      "nombre": "RESURTIBLE"
+    },
+    {
+      "codigo": "O",
+      "nombre": "OBSOLETO"
+    },
+    {
+      "codigo": "I",
+      "nombre": "NO TROQUELADO"
+    }
+  ],
+  "articulos": [
+    {
+      "codigo": "739907000010",
+      "nombre": "PAN HARINA MAIZ PRECOCIDA BLANCA",
+      "clase": "R",
+      "locales": "711,712,713,714",
+      "clasificacion": "1004-ACEITES",
+      "subclasificacion": "0030-SOYA",
+      "local": 716
+    },
+    {
+      "codigo": "7702354945992",
+      "nombre": "SAVILOE BEBIDA ALOE VERA EXTRA CONTENIDO",
+      "clase": "R",
+      "locales": "101,102,713,714",
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1104-GRANOS",
+      "subclasificacion": "0031-MAIZ",
+      "local": 716
+    },
+    {
+      "codigo": "7861024626255",
+      "nombre": "COCA COLA",
+      "clase": "I",
+      "locales": "716",
+      "division": "1-ABARROTES",
+      "departamento": "10-CANASTA BASICA",
+      "clasificacion": "1000-CHOCOLATES",
+      "subclasificacion": "0030-CHOCOLATES",
+      "local": 716
+    }
+  ],
+  "colaboradores": [
+    {
+      "tipo": "Colaboradores",
+      "nombre": "BODEGUERO"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "CAJEROS"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "SEGURIDAD"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PERCHEROS"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "DELI"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "ADMINISTRADOR LOCAL"
+    },
+    {
+      "tipo": "Colaboradores",
+      "nombre": "PANADERIA"
+    }
+  ],
+  "tareas": [
+    {
+      "codigo": " TP001",
+      "calculo": "PORCENTAJE",
+      "estado": "EJECUCION",
+      "finicio": "2024-02-01",
+      "ffin": "2024-04-30"
+    },
+    {
+      "codigo": "TP002",
+      "calculo": "PORCENTAJE",
+      "estado": "FINALIZADA",
+      "finicio": "2023-12-01",
+      "ffin": "2024-01-31"
+    },
+    {
+      "codigo": "TP003",
+      "calculo": "DISTRIBUCION",
+      "estado": "FINALIZADA",
+      "finicio": "2023-12-01",
+      "ffin": "2024-02-20"
+    }
+  ],
+  "estados": [
+    {
+      "nombre": "EJECUCIÓN"
+    },
+    {
+      "nombre": "FINALIZADA"
+    }
+  ],
+  "estadosL": [
+    {
+      "nombre": "GENERADA"
+    },
+    {
+      "nombre": "EN PROCESO"
+    },
+    {
+      "nombre": "FINALIZADA"
+    }
+  ],
+  "tareaslocal": [
+    {
+      "local": "711 - 6 DE DICIEMBRE",
+      "tareas": 255,
+      "estado": "EJECUCIÓN"
+    },
+    {
+      "local": "712 - BATAN",
+      "tareas": 300,
+      "estado": "EJECUCIÓN"
+    },
+    {
+      "local": "716 - SAN LUIS",
+      "tareas": 1000,
+      "estado": "EJECUCIÓN"
+    }
+  ],
+  "tareaslocalnuevo": [
+    {
+      "codigo": "TP001",
+      "estado": "GENERADA"
+    },
+    {
+      "codigo": "TP002",
+      "estado": "GENERADA"
+    },
+    {
+      "codigo": "TP003",
+      "estado": "GENERADA"
+    }
+  ],
+  "colaboradorSantiago": [
+    {
+      "usuario": "scueva",
+      "nombre": "Santiago Cueva",
+      "cargo": "Personal de caja",
+      "check": true
+    },
+    {
+      "usuario": "rflores",
+      "nombre": "Richard Flores",
+      "cargo": "Perchero",
+      "check": false
+    }
+  ],
+  "colaborador2": [
+    {
+      "usuario": "lerazo",
+      "nombre": "Luis Erazo",
+      "cargo": "Personal de caja",
+      "check": true
+    },
+    {
+      "usuario": "kreascos",
+      "nombre": "Karen Reascos",
+      "cargo": "Perchero",
+      "check": false
+    }
+  ],
+  "tipocolaboradores": [
+    {
+      "nombre": "Cargo"
+    },
+    {
+      "nombre": "Colaboradores"
+    },
+    {
+      "nombre": "Genericos"
+    }
+  ],
+  "adminlocal": [
+    {
+      "nombre": "Pedro Perez",
+      "cargo": "Administrador 1",
+      "check": false
+    },
+    {
+      "nombre": "Pablo Andrade",
+      "cargo": "Administrador 2",
+      "check": false
+    },
+    {
+      "nombre": "Monica Alvarado",
+      "cargo": "Administrador 3",
+      "check": false
+    }
+  ],
+  "genericos": [
+    {
+      "nombre": "Despa",
+      "cargo": "Despachos generico",
+      "check": false
+    },
+    {
+      "nombre": "CAJ",
+      "cargo": "Caja generico",
+      "check": false
+    },
+    {
+      "nombre": "DEL",
+      "cargo": "Deli generico",
+      "check": false
+    },
+    {
+      "nombre": "AUD",
+      "cargo": "Auditoria generico",
+      "check": false
+    }
+  ],
+  "clientes": [
+    {
+      "nombre": "1729999999",
+      "cargo": "Pedro Perez",
+      "check": false
+    },
+    {
+      "nombre": "1729999998",
+      "cargo": "Pablo Andrade",
+      "check": false
+    },
+    {
+      "nombre": "1729999997",
+      "cargo": "Monica Alvarado",
+      "check": false
+    },
+    {
+      "nombre": "1729999996",
+      "cargo": "Pepe Perez",
+      "check": false
+    }
+  ]
+}

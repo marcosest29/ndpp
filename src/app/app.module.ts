@@ -45,6 +45,17 @@ import { TarealocalComponent } from './modules/general/tarealocal/tarealocal.com
 import { TarealocaldetalleComponent } from './modules/general/tarealocaldetalle/tarealocaldetalle.component';
 import { ColaboradoresunicosComponent } from './modules/general/colaboradoresunicos/colaboradoresunicos.component';
 import { ColaboradoresgeneralComponent } from './modules/general/colaboradoresgeneral/colaboradoresgeneral.component';
+import { TareaprogramadaComponent } from './modules/general/tareaprogramada/tareaprogramada.component';
+import { CreartareatpnuevaComponent } from './modules/general/tareaprogramada/creartareatpnueva/creartareatpnueva.component';
+import { TpcolaboradoresComponent } from './modules/general/tareaprogramada/tpcolaboradores.component';
+import { TpconfirmacionComponent } from './modules/general/tareaprogramada/tpconfirmacion.component';
+import { TpfiltrosComponent } from './modules/general/tareaprogramada/tpfiltros.component';
+import { TplocalesComponent } from './modules/general/tareaprogramada/tplocales.component';
+import { TpvercolaboradoresComponent } from './modules/general/tareaprogramada/tpvercolaboradores.component';
+import { TpperiodoCalculoComponent } from './modules/general/tareaprogramada/tpperiodo-calculo.component';
+import { TpperiodicidadComponent } from './modules/general/tareaprogramada/tpperiodicidad.component';
+import { TpdetalletarealocalComponent } from './modules/general/tareaprogramada/tpdetalletarealocal/tpdetalletarealocal.component';
+import { TpdetalletareaComponent } from './modules/general/tareaprogramada/tpdetalletarea/tpdetalletarea.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +79,18 @@ import { ColaboradoresgeneralComponent } from './modules/general/colaboradoresge
     TarealocalComponent,
     TarealocaldetalleComponent,
     ColaboradoresunicosComponent,
-    ColaboradoresgeneralComponent
+    ColaboradoresgeneralComponent,
+    TareaprogramadaComponent,
+    CreartareatpnuevaComponent,
+    TpcolaboradoresComponent,
+    TpconfirmacionComponent,
+    TpfiltrosComponent,
+    TplocalesComponent,
+    TpvercolaboradoresComponent,
+    TpperiodoCalculoComponent,
+    TpperiodicidadComponent,
+    TpdetalletarealocalComponent,
+    TpdetalletareaComponent
   ],
   imports: [
     BrowserModule,

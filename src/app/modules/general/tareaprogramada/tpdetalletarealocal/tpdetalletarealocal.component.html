@@ -1,0 +1,94 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de busqueda</p>
+                <p class="mt-1">Locales:</p>
+                <div class="p-fluid">
+                    <p-multiSelect [(ngModel)]="tipolocal" [options]="locales"
+                                   inputId="local"
+                                   optionLabel="nombre" placeholder="Selecione locales"></p-multiSelect>
+                </div>
+
+
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <p class="textcolorcorp">Detalle de tareas</p>
+            <div class="ayuda">
+                <div class="row">
+                    <div class="col-4">
+                        Nombre de tarea: TP001
+                    </div>
+                    <div class="col-4">
+                        Tipo calculo: Distribucion
+                    </div>
+                    <!--                    <div class="col-4">-->
+                    <!--                        <p class="textcolorcorp">Local: 711 - Megamaxi 6 de diciembre </p>-->
+                    <!--                    </div>-->
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        Fecha inicio: 2024-03-01
+                    </div>
+                    <div class="col-4">
+                        Estado: Ejecucion
+                    </div>
+                    <div class="col-4">
+                        Colaboradores: Personal de caja
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        Fecha fin: 2024-03-31
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                    Ejecución:  cada 4 dias, en las siguientes horas 8:00, 12:00
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <p-table [value]="tareas" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th></th>
+                            <th>N</th>
+                            <th>Local</th>
+                            <th>Subclasificaciones</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
+                        <tr>
+                            <td><p-checkbox name="tareasgrupo" [binary]="true" [(ngModel)]="selectedtareas"></p-checkbox></td>
+                            <td>{{ rowIndex+1 }}</td>
+                            <td>{{ tarea.local }}</td>
+                            <td>{{ tarea.tareas }}</td>
+                            <td>{{ tarea.estado }}</td>
+                                                  <td class="d-flex">
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoTareas()">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </section>
+    </div>
+</div>
+

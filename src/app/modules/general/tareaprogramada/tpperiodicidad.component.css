@@ -1,0 +1,56 @@
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+
+.tab-content {
+    display: none;
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+
+.tab-content.show {
+    display: block;
+}
+.tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab-btn.active {
+    background-color: #E74C3C;
+    color: white;
+}
+
+
+
+.tab-content {
+    display: none;
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+
+.tab-content.ng-star-inserted {
+    display: block;
+}
+

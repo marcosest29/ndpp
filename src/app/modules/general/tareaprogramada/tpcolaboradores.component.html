@@ -1,0 +1,199 @@
+<div class="locales-content">
+    <div class=" mt-3">
+        <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
+        <div class="row ms-3">
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-2">
+                    <span class="w-25">Desea asignacion:</span>
+                </div>
+                <div class="col-1">
+                    <span class="w-25">SI </span>
+                    <p-radioButton id="si" name="si" value="SI" [(ngModel)]="asignacion"
+                                   inputId="asignacion"></p-radioButton>
+                </div>
+                <div class="col-1">
+                    <span class="w-25">NO </span>
+                    <p-radioButton id="no" name="no" value="NO" [(ngModel)]="asignacion"
+                                   inputId="asignacion"></p-radioButton>
+                </div>
+
+                <div class="col-2">
+                    <span class="w-25">Aplica reasignacion:</span>
+                </div>
+                <div class="col-1">
+                    <span class="w-25">SI </span>
+                    <p-radioButton id="sia" name="si" value="SI" [(ngModel)]="aplica" inputId="aplica"></p-radioButton>
+                </div>
+                <div class="col-1">
+                    <span class="w-25">NO </span>
+                    <p-radioButton id="noa" name="no" value="NO" [(ngModel)]="aplica" inputId="aplica"></p-radioButton>
+                </div>
+            </div>
+            <div *ngIf="asignacion=='NO'" style="border: 1px solid black;">
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col">
+                        <span class="w-25">La tarea se va a crear sin asignacion de colaboradores.</span>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col">
+                        <span class="w-25">La administracion se encarga cada local.</span>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="asignacion=='SI'">
+                <div class="row">
+                    <div class="col-2">
+                        <span>Tipo de asignaciones:</span>
+                    </div>
+                    <div class="col-3">
+                        <p-dropdown [options]="tipocolaboradores" [(ngModel)]="colaboradoresInfo.colaborador"
+                                    optionLabel="nombre"></p-dropdown>
+                    </div>
+                </div>
+                <div class="row"
+                     style="margin-top: 20px;color: #ffffff;background: #e74c3c;border: 1px solid #e74c3c;padding: 0.75rem 1.25rem;font-size: 1rem;transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s; border-radius: 6px;">
+                    <span class="w-25">Estado disponible</span>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-md-5">
+                        <div *ngIf="colaboradoresInfo.colaborador.nombre=='Colaboradores'">
+                            <p-dropdown [options]="locales" [(ngModel)]="filtrolocales"
+                                        optionLabel="nombre"></p-dropdown>
+                        </div>
+                        <div *ngIf="colaboradoresInfo.colaborador.nombre!='Colaboradores'">
+                            <input type="text" class="form-control" [(ngModel)]="filtro"/>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-danger" (click)="doSearch()">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div *ngIf="colaboradoresInfo.colaborador.nombre=='Colaboradores'" class="col-md-5">
+                        <span style="font-weight: bold;">{{filtrolocales.codigo}} - {{filtrolocales.nombre}}</span>
+                    </div>
+                    <div *ngIf="colaboradoresInfo.colaborador.nombre=='Cliente'"
+                         class="col-md-5 d-flex flex-row-reverse">
+                        <button class="btn btn-danger" (click)="doSearch()">
+                            <i class="fa-solid fa-file-excel"></i>
+                        </button>
+                    </div>
+                </div>
+                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Cargo'"
+                     style="margin-top:10px ;border:solid 1px black">
+                    <div>
+                        <table>
+                            <tbody>
+                            <tr *ngFor="let item of colaboradores;">
+                                <td><i (click)="toggleColItem(item)"
+                                       class="ms-2 fa-regular"
+                                       [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>
+                                <td> {{item.nombre}} </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Colaboradores'"
+                     style="margin-top:10px ;border:solid 1px black">
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" [(ngModel)]="filtro2"/>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-danger" (click)="doSearch()">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <table>
+                                <tbody>
+                                <tr *ngFor="let item of adminlocal;">
+                                    <td><i (click)="toggleColItem(item)"
+                                           class="ms-2 fa-regular"
+                                           [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>
+                                    <td> {{item.nombre}} </td>
+                                    <td> {{item.cargo}} </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div style="margin-left: 300px">
+                                <button class="btn btn-danger" (click)="add()">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col" style="border-left: solid 1px black">
+                            <table>
+                                <tbody>
+                                <tr *ngFor="let item of colaboradoresSeleccionados;;let indexOfelement=index;">
+                                    <td> {{item.nombre}} </td>
+                                    <td> {{item.cargo}} </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-danger" (click)="delete(indexOfelement)">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Genericos'"
+                     style="margin-top:10px ;border:solid 1px black">
+                    <div class="row" style="margin-top: 10px">
+                        <table>
+                            <tbody>
+                            <tr *ngFor="let item of genericos;">
+                                <td><i (click)="toggleColItem(item)"
+                                       class="ms-2 fa-regular"
+                                       [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>
+                                <td> {{item.nombre}} </td>
+                                <td> {{item.cargo}} </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div *ngIf="colaboradoresInfo.colaborador.nombre=='Cliente'"
+                     style="margin-top:10px ;border:solid 1px black">
+                    <div class="row" style="margin-top: 10px">
+                        <table>
+                            <tbody>
+                            <tr *ngFor="let item of clientes;">
+                                <td><i (click)="toggleColItem(item)"
+                                       class="ms-2 fa-regular"
+                                       [ngClass]="item.check?'fa-square-check':'fa-square'"></i></td>
+                                <td> {{item.nombre}} </td>
+                                <td> {{item.cargo}} </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mjflex">
+    <p-dialog header="Gestionar cargos" [(visible)]="isShowModalColaborators" [style]="{width: '750px',height:'500px'}">
+        <div>
+            <app-vercolaboradores></app-vercolaboradores>
+        </div>
+        <ng-template pTemplate="footer">
+            <button class="btn btn-outline-secondary" (click)="AddColaborators()">Agregar <span
+                    class="pi pi-times"></span>
+            </button>
+            <button class="btn btn-outline-secondary" (click)="closeViewColaborators()">Cerrar <span
+                    class="pi pi-times"></span>
+            </button>
+        </ng-template>
+    </p-dialog>
+</div>

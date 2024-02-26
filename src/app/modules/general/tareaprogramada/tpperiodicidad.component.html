@@ -1,0 +1,118 @@
+<div class="locales-content">
+
+    <div *ngIf="tipo===2" class="w-75">
+        <span class="ms-2 "> Se ejecutara  cada 4 dias, en las siguientes horas 8:00, 12:00 </span>
+    </div>
+    <div class=" mt-3">
+        <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
+        <div class="row ms-3">
+
+            <div class="tabs">
+                <button class="tab-btn" (click)="selectTab('tab1')"
+                        [class.active]="selectedTab === 'tab1'">
+                    Horas
+                </button>
+                <button class="tab-btn" (click)="selectTab('tab2')"
+                        [class.active]="selectedTab === 'tab2'">
+                    Dia del mes
+                </button>
+                <button class="tab-btn" (click)="selectTab('tab3')"
+                        [class.active]="selectedTab === 'tab3'">
+                    dias de la semana
+                </button>
+              <!--  <button class="tab-btn" (click)="selectTab('tab4')"
+                        [class.active]="selectedTab === 'tab4'">
+                    Meses
+                </button>-->
+            </div>
+            <div>
+                <div class="tab-content" *ngIf="selectedTab === 'tab1'">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2" *ngFor="let hour of hours">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="{{hour}}h"
+                                               [checked]="selectedHora[hour]" (change)="toggleHora(hour)">
+                                        <label class="form-check-label" for="{{hour}}">{{hour}}
+                                            :00</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" *ngIf="selectedTab === 'tab2'">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col col-md-2">
+                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada">
+                                    <label class="form-check-label mr-2"> Cada</label>
+                                </div>
+                                <div class="col col-md-6">
+                                    <p-dropdown [options]="numeros" [(ngModel)]="selectedCada"
+                                                class="small-dropdown"></p-dropdown>
+                                    <label class="form-check-label mr-2" [style]="{'height':'8px'}">
+                                        día(s), empezando en el día</label>
+                                </div>
+                                <div class="col">
+                                    <p-dropdown [options]="numeros" class="small-dropdown"
+                                                [(ngModel)]="selectedDesde"></p-dropdown>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div class="col col-md-2">
+                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada2">
+                                    <label class="form-check-label">En los dias </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md-2"></div>
+                                    <div class="col col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-1" *ngFor="let day of days">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                           id="{{day}}d" [checked]="selectedNumeros[day]" (change)="toggleDias(day)" >
+                                                    <label class="form-check-label"
+                                                           for="{{day}}">{{day}}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" *ngIf="selectedTab === 'tab3'">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3" *ngFor="let day of daysOfWeek">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="{{day}}"
+                                    [checked]="selectedDias[day]" (change)="toggleStringDias(day)">
+                                    <label class="form-check-label" for="{{day}}">{{day}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" *ngIf="selectedTab === 'tab4'">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3" *ngFor="let month of months">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="{{month}}m">
+                                    <label class="form-check-label" for="{{month}}">{{month}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

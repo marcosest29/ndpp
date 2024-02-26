@@ -1,0 +1,82 @@
+<div class="locales-content">
+    <div class=" mt-3">
+        <!--<div class="card-header"> <h2> Información de locales </h2></div>-->
+        <div class="row ms-3">
+
+            <div class="col-md-5 mt-5">
+                <div class="mjflex">
+                    <span class="w-25">Formato:</span>
+                    <div *ngIf="tipo===1" class="w-75">
+                        <p-multiSelect [(ngModel)]="localInfo.formato" [options]="formatos"
+                                       inputId="formatos"
+                                       optionLabel="nombre" placeholder="Selecione formatos"></p-multiSelect>
+                        <!--                        <p-dropdown [(ngModel)]="localInfo.formato" [options]="formatos" inputId="formato"-->
+                        <!--                                    optionLabel="nombre" placeholder="Selecione formato"></p-dropdown>-->
+                    </div>
+
+                    <div *ngIf="tipo===2" class="w-75">
+                        <span> Megamaxi</span>
+                    </div>
+
+                </div>
+                <div class="mjflex mt-3">
+                    <span class="w-25">Zona:</span>
+                    <div *ngIf="tipo===1" class="w-75">
+                        <p-multiSelect [(ngModel)]="localInfo.zona" [options]="zonas"
+                                       inputId="zonas"
+                                       optionLabel="nombre" placeholder="Selecione zonas"></p-multiSelect>
+                        <!--                        <p-dropdown [(ngModel)]="localInfo.zona" [options]="zonas" inputId="zona"-->
+                        <!--                                    optionLabel="nombre" placeholder="Selecione zona"></p-dropdown>-->
+                    </div>
+                    <div *ngIf="tipo===2" class="w-75">
+                        <span> Sur</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+
+                <div class="mjflex mt-3">
+                    <span class="w-25">Locales:</span>
+                    <div class="w-75">
+
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span class="ms-2">Todos</span>
+                                </td>
+                                <td>
+                                    <i (click)="toggleAllLocal()"
+                                       class="ms-2 fa-regular"
+                                       [ngClass]="allLocal?'fa-square-check':'fa-square'"></i>
+                                </td>
+                            </tr>
+                            <tr *ngFor="let local of locales">
+                                <td>
+                                    <span class="ms-2">{{local.nombre}}</span>
+                                </td>
+                                <td>
+                                    <i (click)="toggleLocalItem(local)"
+                                       class="ms-2 fa-regular"
+                                       [ngClass]="local.check?'fa-square-check':'fa-square'"></i>
+                                </td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <!--<p-dropdown [(ngModel)]="localInfo.locales" [options]="locales" inputId="locales"
+                                    optionLabel="nombre" placeholder="Selecione locales"></p-dropdown>
+                                    -->
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -17,6 +17,14 @@
               <img (click)="menu.toggle($event)" src="assets/images/plusicon.png" alt="Agregar">
             </a>
           </div>
+
+          <div *ngIf="pantalla==='tpinicio'">
+            <p-menu #menu [model]="tpitems" [popup]="true"></p-menu>
+            <a class="hand" title="Agregar">
+              <img (click)="menu.toggle($event)" src="assets/images/plusicon.png" alt="Agregar">
+            </a>
+          </div>
+
           <div *ngIf="pantalla==='creartarea1'">
             <a  class="hand ms-2" >
               <i class="fa-solid fa-floppy-disk" style="color:red;font-size:25px;margin-top:5px"></i>

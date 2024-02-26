@@ -1,0 +1,141 @@
+<div class="container mt-3 ">
+    <p-toast></p-toast>
+    <div class="border mjpad p-3">
+
+        <div class="border p-2 mb-3">
+            <div class="container mt-3">
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <div class="mjflex">
+                            <span class="w-25">Nombre de Tarea:</span>
+                            <input *ngIf="tipo===1" class="form-control form-control-sm" type="text">
+                            <span *ngIf="tipo===2">TP001</span>
+                        </div>
+                        <br>
+                        <div class="mjflex">
+                            <div class="col mjflex">
+                                <span style="width: 35%">Dias de vigencia:</span>
+                                <div *ngIf="tipo===1" style="width: 65%">
+
+                                    <p-inputNumber [(ngModel)]="minimo" [min]="1" [min]="0" style="width: 2px"
+                                                   [showButtons]="true" inputId="minmax-buttons" mode="decimal"
+                                    ></p-inputNumber>
+
+                                    <div *ngIf="tipo===2" class="w-75">
+                                    <span> Megamaxi</span>
+                                    </div>
+                                  <span *ngIf="tipo===2">3</span>
+                                    <br> <br>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="mjflex">
+
+                                <div class="col mjflex">
+                                    <span style="width: 42%">Fecha Inicio:</span>
+                                    <div *ngIf="tipo===1" style="width: 50%">
+                                        <input class="form-control form-control-sm" type="date">
+
+                                    </div>
+                                    <span *ngIf="tipo===2">2024-03-01</span>
+                                </div>
+                                <div class="col mjflex">
+                                    <span class="ms-5" style="width: 43%">Fecha Fin:</span>
+                                    <div *ngIf="tipo===1" style="width: 50%">
+                                        <input class="form-control form-control-sm" type="date">
+
+                                    </div>
+                                    <span *ngIf="tipo===2">2024-03-31</span>
+                                </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col mjflex">
+                        <span class="me-3">Mensaje:</span>
+                        <textarea *ngIf="tipo===1" class="form-control" rows="5"></textarea>
+                        <textarea *ngIf="tipo===2" class="form-control" rows="5"> Realizar la revision de los articulos antes de terminar el inventario de fin de año</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 border-end">
+                    <div>
+                        <div (click)="setpaso(1)" [ngClass]="{'activo':paso===1}"
+                             class="stepper-content text-center fade-in">
+                            Periodicidad
+                        </div>
+                        <div (click)="setpaso(2)" [ngClass]="{'activo':paso===2}"
+                             class="stepper-content text-center fade-in">
+                            Locales
+                        </div>
+
+                        <div (click)="setpaso(3)" [ngClass]="{'activo':paso===3}"
+                             class="stepper-content text-center fade-in">
+                            Muestra
+                        </div>
+
+                        <div (click)="setpaso(4)" [ngClass]="{'activo':paso===4}"
+                             class="stepper-content text-center fade-in ">
+                            Tipo cálculo
+                        </div>
+
+                        <div (click)="setpaso(5)" [ngClass]="{'activo':paso===5}"
+                             class="stepper-content text-center fade-in">
+                            Responsables
+                        </div>
+
+                        <div (click)="setpaso(6)" [ngClass]="{'activo':paso===6}"
+                             class="stepper-content text-center fade-in">
+                            Confirmación
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md border">
+                    <div [ngClass]="{'oculto':paso!==1}">
+                        <app-tpperiodicidad [dosave]="dosave" [tipo]="tipo"></app-tpperiodicidad>
+                    </div>
+                    <div [ngClass]="{'oculto':paso!==2}">
+                        <app-tplocales [dosave]="dosave" [tipo]="tipo"></app-tplocales>
+                    </div>
+                    <div [ngClass]="{'oculto':paso!==3}">
+                        <app-tpfiltros [dosave]="dosave"></app-tpfiltros>
+                    </div>
+                    <div [ngClass]="{'oculto':paso!==4}">
+                        <app-tpperiodo-calculo [dosave]="dosave"></app-tpperiodo-calculo>
+                    </div>
+                    <div [ngClass]="{'oculto':paso!==5}">
+                        <app-tpcolaboradores [dosave]="dosave"></app-tpcolaboradores>
+                    </div>
+                    <div [ngClass]="{'oculto':paso!==6}">
+                        <app-tpconfirmacion [doload]="dosave"></app-tpconfirmacion>
+                    </div>
+
+                    <div *ngIf="tipo===1" class="row ms-3">
+                        <div class="col-md-10 p-fluid">
+                            <div class="botones">
+                                <button (click)="siguiente()" *ngIf="paso<5"
+                                        class="btn btn-danger">Siguiente <i class="fa fa-arrow-right"></i>
+                                </button>
+                                <button (click)="anterior()" *ngIf="paso>1 && paso<=5"
+                                        class="btn btn-danger" style="margin-right:15px;">Anterior <i
+                                        class="fa fa-arrow-left"></i>
+                                </button>
+                                <button *ngIf="paso===5" style="margin-right:15px;" class="btn btn-danger">Crear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

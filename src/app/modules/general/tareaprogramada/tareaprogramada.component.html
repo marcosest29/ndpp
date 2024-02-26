@@ -1,0 +1,78 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de busqueda</p>
+                <p class="mt-1">Codigo de configuración:</p>
+                <div class="p-fluid">
+                    <input type="text" class="form-control" [(ngModel)]="codtarea"/>
+                </div>
+                <p class="mt-1">Estado:</p>
+                <div class="p-fluid">
+                    <!--   <input type="text" class="form-control" [(ngModel)]="estado" />-->
+                    <p-multiSelect [(ngModel)]="estado" [options]="estados" optionLabel="nombre"
+                                   placeholder="Selecione estados"></p-multiSelect>
+                </div>
+                <p class="mt-1">Fecha inicio:</p>
+                <div class="p-fluid">
+                    <p-calendar [(ngModel)]="finicio" [showTime]="true"
+                                [showSeconds]="true"></p-calendar>
+                </div>
+                <p class="mt-1">Fecha fin:</p>
+                <div class="p-fluid">
+                    <p-calendar [(ngModel)]="ffin" [showTime]="true"
+                                [showSeconds]="true"></p-calendar>
+                </div>
+
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <div>
+                <p class="textcolorcorp">Listado de configuraciones</p>
+                <p-table [value]="tareas" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>N</th>
+                            <th>Codigo configuración</th>
+                            <th>Estado</th>
+                            <th>Fecha inicio</th>
+                            <th>Fecha fin</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{ rowIndex + 1 }}</td>
+                            <td>{{ tarea.codigo }}</td>
+                            <td>{{ tarea.estado }}</td>
+                            <td>{{ tarea.finicio }}</td>
+                            <td>{{ tarea.ffin }}</td>
+                            <td class="d-flex">
+                               <!-- <button class="btn btn-sm btn-outline-danger" (click)="gotoInfo()">
+                                    <i class="fa fa-eye"></i>
+                                </button>-->
+                                <button *ngIf="tarea.estado=='EJECUCION'" class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button *ngIf="tarea.estado=='FINALIZADA'" class="btn btn-sm" style="color:grey" >
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button *ngIf="tarea.estado=='FINALIZADA'" class="btn btn-sm" style="color:grey" >
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <button  *ngIf="tarea.estado=='EJECUCION'" class="btn btn-sm btn-outline-danger" (click)="gotoNone()">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3">
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de búsqueda</p>
+                <p class="mt-1">Código de clasificación:</p>
+                <div class="p-fluid">
+                    <input type="text" class="form-control" [(ngModel)]="codbarras"/>
+                </div>
+                 <p class="mt-1">Código de subclasificación:</p>
+                <div class="p-fluid">
+                    <input type="text" class="form-control" [(ngModel)]="codbarras"/>
+                </div>
+
+                <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+                    <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main ps-2">
+            <p class="textcolorcorp">Detalle de tareas</p>
+            <div class="ayuda">
+                <div class="row">
+                    <div class="col-4">
+                        Nombre de tarea: TP001
+                    </div>
+                    <div class="col-4">
+                        Tipo calculo: Distribucion
+                    </div>
+                    <div class="col-4">
+                        <p class="textcolorcorp">Local: 711 - Megamaxi 6 de diciembre </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        Fecha inicio: 2024-03-01
+                    </div>
+                    <div class="col-4">
+                        Fecha fin: 2024-03-31
+                    </div>
+                    <div class="col-4">
+                        Colaboradores: Personal de caja
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <p-table [value]="articulos" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th></th>
+                            <th>N</th>
+                            <th>Clasificacion</th>
+                            <th>Subbclasificacion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
+                        <tr>
+                            <td>
+                                <p-checkbox name="tareasgrupo" [binary]="true"
+                                            [(ngModel)]="selectedtareas">
+                                </p-checkbox>
+                            </td>
+                            <td>{{ rowIndex + 1 }}</td>
+                            <td>{{ tarea.clasificacion }}</td>
+                            <td>{{ tarea.subclasificacion }}</td>
+                            <td class="d-flex">
+                                   <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                                    </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div class="mjflex">
+                <p-dialog header="Gestionar cargos" [(visible)]="isShowModalColaborators"
+                          [style]="{width: '750px',height:'500px'}">
+                    <div>
+                        <app-vercolaboradores></app-vercolaboradores>
+                    </div>
+                    <ng-template pTemplate="footer">
+                        <button class="btn btn-outline-secondary" (click)="AddColaborators()">Agregar <span
+                                class="pi pi-times"></span>
+                        </button>
+                        <button class="btn btn-outline-secondary" (click)="closeViewColaborators()">Cerrar <span
+                                class="pi pi-times"></span>
+                        </button>
+                    </ng-template>
+                </p-dialog>
+            </div>
+        </section>
+    </div>
+</div>
