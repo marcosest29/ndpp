@@ -16,10 +16,10 @@ export class TpperiodicidadComponent implements OnInit {
     selectedDias: string[] = [];
 
     numeros: number[] = [];
-    hours: string[] = Array.from({length: 24}, (_, i) => i.toString().padStart(2, '0'));
+ //   hours: string[] = Array.from({length: 24}, (_, i) => i.toString().padStart(2, '0'));
     days: string[] = Array.from({length: 31}, (_, i) => (i + 1).toString().padStart(2, '0'));
     daysOfWeek: string[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-    months: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+   // months: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     selectedTab: string = 'tab1';
     @Input()
     dosave = false;

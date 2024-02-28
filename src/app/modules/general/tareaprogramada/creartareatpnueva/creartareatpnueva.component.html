@@ -16,7 +16,7 @@
                         <br>
                         <div class="mjflex">
                             <div class="col mjflex">
-                                <span style="width: 35%">Dias de vigencia:</span>
+                                <span style="width: 35%">Dias de vigencia de las tareas:</span>
                                 <div *ngIf="tipo===1" style="width: 65%">
 
                                     <p-inputNumber [(ngModel)]="minimo" [min]="1" [min]="0" style="width: 2px"
@@ -32,6 +32,11 @@
                             </div>
                             <br>
                         </div>
+                        <div class="mjflex">
+                            <span style="width: 42%">Periodicidad</span>
+                        </div>
+                        <div class="border p-2 mb-3">
+
                         <div class="mjflex">
 
                                 <div class="col mjflex">
@@ -51,10 +56,7 @@
                                     <span *ngIf="tipo===2">2024-03-31</span>
                                 </div>
 
-
-
-
-                        </div>
+                        </div></div>
                     </div>
                     <div class="col mjflex">
                         <span class="me-3">Mensaje:</span>
@@ -69,7 +71,7 @@
                     <div>
                         <div (click)="setpaso(1)" [ngClass]="{'activo':paso===1}"
                              class="stepper-content text-center fade-in">
-                            Periodicidad
+                            Configuración
                         </div>
                         <div (click)="setpaso(2)" [ngClass]="{'activo':paso===2}"
                              class="stepper-content text-center fade-in">
