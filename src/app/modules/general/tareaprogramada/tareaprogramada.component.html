@@ -79,7 +79,7 @@
                                 <button class="btn btn-sm"
                                         [ngClass]="{'btn-outline-danger': tarea.estado === 'EJECUCION'|| tarea.estado === 'PAUSADA', 'btn-outline-secondary': tarea.estado === 'FINALIZADA'}"
                                         (click)="tarea.estado === 'EJECUCION' || tarea.estado === 'PAUSADA' ? gotoEdit() : null">
-                                    <i class="fa fa-trash"></i>
+                                    <i class="fa fa-x"></i>
                                 </button>
 
                             </td>

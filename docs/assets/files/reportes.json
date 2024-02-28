@@ -1,0 +1,172 @@
+{
+  "formatos": [
+    {
+      "nombre": "SAK - ZONA QUITO"
+    },
+    {
+      "nombre": "SUP - ZONA QUITO"
+    },
+    {
+      "nombre": "SSA - ZONA QUITO"
+    },
+    {
+      "nombre": "TTN - ZONA QUITO"
+    },
+    {
+      "nombre": "SAK - ZONA QUITO"
+    },
+    {
+      "nombre": "AKI - ZONA SUR"
+    },
+    {
+      "nombre": "GAK - ZONA SUR"
+    },
+    {
+      "nombre": "JUG - ZONA SUR"
+    },
+    {
+      "nombre": "MEG - ZONA SUR"
+    }
+  ],
+  "zona": [
+    {
+      "nombre": "ZONA CENTRO"
+    },
+    {
+      "nombre": "ZONA COSTA CENTRO"
+    },
+    {
+      "nombre": "ZONA COSTA NORTE"
+    },
+    {
+      "nombre": "ZONA NORTE"
+    },
+    {
+      "nombre": "ZONA QUITO"
+    },
+    {
+      "nombre": "ZONA SUR"
+    }
+  ],
+  "areaTrabajo": [
+    {
+      "nombre": "152 - AKI - AMBATO SUR"
+    },
+    {
+      "nombre": "162 - AKI - GUARANDA"
+    },
+    {
+      "nombre": "148 - AKI - LATACUNGA NORTE"
+    },
+    {
+      "nombre": "255 - JUG - MALL LOS ANDES"
+    },
+    {
+      "nombre": "259 - JUG - MALTERIA"
+    },
+    {
+      "nombre": "258 - JUG - RIOBAMBA"
+    },
+    {
+      "nombre": "252 - SUP - EL CARACOL"
+    },
+    {
+      "nombre": "262 - SUP - FICOA"
+    },
+    {
+      "nombre": "257 - SUP - LA MALTERIA"
+    },
+    {
+      "nombre": "263 - TTN - AMBATO"
+    },
+    {
+      "nombre": "265 - TTN - RIOBAMBA"
+    },
+    {
+      "nombre": "357 - GAK - DURAN CENTRO"
+    },
+    {
+      "nombre": "349 - GAK - MAPASINGUE"
+    },
+    {
+      "nombre": "733 - MEG - MALL DEL SUR"
+    },
+    {
+      "nombre": "735 - MEG - VILLAGE PLAZA"
+    },
+    {
+      "nombre": "549 - SAK - AJAVI"
+    },
+    {
+      "nombre": "562 - SAK - COCA"
+    }
+  ],
+  "datos": [
+    {
+      "zona": "ZONA NORTE",
+      "local": "152 - AKI - AMBATO",
+      "totalTareas": 10,
+      "totalArticulos": 140,
+      "porcentajeFinalizado": 54
+
+    },  {
+      "zona": "ZONA NORTE",
+      "local": "255 - JUG - MALL LOS ANDES",
+      "totalTareas": 14,
+      "totalArticulos": 190,
+      "porcentajeFinalizado": 100
+
+    },  {
+      "zona": "ZONA NORTE",
+      "local": "252 - SUP - EL CARACOL",
+      "totalTareas": 10,
+      "totalArticulos": 100,
+      "porcentajeFinalizado": 100
+
+    },
+    {
+      "zona": "ZONA CENTRO",
+      "local": "162 - AKI - GUARANDA",
+      "totalTareas": 7,
+      "totalArticulos": 90,
+      "porcentajeFinalizado": 70
+
+    },  {
+      "zona": "ZONA CENTRO",
+      "local": "258 - JUG - RIOBAMBA",
+      "totalTareas": 13,
+      "totalArticulos": 130,
+      "porcentajeFinalizado": 60
+
+    },  {
+      "zona": "ZONA CENTRO",
+      "local": "257 - SUP - LA MALTERIA",
+      "totalTareas": 10,
+      "totalArticulos": 100,
+      "porcentajeFinalizado": 78
+
+    },
+    {
+      "zona": "ZONA QUITO",
+      "local": "142 - AKI - GUAJALO",
+      "totalTareas": 23,
+      "totalArticulos": 212,
+      "porcentajeFinalizado": 28
+
+    },  {
+      "zona": "ZONA QUITO",
+      "local": "715 - MEG - QUICENTRO SUR",
+      "totalTareas": 17,
+      "totalArticulos": 150,
+      "porcentajeFinalizado": 96
+
+    },  {
+      "zona": "ZONA QUITO",
+      "local": "143 - SAK - COTOCOLLA",
+      "totalTareas": 4,
+      "totalArticulos": 120,
+      "porcentajeFinalizado": 100
+
+    }
+  ]
+}

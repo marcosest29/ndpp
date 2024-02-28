@@ -15,7 +15,7 @@
                             [showSeconds]="true"></p-calendar>
             </div>
             <div class="me-3">
-                <p class="mt-1 text-center ">Formato:</p>
+                <p class="mt-1 text-center ">Zona:</p>
                 <div class="table-container" style="max-height: 150px; overflow-y: auto;">
                     <p-table [value]="zona" [(selection)]="selectedZona" dataKey="code">
                         <ng-template pTemplate="body" let-product>
@@ -31,9 +31,9 @@
                 </div>
             </div>
             <div class="me-3">
-                <p class="mt-1 text-center ">Zona:</p>
+                <p class="mt-1 text-center ">Formato:</p>
                 <div class="table-container" style="max-height: 150px; overflow-y: auto;">
-                    <p-table [value]="zona" [(selection)]="selectedZona" dataKey="code">
+                    <p-table [value]="formatos" [(selection)]="selectedZona" dataKey="code">
                         <ng-template pTemplate="body" let-product>
                             <tr>
                                 <td style="padding: 4px;">
@@ -49,7 +49,7 @@
             <div class="me-3">
                 <p class="mt-1 text-center ">Area Trabajo:</p>
                 <div class="table-container" style="max-height: 150px; overflow-y: auto;">
-                    <p-table [filters]="true" [value]="zona" [(selection)]="selectedZona" dataKey="code">
+                    <p-table [filters]="true" [value]="areaTrabajo" [(selection)]="selectedAreaTrabajo" dataKey="code">
                         <ng-template pTemplate="body" let-product>
                             <tr>
                                 <td style="padding: 4px;">

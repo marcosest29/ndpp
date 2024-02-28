@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
     titulo = 'No Disponible Producto Piso';
     items: MenuItem[] | undefined;
     tpitems: MenuItem[] | undefined;
+    ritems: MenuItem[] | undefined;
     isShowModalColaborators: boolean = false;
 
     constructor(
@@ -46,6 +47,15 @@ export class AppComponent implements OnInit {
             }
         ];
         this.tpitems = [
+            {
+                label: 'Configuracion',
+                icon: 'pi pi-fw pi-plus',
+                command: () => {
+                    this.gotoCrearTpTarea();
+                }
+            }
+        ];
+        this.ritems = [
             {
                 label: 'Reporte de locales',
                 icon: 'pi pi-fw pi-download',
