@@ -11,6 +11,8 @@ import {TpnodeService} from "../tpnode.service";
   styleUrls: ['./tareaprogramada.component.css']
 })
 export class TareaprogramadaComponent implements OnInit {
+  mensaje: string = '';
+  mostrarAlerta: boolean = false;
 
   constructor(
       private nodeService: TpnodeService,
@@ -50,10 +52,30 @@ export class TareaprogramadaComponent implements OnInit {
   gotoEdit(){
     this.router.navigate(['nuevatareatp','2'], {});
   }
+  gotoEject(estado){
+    if(estado==='PAUSADA'){
+      this.mostrarMensaje('Se activo acorrectamente')
+    }else{
+      this.mostrarMensaje('Se pauso acorrectamente')
+    }
+
+  }
   gotoInfo(){
     this.router.navigate(['tp-detalle-tarea-local'], {});
   }
 
+
+  mostrarMensaje(mensaje: string) {
+    this.mensaje = mensaje;
+
+    setTimeout(() => {
+      this.ocultarMensaje();
+    }, 2000);
+  }
+
+  ocultarMensaje() {
+    this.mensaje = '';
+  }
   gotoNone(){
 
   }

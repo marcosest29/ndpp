@@ -56,6 +56,7 @@ import { TpperiodoCalculoComponent } from './modules/general/tareaprogramada/tpp
 import { TpperiodicidadComponent } from './modules/general/tareaprogramada/tpperiodicidad.component';
 import { TpdetalletarealocalComponent } from './modules/general/tareaprogramada/tpdetalletarealocal/tpdetalletarealocal.component';
 import { TpdetalletareaComponent } from './modules/general/tareaprogramada/tpdetalletarea/tpdetalletarea.component';
+import { ModalComponentComponent } from './modules/modal-component/modal-component.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { TpdetalletareaComponent } from './modules/general/tareaprogramada/tpdet
     TpperiodoCalculoComponent,
     TpperiodicidadComponent,
     TpdetalletarealocalComponent,
-    TpdetalletareaComponent
+    TpdetalletareaComponent,
+    ModalComponentComponent
   ],
   imports: [
     BrowserModule,

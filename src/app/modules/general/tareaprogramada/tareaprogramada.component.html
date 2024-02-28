@@ -53,21 +53,35 @@
                             <td>{{ tarea.finicio }}</td>
                             <td>{{ tarea.ffin }}</td>
                             <td class="d-flex">
-                               <!-- <button class="btn btn-sm btn-outline-danger" (click)="gotoInfo()">
-                                    <i class="fa fa-eye"></i>
-                                </button>-->
-                                <button *ngIf="tarea.estado=='EJECUCION'" class="btn btn-sm btn-outline-danger" (click)="gotoEdit()">
+                                <!-- <button class="btn btn-sm btn-outline-danger" (click)="gotoInfo()">
+                                     <i class="fa fa-eye"></i>
+                                 </button>-->
+                                <!--   BUTTON EDITAR--->
+                                <button class="btn btn-sm"
+                                        [ngClass]="{'btn-outline-danger': tarea.estado === 'EJECUCION'|| tarea.estado === 'PAUSADA', 'btn-outline-secondary': tarea.estado === 'FINALIZADA'}"
+                                        (click)="tarea.estado === 'EJECUCION' || tarea.estado === 'PAUSADA' ? gotoEdit() : null">
                                     <i class="fa fa-edit"></i>
                                 </button>
-                                <button *ngIf="tarea.estado=='FINALIZADA'" class="btn btn-sm" style="color:grey" >
-                                    <i class="fa fa-edit"></i>
+                                <!-- BONTON PAUSAR Y PLAY-->
+                                <button class="btn btn-sm"
+                                        [ngClass]="{'btn-outline-danger': tarea.estado === 'EJECUCION',
+                                                    'btn-outline-primary': tarea.estado === 'PAUSADA',
+                                                    'btn-outline-secondary': tarea.estado === 'FINALIZADA'}"
+                                                                        (click)="tarea.estado === 'EJECUCION' || tarea.estado === 'PAUSADA' ? gotoEject(tarea.estado) : null">
+                                    <i class="fa" [ngClass]="{'fa-pause': tarea.estado === 'EJECUCION',
+                                    'fa-play': tarea.estado === 'PAUSADA',
+                                   'fa-stop': tarea.estado === 'FINALIZADA'}"></i>
                                 </button>
-                                <button *ngIf="tarea.estado=='FINALIZADA'" class="btn btn-sm" style="color:grey" >
-                                    <i class="fa-solid fa-trash"></i>
+
+
+
+                                <!-- BONTON ELIMINAR-->
+                                <button class="btn btn-sm"
+                                        [ngClass]="{'btn-outline-danger': tarea.estado === 'EJECUCION'|| tarea.estado === 'PAUSADA', 'btn-outline-secondary': tarea.estado === 'FINALIZADA'}"
+                                        (click)="tarea.estado === 'EJECUCION' || tarea.estado === 'PAUSADA' ? gotoEdit() : null">
+                                    <i class="fa fa-trash"></i>
                                 </button>
-                                <button  *ngIf="tarea.estado=='EJECUCION'" class="btn btn-sm btn-outline-danger" (click)="gotoNone()">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
+
                             </td>
                         </tr>
                     </ng-template>
@@ -75,4 +89,9 @@
             </div>
         </section>
     </div>
+</div>
+
+<div *ngIf="mensaje" class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ mensaje }}
+    <button type="button" class="btn-close" aria-label="Close" (click)="ocultarMensaje()"></button>
 </div>

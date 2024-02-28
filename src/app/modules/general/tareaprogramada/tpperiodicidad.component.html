@@ -14,16 +14,16 @@
                 </button>
                 <button class="tab-btn" (click)="selectTab('tab2')"
                         [class.active]="selectedTab === 'tab2'">
-                    Dia del mes
+                    Dias
                 </button>
-                <button class="tab-btn" (click)="selectTab('tab3')"
-                        [class.active]="selectedTab === 'tab3'">
-                    dias de la semana
-                </button>
-              <!--  <button class="tab-btn" (click)="selectTab('tab4')"
-                        [class.active]="selectedTab === 'tab4'">
-                    Meses
-                </button>-->
+                <!--    <button class="tab-btn" (click)="selectTab('tab3')"
+                           [class.active]="selectedTab === 'tab3'">
+                       dias de la semana
+                   </button>
+                  <button class="tab-btn" (click)="selectTab('tab4')"
+                           [class.active]="selectedTab === 'tab4'">
+                       Meses
+                   </button>-->
             </div>
             <div>
                 <div class="tab-content" *ngIf="selectedTab === 'tab1'">
@@ -47,7 +47,7 @@
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col col-md-2">
-                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada">
+                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada" (change)="limpiarSeleccionDias(1)">
                                     <label class="form-check-label mr-2"> Cada</label>
                                 </div>
                                 <div class="col col-md-6">
@@ -64,7 +64,7 @@
                             <br>
                             <div>
                                 <div class="col col-md-2">
-                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada2">
+                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada2" (change)="limpiarSeleccionDias(2)">
                                     <label class="form-check-label">En los dias </label>
                                 </div>
                                 <div class="row">
@@ -83,11 +83,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
+                            <div>
+                                <div class="col col-md-2">
+                                    <input class="form-check-input" name="grupo1" type="radio" id="valuecada3" (change)="limpiarSeleccionDias(3)">
+                                    <label class="form-check-label">dias </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md-2"></div>
+                                    <div class="col col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-3" *ngFor="let day of daysOfWeek">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="{{day}}"
+                                                           [checked]="selectedDias[day]" (change)="toggleStringDias(day)">
+                                                    <label class="form-check-label" for="{{day}}">{{day}}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-content" *ngIf="selectedTab === 'tab3'">
+                <!--<div class="tab-content" *ngIf="selectedTab === 'tab3'">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3" *ngFor="let day of daysOfWeek">
@@ -111,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

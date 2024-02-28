@@ -2,12 +2,64 @@
     <p-toast></p-toast>
 
     <div class="alldiv">
+
         <section class="barra border p-3">
+            <p class="mt-1">Fecha inicio:</p>
+            <div class="p-fluid" >
+                <p-calendar [(ngModel)]="finicio" [showTime]="true"
+                            [showSeconds]="true"  ></p-calendar>
+            </div>
+            <p class="mt-1">Fecha fin:</p>
+            <div class="p-fluid">
+                <p-calendar [(ngModel)]="ffin" [showTime]="true"
+                            [showSeconds]="true"></p-calendar>
+            </div>
             <div class="me-3">
-                <p class="mt-1">Formato:</p>
-                <div class="p-fluid">
-                    <p-dropdown [options]="formatos" [(ngModel)]="selectedFormato" optionLabel="nombre"
-                        placeholder="Seleccionar"></p-dropdown>
+                <p class="mt-1 text-center ">Formato:</p>
+                <div class="table-container" style="max-height: 150px; overflow-y: auto;">
+                    <p-table [value]="zona" [(selection)]="selectedZona" dataKey="code">
+                        <ng-template pTemplate="body" let-product>
+                            <tr>
+                                <td style="padding: 4px;">
+                                    <p-tableCheckbox [value]="product" style="transform: scale(0.5);"></p-tableCheckbox>
+                                </td>
+                                <td style="font-size: 12px;" >{{product.nombre}}</td>
+
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+            <div class="me-3">
+                <p class="mt-1 text-center ">Zona:</p>
+                <div class="table-container" style="max-height: 150px; overflow-y: auto;">
+                    <p-table [value]="zona" [(selection)]="selectedZona" dataKey="code">
+                        <ng-template pTemplate="body" let-product>
+                            <tr>
+                                <td style="padding: 4px;">
+                                    <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                                </td>
+                                <td style="font-size: 12px;">{{product.nombre}}</td>
+
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+            <div class="me-3">
+                <p class="mt-1 text-center ">Area Trabajo:</p>
+                <div class="table-container" style="max-height: 150px; overflow-y: auto;">
+                    <p-table [filters]="true" [value]="zona" [(selection)]="selectedZona" dataKey="code">
+                        <ng-template pTemplate="body" let-product>
+                            <tr>
+                                <td style="padding: 4px;">
+                                    <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                                </td>
+                                <td style="font-size: 12px;">{{product.nombre}}</td>
+
+                            </tr>
+                        </ng-template>
+                    </p-table>
                 </div>
                 <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
                     <button class="btn btn-danger" (click)="loadTabla()">Buscar</button>
@@ -16,44 +68,36 @@
         </section>
 
         <section class="main ps-2">
-            <p-table [value]="reportes" sortField="zona" sortMode="single" dataKey="zona" rowGroupMode="subheader" groupRowsBy="zona" [tableStyle]="{'min-width': '70rem'}">
+            <p-table [value]="reportes" [tableStyle]="{ 'min-width': '50rem' }">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th>Nombre</th>
-                        <th>Progreso</th>
-                        <th>Acciones</th>
+                        <th>N</th>
+                        <th>Zona</th>
+                        <th>Local</th>
+                        <th>Total tareas</th>
+                        <th>total articulos</th>
+                        <th>porcentaje</th>
+
+
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="groupheader" let-reportes let-rowIndex="rowIndex" let-expanded="expanded">
+                <ng-template pTemplate="body" let-tarea let-rowIndex="rowIndex">
                     <tr>
-                        <td colspan="5">
-                            <button type="button" pButton pRipple [pRowToggler]="reportes" class="p-button-text p-button-rounded p-button-plain mr-2" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
-                            <span class="font-bold ml-2">{{reportes.zona}}</span>
-                        </td>
-                    </tr>
-                </ng-template>
-                <ng-template pTemplate="rowexpansion" let-reportes>
-                    <tr>
-                        <td>
-                            {{reportes.nombre}}
-                        </td>
-                        <td>
-                            <p-progressBar [value]="reportes.progreso" [showValue]="true"></p-progressBar>
-                        </td>
-                        <td class="d-flex">
-                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(reportes)">
-                                <i class="fa fa-eye"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(reportes)">
-                                <i class="fa fa-edit"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(reportes)">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </td>
+                        <td>{{ rowIndex+1 }}</td>
+                        <td>{{ tarea.zona }}</td>
+                        <td>{{ tarea.local }}</td>
+                        <td>{{ tarea.totalTareas }}</td>
+                        <td>{{ tarea.totalArticulos}}</td>
+                        <td><p-progressBar [value]="tarea.porcentajeFinalizado" [showValue]="true"></p-progressBar></td>
+
+
                     </tr>
                 </ng-template>
             </p-table>
         </section>
     </div>
+</div>
+<div *ngIf="mensaje" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ mensaje }}
+    <button type="button" class="btn-close" aria-label="Close" (click)="ocultarMensaje()"></button>
 </div>

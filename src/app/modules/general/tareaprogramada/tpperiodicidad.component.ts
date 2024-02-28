@@ -67,4 +67,16 @@ export class TpperiodicidadComponent implements OnInit {
             this.selectedDias.push(hour);
         }
     }
+    limpiarSeleccionDias(number:any){
+        console.log(number);
+        if (number === 1) {
+            this.selectedCada = null;
+        }
+        if (number === 2) {
+            this.selectedNumeros = [];
+        }
+        if (number === 3) {
+            this.selectedDias = [];
+        }
+    }
 }

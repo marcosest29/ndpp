@@ -47,6 +47,7 @@
                             <th>Fecha inicio</th>
                             <th>Fecha fin</th>
                             <th>Progreso</th>
+                            <th>Configuracion</th>
                             <th>Acciones</th>
                         </tr>
                     </ng-template>
@@ -59,6 +60,7 @@
                             <td>{{ tarea.finicio }}</td>
                             <td>{{ tarea.ffin }}</td>
                             <td><p-progressBar [value]="tarea.progreso" [showValue]="true"></p-progressBar></td>
+                            <td>{{ tarea.configuracion }}</td>
                             <td class="d-flex">
                                 <button class="btn btn-sm btn-outline-danger" (click)="gotoInfo()">
                                     <i class="fa fa-eye"></i>

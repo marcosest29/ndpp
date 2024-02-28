@@ -54,4 +54,7 @@
   .bgcolor{
     background-color: coral;
   }
-  
+
+.p-calendar {
+  height: 15px !important;
+}
