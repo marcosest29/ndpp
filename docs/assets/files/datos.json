@@ -44,31 +44,31 @@
       "codigo": "711",
       "nombre": "6 DE DICIEMBRE",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "101",
       "nombre": "MULTICENTRO",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "103",
       "nombre": "CARCELEN",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "716",
       "nombre": "SCALA",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "712",
       "nombre": "SAN LUIS",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     }
   ],
   "localescolaboradores": [
@@ -76,37 +76,37 @@
       "codigo": "OFI",
       "nombre": "OFICINAS",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "711",
       "nombre": "6 DE DICIEMBRE",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "101",
       "nombre": "MULTICENTRO",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "103",
       "nombre": "CARCELEN",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "716",
       "nombre": "SCALA",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     },
     {
       "codigo": "712",
       "nombre": "SAN LUIS",
       "zona": "QUITO",
-      "marcado":false
+      "marcado": false
     }
   ],
   "division": [
@@ -300,7 +300,7 @@
       "departamento": "10-CANASTA BASICA",
       "clasificacion": "1004-ACEITES",
       "subclasificacion": "0030-SOYA",
-      "rotacion":"ALTA",
+      "rotacion": "ALTA",
       "responsable": "scueva",
       "estado": "EN PROCESO",
       "local": 716,
@@ -316,7 +316,7 @@
       "departamento": "10-CANASTA BASICA",
       "clasificacion": "1004-ACEITES",
       "subclasificacion": "0030-SOYA",
-      "rotacion":"MEDIA",
+      "rotacion": "MEDIA",
       "responsable": "scueva",
       "estado": "EN PROCESO",
       "local": 716,
@@ -332,7 +332,7 @@
       "departamento": "10-CANASTA BASICA",
       "clasificacion": "1004-ACEITES",
       "subclasificacion": "0030-SOYA",
-      "rotacion":"BAJA",
+      "rotacion": "BAJA",
       "responsable": "scueva",
       "estado": "EN PROCESO",
       "local": 716,
@@ -376,6 +376,7 @@
       "estado": "CONFIRMADO",
       "finicio": "2023-06-01",
       "ffin": "2023-06-30",
+      "configuracion": "TP001",
       "progreso": 80
     },
     {
@@ -388,6 +389,15 @@
     },
     {
       "codigo": "NDPP003",
+      "calculo": "DISTRIBUCION",
+      "estado": "CONFIRMADO",
+      "finicio": "2023-06-01",
+      "ffin": "2023-06-30",
+      "configuracion": "TP002",
+      "progreso": 100
+    },
+    {
+      "codigo": "NDPP004",
       "calculo": "DISTRIBUCION",
       "estado": "CONFIRMADO",
       "finicio": "2023-06-01",
